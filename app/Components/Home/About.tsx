@@ -23,7 +23,7 @@ export default function About() {
           <div className="flex justify-center">
 
 
-            <div className="relative -left-20 z-10 w-72 h-[420px] rounded-3xl border-2 border-[#131a3d]">
+            <div className="relative -left-5 md:-left-20 z-10 w-48 aspect-[3/4] md:w-72 md:h-[420px] rounded-3xl border-2 border-[#131a3d]">
               <Image
                 src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=600"
                 alt="Team discussing career options"
@@ -38,15 +38,15 @@ export default function About() {
               </div>
               <div className="absolute h-full w-20 border-l-2 border-dashed border-[#131a3d] rounded-3xl pointer-events-none" />
               {/* Golden/Orange Badge (Top Right) */}
-              <div className="absolute top-[-40px] -left-24 z-20 bg-gold-400 p-4 sm:p-6 rounded-2xl w-44 text-center shadow-2xl">
-                <h3 className="text-2xl sm:text-5xl font-extrabold text-[#050616]">30+</h3>
-                <p className="text-[10px] uppercase font-semibold text-[#050616] tracking-widest mt-1">
+              <div className="absolute top-[-40px] -left-10 md:-left-24 z-20 bg-gold-400 p-4 sm:p-6 rounded-2xl w-30 md:w-44 text-center shadow-2xl">
+                <h3 className="text-xl sm:text-5xl font-extrabold text-[#050616]">30+</h3>
+                <p className="text-[10px] word-wrap uppercase font-semibold text-[#050616] tracking-widest mt-1">
                   Years Of Experience
                 </p>
               </div>
 
               {/* Secondary Inset Image (Bottom Right) */}
-              <div className="absolute bottom-[-30px] -right-50 z-20 w-64 h-[280px] rounded-3xl overflow-hidden border-2 border-[#131a3d]">
+              <div className="absolute bottom-[-30px] -right-20 md:-right-50 z-20 w-35 aspect-square md:aspect-auto md:w-64 md:h-[280px] rounded-3xl overflow-hidden border-2 border-[#131a3d]">
                 <Image
                   src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=600"
                   alt="Group workspace"
