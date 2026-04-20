@@ -77,13 +77,11 @@ export default function HeroDesign1() {
                                 className="z-10 group flex items-center gap-3 animate-fadeUp4 mt-5">
                                 <div className="relative bg-white rounded-lg overflow-hidden bg-gold px-8 py-4 flex items-center gap-3
                 shadow-lg shadow-gold/20 transition-all duration-300 group-hover:shadow-xl">
-                                    <span className="text-[10px] font-medium tracking-[0.35em] text-navy-900 uppercase font-body">Explore Properties</span>
+                                    <span className="text-[10px] font-bold tracking-[0.35em] text-navy-900 uppercase">Explore Properties</span>
                                     <svg className="w-3.5 h-3.5 text-navy-900 transition-transform duration-300 group-hover:translate-x-1.5"
                                         fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 16 16">
                                         <path d="M2 8h12M9 3l5 5-5 5" />
                                     </svg>
-                                    <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700
-                  bg-gradient-to-r from-transparent via-white/25 to-transparent skew-x-12 pointer-events-none"></div>
                                 </div>
                             </Link>
                         </motion.div>
