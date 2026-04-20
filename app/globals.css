@@ -1,26 +1,126 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* ── Fonts ─────────────────────────────────────────── */
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "DM Sans", "Helvetica Neue", sans-serif;
+
+  /* ── Brand Colors ───────────────────────────────────── */
+
+  /* Navy (from logo) */
+  --color-navy-950: #06092a;
+  --color-navy-900: #0d1240; /* PRIMARY */
+  --color-navy-800: #141a5c;
+  --color-navy-700: #1d2570;
+  --color-navy-100: #d5daef;
+  --color-navy-50: #eceef8;
+
+  /* Gold (accent) */
+  --color-gold-600: #9e6c19;
+  --color-gold-500: #c08c20;
+  --color-gold-400: #d4a435; /* PRIMARY ACCENT */
+  --color-gold-300: #e2be62;
+  --color-gold-100: #f7edd0;
+  --color-gold-50: #fdf9ef;
+
+  /* Neutrals */
+  --color-white: #ffffff;
+  --color-off-white: #f8f7f4;
+  --color-cream: #f2ede4;
+
+  /* Text */
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #555555;
+  --color-text-muted: #8a8a8a;
+
+  /* Border */
+  --color-border: #e5e5e5;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* ── Base resets ─────────────────────────────────────── */
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-white);
+    color: var(--color-text-primary);
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+  }
+
+  ::selection {
+    background-color: var(--color-navy-900);
+    color: var(--color-white);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+
+        :root {
+          --navy: #002147;
+        --accent: #E88D4D; /* Inspired by the orange in your reference */
+        }
+
+        body {
+          font-family: 'Plus Jakarta Sans', sans-serif;
+        background-color: #fff;
+        }
+
+        .video-container {
+          position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        }
+
+        .video-container video {
+          width: 100%;
+        height: 100%;
+        object-fit: cover;
+        }
+
+        .overlay {
+          background: linear-gradient(90deg, rgba(0, 33, 71, 0.7) 0%, rgba(0, 33, 71, 0.4) 50%, rgba(255,255,255,0) 100%);
+        }
+
+        /* Circular Badge from Reference */
+        .rotating-badge {
+          animation: rotate 15s linear infinite;
+        }
+
+        @keyframes rotate {
+          from {transform: rotate(0deg); }
+        to {transform: rotate(360deg); }
+        }
+
+        .cta-group {
+          background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 12px;
+        padding: 6px;
+        }
+
+        .cta-btn {
+          transition: all 0.3s ease;
+        }
+
+        .cta-btn.active {
+          background-color: var(--accent);
+        color: white;
+        box-shadow: 0 4px 15px rgba(232, 141, 77, 0.3);
+        }
+
+        .cta-btn:not(.active):hover {
+          background-color: rgba(255, 255, 255, 0.2);
+        color: white;
+        }
