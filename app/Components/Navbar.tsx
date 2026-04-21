@@ -50,7 +50,7 @@ export default function Navbar({ scrolled }: { scrolled: boolean }) {
             <li key={link.name}>
               <Link
                 href={link.href}
-                className="text-[12.5px] py-1 font-medium tracking-[0.25em] text-white/70 uppercase hover:text-gold-400 transition-colors duration-300 relative group"
+                className="text-[12.5px] py-1 font-medium tracking-[0.25em] text-white uppercase hover:text-gold-400 transition-colors duration-300 relative group"
               >
                 {link.name}
                 {/* Center-out underline hover effect */}
@@ -64,7 +64,7 @@ export default function Navbar({ scrolled }: { scrolled: boolean }) {
         <div className="hidden lg:block">
           <Link
             href="/contact"
-            className="text-[9.5px] font-bold rounded-lg tracking-[0.3em] text-white uppercase border border-gold-400/40 px-7 py-3.5 hover:bg-gold-400 hover:text-navy-950 transition-all duration-500 shadow-lg shadow-gold-400/10"
+            className="text-[9.5px] font-bold rounded-lg tracking-[0.3em] text-white uppercase border border-gold-400/70 px-7 py-3.5 hover:bg-gold-400 hover:text-navy-950 transition-all duration-500 shadow-lg shadow-gold-400/10"
           >
             Contact Us
           </Link>
