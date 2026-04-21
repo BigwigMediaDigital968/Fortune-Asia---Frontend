@@ -34,11 +34,11 @@ export default function PropertyDetailsGallery({ images, title }: PropertyDetail
             </div>
 
             {/* Thumbnails Grid */}
-            <div className="md:col-span-2 grid grid-cols-2 gap-4">
+            <div className="md:col-span-2 flex gap-2 overflow-x-auto md:grid md:grid-cols-2 md:gap-4 pb-4 md:pb-0 snap-x snap-mandatory scrollbar-hide">
                 {displayImages.slice(1, 5).map((img, idx) => (
                     <div
                         key={idx}
-                        className="relative rounded-xl md:rounded-xl aspect-[8/5] overflow-hidden cursor-pointer group"
+                        className="relative rounded-xl aspect-[8/5] min-w-[150px] md:min-w-0 md:w-full overflow-hidden cursor-pointer group snap-center"
                         onClick={() => setActiveImage(idx + 1)}
                     >
                         <Image
@@ -50,7 +50,7 @@ export default function PropertyDetailsGallery({ images, title }: PropertyDetail
                         <div className="absolute inset-0 bg-navy-950/10 group-hover:bg-transparent transition-colors" />
 
                         {idx === 3 && images.length > 5 && (
-                            <div className="absolute right-2 bottom-2 p-2 roundex-2xl overflow-hidden bg-navy-950/20 backdrop-blur-sm flex items-center justify-center">
+                            <div className="absolute right-2 bottom-2 p-2 rounded-2xl overflow-hidden bg-navy-950/20 backdrop-blur-sm flex items-center justify-center">
                                 <span className="text-white font-display font-bold text-xl">+{images.length - 5}</span>
                             </div>
                         )}
