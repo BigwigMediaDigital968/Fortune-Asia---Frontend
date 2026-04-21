@@ -25,7 +25,7 @@ export default function EnquiryForm() {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="bg-white/5 p-4 md:p-10 rounded-xl md:rounded-[40px] border border-white/10">
+        <form onSubmit={handleSubmit} className="bg-white/5 p-4 md:p-6 rounded-xl md:rounded-xl border border-white/10">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6 text-white">
                 <div className="space-y-2">
                     <label className="text-[10px] uppercase font-bold text-white tracking-widest ml-1">Full Name</label>
