@@ -13,10 +13,10 @@ export default function LeadForm() {
   const inView = useInView(ref, { once: true, margin: "-80px" });
   return (
     <section className="py-24 relative overflow-hidden">
-      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-gold-400/5 blur-[150px] -translate-y-1/2 rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-gold-400/5 blur-[150px] -translate-y-1/2 rounded-xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
-        <div className="bg-navy-900 border border-white/5 rounded-xl md:rounded-[60px] p-4 sm:p-8 md:p-16 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <div className="bg-navy-900 border border-white/5 rounded-xl md:rounded-xl p-4 sm:p-8 md:p-16 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
 
           <div>
             <SectionHeading subtitle="Contact" title="Connect with Our Experts" centered={false} />
