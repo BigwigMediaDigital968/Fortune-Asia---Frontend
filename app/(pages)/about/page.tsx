@@ -109,26 +109,27 @@ export default function About() {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
-                        className="relative h-[500px] w-full"
+                        className="relative flex justify-center items-center h-auto w-full p-2"
                     >
-                        <div className="absolute top-0 left-0 w-[80%] h-[80%] rounded-2xl overflow-hidden border-2 border-navy-900 shadow-2xl z-10">
+                        <div className="relative top-0 -left-3 sm:-left-5 md:left-0 w-[80%] max-w-[400px] aspect-square rounded-2xl  border-2 border-navy-900 shadow-2xl">
                             <Image
                                 src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800"
                                 alt="Modern Office"
                                 fill
-                                className="object-cover"
+                                className="object-cover rounded-2xl"
                             />
+                            <div className="absolute -bottom-1/2 -right-1/2 -translate-1/2  w-[60%] aspect-square rounded-2xl overflow-hidden border-4 border-navy-950 shadow-2xl z-20">
+                                <Image
+                                    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=600"
+                                    alt="Team Meeting"
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
+                            {/* Decorative Gold Accent */}
+                            <div className="absolute -top-5 -left-5 md:-top-10 md:-left-10 w-32 aspect-square border-l-2 border-t-2 border-gold-400/30 rounded-tl-3xl z-20" />
                         </div>
-                        <div className="absolute bottom-0 right-0 w-[60%] h-[60%] rounded-2xl overflow-hidden border-4 border-navy-950 shadow-2xl z-20">
-                            <Image
-                                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=600"
-                                alt="Team Meeting"
-                                fill
-                                className="object-cover"
-                            />
-                        </div>
-                        {/* Decorative Gold Accent */}
-                        <div className="absolute -top-6 -left-6 w-32 h-32 border-l-2 border-t-2 border-gold-400/30 rounded-tl-3xl z-0" />
+
                     </motion.div>
 
                     {/* Right: Content */}
