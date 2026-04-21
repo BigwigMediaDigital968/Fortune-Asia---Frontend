@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
     MapPin, BedDouble, Bath, Square, Home,
     Calendar, Building, CheckCircle2, ChevronRight,
@@ -12,6 +13,8 @@ import { useParams } from "next/navigation";
 import { fadeUp, motionContainer } from "@/app/utils/motion";
 import PropertyDetailsGallery from "@/app/Components/Properties/PropertyDetailsGallery";
 import EnquiryForm from "@/app/Components/Ui/EnquiryForm";
+import RelatedPropertyCard from "@/app/Components/Properties/RelatedPropertyCard";
+import { Property as BaseProperty } from "@/app/Components/Buy/PropertyCard";
 
 // ─── Interfaces (Matching Mongoose Model) ──────────────────
 export interface FAQItem {
@@ -102,8 +105,67 @@ const MOCK_PROPERTY: DetailedProperty = {
     extraDetails: "This unit belongs to the Signature Collection which features higher ceilings and premium marble flooring throughout.",
 };
 
+const RELATED_PROPERTIES: BaseProperty[] = [
+    {
+        id: "rp1",
+        title: "Marina Penthouse",
+        location: "Dubai Marina",
+        price: "AED 12,000,000",
+        beds: 3,
+        baths: 4,
+        sqft: 3500,
+        category: "Apartment",
+        image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=800"
+    },
+    {
+        id: "rp2",
+        title: "Palm Villa",
+        location: "Palm Jumeirah",
+        price: "AED 25,000,000",
+        beds: 5,
+        baths: 6,
+        sqft: 8000,
+        category: "Villa",
+        image: "https://images.unsplash.com/photo-1541123437800-1bb1317badc2?q=80&w=800"
+    },
+    {
+        id: "rp3",
+        title: "Downtown Loft",
+        location: "Downtown Dubai",
+        price: "AED 4,500,000",
+        beds: 2,
+        baths: 2,
+        sqft: 1800,
+        category: "Loft",
+        image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=800"
+    },
+    {
+        id: "rp4",
+        title: "Emirates Hills Mansion",
+        location: "Emirates Hills",
+        price: "AED 85,000,000",
+        beds: 7,
+        baths: 9,
+        sqft: 15000,
+        category: "Mansion",
+        image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=800"
+    },
+    {
+        id: "rp5",
+        title: "Creek Side Apartment",
+        location: "Dubai Creek",
+        price: "AED 2,800,000",
+        beds: 2,
+        baths: 2,
+        sqft: 1400,
+        category: "Apartment",
+        image: "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?q=80&w=800"
+    }
+];
+
 export default function PropertyDetailsPage() {
     const property = MOCK_PROPERTY; // In reality, fetch by params.slug
+    const [openFaq, setOpenFaq] = useState<number | null>(0);
 
     return (
         <main className="bg-navy-950 min-h-screen pb-32">
@@ -291,19 +353,39 @@ export default function PropertyDetailsPage() {
                             </div>
                         </div>
 
-                        {/* FAQ Section */}
                         <div className="space-y-8">
                             <SectionTitle icon={<MessageSquare size={20} />} title="Common Inquiries" />
                             <div className="space-y-4">
                                 {property.faqs.map((faq, i) => (
-                                    <div key={i} className="bg-white/[0.03] border border-white/10 rounded-2xl p-6 md:p-8 hover:bg-white/[0.05] transition-colors group cursor-pointer">
-                                        <h5 className="text-white font-bold text-lg mb-4 flex items-center justify-between">
+                                    <div
+                                        key={i}
+                                        onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                                        className={`bg-white/[0.03] border rounded-2xl p-4 md:p-8 transition-all duration-300 group cursor-pointer ${openFaq === i ? "border-gold-400/50 bg-white/[0.06]" : "border-white/10 hover:border-white/20"
+                                            }`}
+                                    >
+                                        <h3 className="text-white font-medium text-sm md:text-lg flex items-center justify-between">
                                             {faq.question}
-                                            <ChevronRight size={18} className="text-gold-400 group-hover:rotate-90 transition-transform" />
-                                        </h5>
-                                        <p className="text-white/50 text-sm font-light leading-relaxed">
-                                            {faq.answer}
-                                        </p>
+                                            <ChevronRight
+                                                size={18}
+                                                className={`text-gold-400 transition-transform duration-300 ${openFaq === i ? "rotate-90" : "rotate-0"
+                                                    }`}
+                                            />
+                                        </h3>
+                                        <AnimatePresence>
+                                            {openFaq === i && (
+                                                <motion.div
+                                                    initial={{ height: 0, opacity: 0, marginTop: 0 }}
+                                                    animate={{ height: "auto", opacity: 1, marginTop: 16 }}
+                                                    exit={{ height: 0, opacity: 0, marginTop: 0 }}
+                                                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                                                    className="overflow-hidden"
+                                                >
+                                                    <p className="text-white/50 text-sm font-light leading-relaxed">
+                                                        {faq.answer}
+                                                    </p>
+                                                </motion.div>
+                                            )}
+                                        </AnimatePresence>
                                     </div>
                                 ))}
                             </div>
@@ -312,7 +394,7 @@ export default function PropertyDetailsPage() {
 
                     {/* RIGHT COLUMN: SIDEBAR */}
                     <aside className="w-full lg:w-[420px] shrink-0">
-                        <div className="sticky top-24 space-y-8">
+                        <div className="space-y-8">
 
                             {/* Inquiry Form Card */}
                             <div className="bg-navy-900 border border-white/10 rounded-xl p-4 md:p-6 shadow-2xl relative overflow-hidden">
@@ -327,6 +409,19 @@ export default function PropertyDetailsPage() {
 
                                     {/* Direct use of EnquiryForm as requested */}
                                     <EnquiryForm />
+                                </div>
+                            </div>
+
+                            {/* Related Properties */}
+                            <div className="space-y-6 pt-10">
+                                <div className="flex items-center gap-4 mb-4">
+                                    <div className="w-2 h-8 bg-gold-400 rounded-full" />
+                                    <h3 className="text-xl font-display font-bold text-white uppercase tracking-wider">Related Properties</h3>
+                                </div>
+                                <div className="flex flex-col gap-4">
+                                    {RELATED_PROPERTIES.map((related, idx) => (
+                                        <RelatedPropertyCard key={related.id} property={related} index={idx} />
+                                    ))}
                                 </div>
                             </div>
 
