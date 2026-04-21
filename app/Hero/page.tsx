@@ -10,13 +10,17 @@ export default function HeroDesign1() {
         <>
             <section className="relative w-full h-screen overflow-hidden">
 
-                <div className="absolute inset-0 bg-img">
-                    <img
-                        src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2070"
-                        alt="Dubai luxury interior"
-                        className="hidden w-full h-full object-cover"
-                    />
-                    <video className="w-full h-full object-cover" autoPlay loop muted src="https://media.istockphoto.com/id/463827650/video/dubai-skyline.mp4?s=mp4-640x640-is&k=20&c=xO778OSkEAFLwoXKmJznnnsDJl1m4lSeD2lpqrh8UDA="></video>
+                <div className="absolute inset-0">
+                    <video
+                        className="w-full h-full object-cover"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        poster="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2070"
+                    >
+                        <source src="/assets/elevator-video.mp4" type="video/mp4" />
+                    </video>
                 </div>
 
                 <div className="absolute inset-0 bg-navy-deep/55"></div>
