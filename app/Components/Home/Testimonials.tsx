@@ -35,8 +35,10 @@ function StarRating({ count }: { count: number }) {
 export default function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [cardWidth, setCardWidth] = useState(0);
 
-  const CARD_WIDTH = 400; // matching your w-[400px]
+  //const CARD_WIDTH = 400; // matching your w-[400px]
   const GAP = 20; // approximate gap from your padding/flex
 
   const maxIndex = testimonials2.length - 1;
@@ -54,6 +56,18 @@ export default function Testimonials() {
     const interval = setInterval(nextSlide, 4000);
     return () => clearInterval(interval);
   }, [nextSlide, isPaused]);
+  useEffect(() => {
+    const updateWidth = () => {
+      if (cardRef.current) {
+        setCardWidth(cardRef.current?.offsetWidth);
+      }
+    };
+
+    updateWidth();
+    window.addEventListener("resize", updateWidth);
+
+    return () => window.removeEventListener("resize", updateWidth);
+  }, []);
 
   return (
     <section className="overflow-hidden">
@@ -68,7 +82,7 @@ export default function Testimonials() {
         </div>
 
         <div
-          className="relative bg-navy-950/30 p-10 md:p-20 md:py-24 border border-white/5 shadow-2xl overflow-hidden backdrop-blur-sm"
+          className="relative bg-navy-950/30 p-5 md:p-10 md:py-24 border border-white/5 shadow-2xl overflow-hidden backdrop-blur-sm"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
@@ -100,14 +114,15 @@ export default function Testimonials() {
                   className="flex"
                   animate={{
                     // Prevents moving beyond the last card's position
-                    x: `-${currentIndex * CARD_WIDTH}px`
+                    x: `-${currentIndex * cardWidth}px`
                   }}
                   transition={{ type: "spring", stiffness: 200, damping: 25 }}
                 >
                   {testimonials2.map((item, idx) => (
-                    <div key={item.id} className="w-[400px] px-4 shrink-0">
+                    <div key={item.id + "testemonials"}
+                      ref={idx === 0 ? cardRef : null} className="w-[85vw] sm:w-[400px] px-4 shrink-0">
                       {/* GLOSSY CARD DESIGN */}
-                      <div className="relative group w-full bg-white/10 backdrop-blur-md border border-white/20 rounded-[2.5rem] p-10 flex flex-col shadow-2xl h-[320px] transition-all duration-500 hover:bg-white/15">
+                      <div className="relative group w-full bg-white/10 backdrop-blur-md border border-white/20 rounded-[2.5rem] p-5 md:p-10 flex flex-col shadow-2xl h-[320px] transition-all duration-500 hover:bg-white/15">
 
                         {/* Profile Circle */}
                         <div className="w-16 h-16 rounded-full bg-gold-400 flex items-center justify-center mb-6 shadow-lg shadow-gold-400/20">

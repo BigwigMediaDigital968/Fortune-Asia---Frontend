@@ -34,7 +34,7 @@ export default function HeroDesign1() {
 
 
 
-                <div className="absolute inset-0 z-10 flex flex-col justify-center p-5 sm:px-10 md:px-20">
+                <div className="absolute inset-0 z-10 flex flex-col justify-end md:justify-center p-5 sm:px-10 md:px-20">
                     <motion.div className="max-w-2xl">
 
                         <motion.div initial={{ y: 50, opacity: 0 }}
@@ -64,13 +64,13 @@ export default function HeroDesign1() {
                         <motion.div initial={{ y: 50, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ duration: 0.8, delay: 0.2 }} className="cta-group inline-flex items-center space-x-1 p-1 bg-white/10 w-full sm:w-auto">
-                            <Link href={"/buy"} className="cursor-pointer cta-btn bg-gold-500  flex-1 sm:flex-none px-10 py-2 rounded-lg text-sm font-bold uppercase tracking-wider">
+                            <Link href={"/buy"} className="cursor-pointer cta-btn bg-gold-500  flex-1 sm:flex-none px-3 sm:px-5 md:px-10 py-2 rounded-lg text-center text-sm font-medium sm:font-bold uppercase tracking-wider">
                                 Buy
                             </Link>
-                            <Link href={"/rent"} className="cursor-pointer cta-btn flex-1 sm:flex-none px-10 py-2 rounded-lg text-white text-sm font-bold uppercase tracking-wider">
+                            <Link href={"/rent"} className="cursor-pointer cta-btn flex-1 sm:flex-none px-3 sm:px-5 md:px-10 py-2 rounded-lg text-white text-center text-sm font-medium sm:font-bold uppercase tracking-wider">
                                 Rent
                             </Link>
-                            <Link href={"/lease"} className="cursor-pointer cta-btn flex-1 sm:flex-none px-10 py-2 rounded-lg text-white text-sm font-bold uppercase tracking-wider">
+                            <Link href={"/lease"} className="cursor-pointer cta-btn flex-1 sm:flex-none px-3 sm:px-5 md:px-10 py-2 rounded-lg text-white text-center text-sm font-medium sm:font-bold uppercase tracking-wider">
                                 Lease
                             </Link>
                         </motion.div>
@@ -93,7 +93,7 @@ export default function HeroDesign1() {
                 </div>
 
 
-                <div className="absolute z-10"
+                <div className="absolute z-10 hidden sm:block"
                     style={{ top: "50%", right: "8%", transform: "translateY(-55%)" }}>
                     <div className="relative w-[130px] h-[130px]  flex items-center justify-center cursor-pointer group">
 
@@ -122,7 +122,7 @@ export default function HeroDesign1() {
                 </div>
 
 
-                <div className="absolute bottom-0 left-0 right-0 z-10 grid grid-cols-2 sm:flex border-t border-white/10 animate-fadeUp4">
+                <div className="absolute bottom-0 left-0 right-0 z-10  hidden sm:flex border-t border-white/10 animate-fadeUp4">
                     <div className="flex-1 flex flex-col items-center justify-center py-2 sm:py-5 border-r border-white/10
                 bg-navy-deep/50 backdrop-blur-sm hover:bg-navy/60 transition-colors duration-300 cursor-pointer group">
                         <span className="font-display text-lg sm:text-2xl font-semibold text-white group-hover:text-gold-lt transition-colors duration-300">1,200<span className="text-gold text-base">+</span></span>
@@ -155,6 +155,28 @@ export default function HeroDesign1() {
                     </div>
                 </div>
 
-            </section></>
+            </section>
+            <div className=" bottom-0 left-0 right-0 z-10 grid grid-cols-2 sm:hidden border-t border-white/10 animate-fadeUp4">
+                <div className="flex-1 flex flex-col items-center justify-center py-2 sm:py-5 border-r border-white/10
+                bg-navy-deep/50 backdrop-blur-sm hover:bg-navy/60 transition-colors duration-300 cursor-pointer group">
+                    <span className="font-display text-lg sm:text-2xl font-semibold text-white group-hover:text-gold-lt transition-colors duration-300">1,200<span className="text-gold text-base">+</span></span>
+                    <span className="text-[8px] tracking-[0.4em] text-white/40 uppercase font-medium mt-1">Properties</span>
+                </div>
+                <div className="flex-1 flex flex-col items-center justify-center py-2 sm:py-5 border-r border-white/10
+                bg-navy-deep/50 backdrop-blur-sm hover:bg-navy/60 transition-colors duration-300 cursor-pointer group">
+                    <span className="font-display text-lg sm:text-2xl font-semibold text-white group-hover:text-gold-lt transition-colors duration-300">AED 2.4<span className="text-gold text-base">B</span></span>
+                    <span className="text-[8px] tracking-[0.4em] text-white/40 uppercase font-medium mt-1">Portfolio Value</span>
+                </div>
+                <div className="flex-1 flex flex-col items-center justify-center py-2 sm:py-5 border-r border-white/10
+                bg-navy-deep/50 backdrop-blur-sm hover:bg-navy/60 transition-colors duration-300 cursor-pointer group">
+                    <span className="font-display text-lg sm:text-2xl font-semibold text-white group-hover:text-gold-lt transition-colors duration-300">15<span className="text-gold text-base">+</span></span>
+                    <span className="text-[8px] tracking-[0.4em] text-white/40 uppercase font-medium mt-1">Years in Dubai</span>
+                </div>
+                <div className="flex-1 flex flex-col items-center justify-center py-2 sm:py-5
+                bg-navy-deep/50 backdrop-blur-sm hover:bg-navy/60 transition-colors duration-300 cursor-pointer group">
+                    <span className="font-display text-lg sm:text-2xl font-semibold text-white group-hover:text-gold-lt transition-colors duration-300">98<span className="text-gold text-base">%</span></span>
+                    <span className="text-[8px] tracking-[0.4em] text-white/40 uppercase font-medium mt-1">Satisfaction Rate</span>
+                </div>
+            </div></>
     );
 }
