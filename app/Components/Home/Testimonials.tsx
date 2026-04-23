@@ -6,18 +6,79 @@ import SectionLabel from "../Ui/SectionLabel";
 import { fadeUp, motionContainer } from "@/app/utils/motion";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import Link from "next/link";
 
 const testimonials2 = [
-  { id: 1, name: "Michael", role: "MDS Manufacturing", text: "The level of professionalism was unparalleled. We found our dream office within a week.", initials: "M" },
-  { id: 2, name: "Diane", role: "ABC Rentals", text: "Exquisite taste and attention to detail. Every property was a masterpiece.", initials: "D" },
-  { id: 3, name: "Allison", role: "Grand Party Rental", text: "Seamless transaction from start to finish. The team handled everything with grace.", initials: "A" },
-  { id: 4, name: "Robert", role: "Tech Horizons", text: "A truly bespoke experience. They found us a community that fits our lifestyle.", initials: "R" },
-  { id: 5, name: "Sarah", role: "Global Luxe", text: "Their understanding of the luxury market is unmatched in the region.", initials: "S" },
-  { id: 1, name: "Michael", role: "MDS Manufacturing", text: "The level of professionalism was unparalleled. We found our dream office within a week.", initials: "M" },
-  { id: 2, name: "Diane", role: "ABC Rentals", text: "Exquisite taste and attention to detail. Every property was a masterpiece.", initials: "D" },
-  { id: 3, name: "Allison", role: "Grand Party Rental", text: "Seamless transaction from start to finish. The team handled everything with grace.", initials: "A" },
-  { id: 4, name: "Robert", role: "Tech Horizons", text: "A truly bespoke experience. They found us a community that fits our lifestyle.", initials: "R" },
-  { id: 5, name: "Sarah", role: "Global Luxe", text: "Their understanding of the luxury market is unmatched in the region.", initials: "S" },
+  {
+    id: 1,
+    name: "Michael",
+    role: "MDS Manufacturing",
+    text: "The level of professionalism was unparalleled. We found our dream office within a week.",
+    initials: "M",
+  },
+  {
+    id: 2,
+    name: "Diane",
+    role: "ABC Rentals",
+    text: "Exquisite taste and attention to detail. Every property was a masterpiece.",
+    initials: "D",
+  },
+  {
+    id: 3,
+    name: "Allison",
+    role: "Grand Party Rental",
+    text: "Seamless transaction from start to finish. The team handled everything with grace.",
+    initials: "A",
+  },
+  {
+    id: 4,
+    name: "Robert",
+    role: "Tech Horizons",
+    text: "A truly bespoke experience. They found us a community that fits our lifestyle.",
+    initials: "R",
+  },
+  {
+    id: 5,
+    name: "Sarah",
+    role: "Global Luxe",
+    text: "Their understanding of the luxury market is unmatched in the region.",
+    initials: "S",
+  },
+  {
+    id: 1,
+    name: "Michael",
+    role: "MDS Manufacturing",
+    text: "The level of professionalism was unparalleled. We found our dream office within a week.",
+    initials: "M",
+  },
+  {
+    id: 2,
+    name: "Diane",
+    role: "ABC Rentals",
+    text: "Exquisite taste and attention to detail. Every property was a masterpiece.",
+    initials: "D",
+  },
+  {
+    id: 3,
+    name: "Allison",
+    role: "Grand Party Rental",
+    text: "Seamless transaction from start to finish. The team handled everything with grace.",
+    initials: "A",
+  },
+  {
+    id: 4,
+    name: "Robert",
+    role: "Tech Horizons",
+    text: "A truly bespoke experience. They found us a community that fits our lifestyle.",
+    initials: "R",
+  },
+  {
+    id: 5,
+    name: "Sarah",
+    role: "Global Luxe",
+    text: "Their understanding of the luxury market is unmatched in the region.",
+    initials: "S",
+  },
 ];
 
 function StarRating({ count }: { count: number }) {
@@ -92,19 +153,26 @@ export default function Testimonials() {
           </div>
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-
             {/* ── LEFT HEADING ── */}
             <div className="lg:col-span-4">
               <h2 className="text-4xl md:text-5xl font-serif text-white mb-6 leading-tight">
-                Connect with <br /> <span className="text-gold-400">other members</span>
+                Connect with <br />{" "}
+                <span className="text-gold-400">other members</span>
               </h2>
               <p className="text-white/60 font-light mb-8 max-w-sm leading-relaxed">
-                Hear from the visionary leaders who have redefined their living standards through our bespoke services.
+                Hear from the visionary leaders who have redefined their living
+                standards through our bespoke services.
               </p>
-              <button className="border border-gold-400/50 hover:bg-gold-400 hover:text-navy-950 transition-all duration-500 rounded-full py-3 px-8 flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-white group cursor-pointer">
+              <Link
+                href={"/contact"}
+                className="border border-gold-400/50 hover:bg-gold-400 hover:text-navy-950 transition-all duration-500 rounded-full py-3 px-8 inline-flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-white group cursor-pointer"
+              >
                 Connect now
-                <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </button>
+                <ChevronRight
+                  size={16}
+                  className="group-hover:translate-x-1 transition-transform"
+                />
+              </Link>
             </div>
 
             {/* ── RIGHT CAROUSEL TRACK ── */}
@@ -114,23 +182,32 @@ export default function Testimonials() {
                   className="flex"
                   animate={{
                     // Prevents moving beyond the last card's position
-                    x: `-${currentIndex * cardWidth}px`
+                    x: `-${currentIndex * cardWidth}px`,
                   }}
                   transition={{ type: "spring", stiffness: 200, damping: 25 }}
                 >
                   {testimonials2.map((item, idx) => (
-                    <div key={item.id + "testemonials"}
-                      ref={idx === 0 ? cardRef : null} className="w-[85vw] sm:w-[400px] px-4 shrink-0">
+                    <div
+                      key={item.id + "testemonials"}
+                      ref={idx === 0 ? cardRef : null}
+                      className="w-[85vw] sm:w-[400px] px-4 shrink-0"
+                    >
                       {/* GLOSSY CARD DESIGN */}
                       <div className="relative group w-full bg-white/10 backdrop-blur-md border border-white/20 rounded-[2.5rem] p-5 md:p-10 flex flex-col shadow-2xl h-[320px] transition-all duration-500 hover:bg-white/15">
-
                         {/* Profile Circle */}
                         <div className="w-16 h-16 rounded-full bg-gold-400 flex items-center justify-center mb-6 shadow-lg shadow-gold-400/20">
-                          <span className="text-xl font-bold text-navy-950">{item.initials}</span>
+                          <span className="text-xl font-bold text-navy-950">
+                            {item.initials}
+                          </span>
                         </div>
 
                         <div className="relative mb-6 flex-grow">
-                          <Quote size={24} className="text-gold-400/30 absolute -top-2 -left-2" fill="currentColor" stroke="none" />
+                          <Quote
+                            size={24}
+                            className="text-gold-400/30 absolute -top-2 -left-2"
+                            fill="currentColor"
+                            stroke="none"
+                          />
                           <p className="text-white/80 text-sm leading-relaxed italic relative z-10 font-light">
                             "{item.text}"
                           </p>
@@ -138,12 +215,19 @@ export default function Testimonials() {
 
                         <div className="mt-auto pt-6 border-t border-white/10 flex justify-between items-end">
                           <div>
-                            <h4 className="font-bold text-white tracking-wide">{item.name}</h4>
-                            <p className="text-[10px] text-gold-400 uppercase tracking-[0.2em] font-medium">{item.role}</p>
+                            <h4 className="font-bold text-white tracking-wide">
+                              {item.name}
+                            </h4>
+                            <p className="text-[10px] text-gold-400 uppercase tracking-[0.2em] font-medium">
+                              {item.role}
+                            </p>
                           </div>
                           <div className="flex gap-1 mb-1">
                             {[...Array(5)].map((_, i) => (
-                              <div key={i} className="w-1 h-1 bg-gold-400 rounded-full shadow-[0_0_8px_rgba(212,164,53,0.8)]" />
+                              <div
+                                key={i}
+                                className="w-1 h-1 bg-gold-400 rounded-full shadow-[0_0_8px_rgba(212,164,53,0.8)]"
+                              />
                             ))}
                           </div>
                         </div>
@@ -176,8 +260,11 @@ export default function Testimonials() {
                     <button
                       key={i}
                       onClick={() => setCurrentIndex(i)}
-                      className={`h-1.5 rounded-full transition-all duration-500 ${currentIndex === i ? "w-12 bg-gold-400" : "w-3 bg-white/10 hover:bg-white/30"
-                        }`}
+                      className={`h-1.5 rounded-full transition-all duration-500 ${
+                        currentIndex === i
+                          ? "w-12 bg-gold-400"
+                          : "w-3 bg-white/10 hover:bg-white/30"
+                      }`}
                     />
                   ))}
                 </div>
@@ -188,4 +275,4 @@ export default function Testimonials() {
       </div>
     </section>
   );
-};
+}

@@ -1,8 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Bath, BedDouble, MapPin, Square, Heart, ArrowRight } from "lucide-react";
+import {
+  Bath,
+  BedDouble,
+  MapPin,
+  Square,
+  Heart,
+  ArrowRight,
+} from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export interface Property {
   id: number | string;
@@ -82,33 +90,51 @@ export default function PropertyCard({ property, index }: PropertyCardProps) {
           <div className="flex flex-col items-center gap-1">
             <div className="flex items-center gap-2 text-gold-400">
               <BedDouble size={16} />
-              <span className="text-white font-bold text-sm">{property.beds}</span>
+              <span className="text-white font-bold text-sm">
+                {property.beds}
+              </span>
             </div>
-            <span className="text-[10px] text-gray-500 uppercase font-medium tracking-wider">Beds</span>
+            <span className="text-[10px] text-gray-500 uppercase font-medium tracking-wider">
+              Beds
+            </span>
           </div>
 
           <div className="flex flex-col items-center gap-1 border-x border-white/5">
             <div className="flex items-center gap-2 text-gold-400">
               <Bath size={16} />
-              <span className="text-white font-bold text-sm">{property.baths}</span>
+              <span className="text-white font-bold text-sm">
+                {property.baths}
+              </span>
             </div>
-            <span className="text-[10px] text-gray-500 uppercase font-medium tracking-wider">Baths</span>
+            <span className="text-[10px] text-gray-500 uppercase font-medium tracking-wider">
+              Baths
+            </span>
           </div>
 
           <div className="flex flex-col items-center gap-1">
             <div className="flex items-center gap-2 text-gold-400">
               <Square size={14} />
-              <span className="text-white font-bold text-sm">{property.sqft}</span>
+              <span className="text-white font-bold text-sm">
+                {property.sqft}
+              </span>
             </div>
-            <span className="text-[10px] text-gray-500 uppercase font-medium tracking-wider">Sqft</span>
+            <span className="text-[10px] text-gray-500 uppercase font-medium tracking-wider">
+              Sqft
+            </span>
           </div>
         </div>
 
         {/* Action Button */}
-        <button className="w-full mt-4 py-3 bg-white/5 hover:bg-gold-400 border border-white/10 hover:border-gold-400 text-white hover:text-navy-950 font-bold text-[10px] uppercase tracking-[0.2em] rounded-lg transition-all duration-300 flex items-center justify-center gap-2 group/btn cursor-pointer">
+        <Link
+          href={"/properties/abc"}
+          className="w-full mt-4 py-3 bg-white/5 hover:bg-gold-400 border border-white/10 hover:border-gold-400 text-white hover:text-navy-950 font-bold text-[10px] uppercase tracking-[0.2em] rounded-lg transition-all duration-300 flex items-center justify-center gap-2 group/btn cursor-pointer"
+        >
           View Details
-          <ArrowRight size={14} className="group-hover/btn:translate-x-1 transition-transform" />
-        </button>
+          <ArrowRight
+            size={14}
+            className="group-hover/btn:translate-x-1 transition-transform"
+          />
+        </Link>
       </div>
     </motion.div>
   );
