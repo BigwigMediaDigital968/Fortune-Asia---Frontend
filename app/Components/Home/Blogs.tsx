@@ -103,7 +103,10 @@ export default function Blogs() {
                 <p className="font-sans text-charcoal-500 text-sm leading-relaxed line-clamp-2">
                   {b.excerpt}
                 </p>
-                <div className="mt-5 flex items-center gap-1.5 text-xs font-sans font-semibold tracking-widest uppercase text-navy-900 group-hover:text-gold-500 transition-colors duration-200">
+                <Link
+                  href={"/blogs/5-science-backed-tips-to-conquer-insomnia"}
+                  className="mt-5 flex items-center gap-1.5 text-xs font-sans font-semibold tracking-widest uppercase text-navy-900 group-hover:text-gold-500 transition-colors duration-200"
+                >
                   Read More
                   <svg
                     width="12"
@@ -120,7 +123,7 @@ export default function Blogs() {
                       d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
                     />
                   </svg>
-                </div>
+                </Link>
               </div>
             </motion.article>
           ))}
