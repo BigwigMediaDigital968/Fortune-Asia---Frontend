@@ -14,9 +14,9 @@ export type PropertyFilters = {
   developerName?: string;
 };
 
-export const getProperties = async (filters: any) => {
+export const getProperties = async (filters?: any) => {
   const res = await api.get("/property", {
-    params: filters,
+    params: filters || {},
   });
   //console.log("Fetched Properties:", res, filters);
   return res.data.data;
