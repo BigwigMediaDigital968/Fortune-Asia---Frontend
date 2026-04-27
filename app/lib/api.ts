@@ -8,3 +8,9 @@ export const api = axios.create({
     "Content-Type": "application/json",
   },
 });
+
+export const getBlogs = async () => {
+  const res = await api.get("/blogs");
+  console.log("API Response for /blogs:", res);
+  return res.data;
+};

@@ -12,6 +12,8 @@ export type PropertyFilters = {
   maxPrice?: number | string | "";
   status?: boolean;
   developerName?: string;
+  limit?: number | string | "";
+  page?: number | string | "";
 };
 
 export const getProperties = async (filters?: any) => {
