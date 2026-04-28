@@ -1,7 +1,5 @@
 "use client";
 
-import PropertyGridCard from "@/app/Components/Properties/PropertyGridCard";
-import PropertyCard from "@/app/Components/Buy/PropertyCard";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
