@@ -5,6 +5,7 @@ export default function Footer() {
     { name: "Buy Property", href: "/buy" },
     { name: "Rent Property", href: "/rent" },
     { name: "Lease Property", href: "/lease" },
+    { name: "Sell Property", href: "/sell" },
     { name: "Explore Properties", href: "/properties" },
   ];
 
@@ -34,7 +35,8 @@ export default function Footer() {
               </div>
             </div>
             <p className="font-sans text-white/40 text-sm leading-relaxed mb-5 max-w-xs">
-              Dubai's trusted real estate partner. Connecting discerning clients with the city's most exclusive properties.
+              Dubai's trusted real estate partner. Connecting discerning clients
+              with the city's most exclusive properties.
             </p>
             <div className="flex gap-3">
               {["linkedin", "facebook", "instagram", "twitter"].map((s) => (
