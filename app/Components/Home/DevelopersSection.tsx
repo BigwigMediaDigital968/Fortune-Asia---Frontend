@@ -77,7 +77,7 @@ const DevelopersSection = () => {
   const renderSkeleton = (index: number) => (
     <div
       key={`dev-skel-${index}`}
-      className="animate-pulse relative h-[550px] w-full overflow-hidden rounded-xl bg-navy-900 border border-white/5"
+      className="animate-pulse relative h-[550px] w-full  md:w-72 overflow-hidden rounded-xl bg-navy-900 border border-white/5"
     >
       <div className="absolute inset-0 bg-slate-700/20" />
       <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-transparent" />
