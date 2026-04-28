@@ -46,7 +46,7 @@ export type FAQ = {
 
 export type DeveloperStats = {
   establishedYear?: number | null;
-  totalProjects?: number;
+  totalProjects?: number | null;
 };
 
 export type DeveloperSocialLinks = {

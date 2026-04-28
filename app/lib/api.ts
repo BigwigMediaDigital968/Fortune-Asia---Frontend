@@ -38,3 +38,15 @@ export const getDevelopers = async () => {
   const res = await api.get("/developers");
   return res.data;
 };
+
+export const getDeveloperBySlug = async (slug: string) => {
+  try {
+    const res = await api.get(`/developers/${slug}`);
+    return res.data;
+  } catch (error: unknown) {
+    if (axios.isAxiosError(error) && error.response?.status === 404) {
+      return null;
+    }
+    throw error;
+  }
+};
