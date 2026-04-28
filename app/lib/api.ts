@@ -1,6 +1,8 @@
 import axios from "axios";
 
-export const BASE_URL = `${process.env.NEXT_PUBLIC_API_URL}/api`;
+export const BASE_URL = process.env.NEXT_PUBLIC_API_URL
+  ? `${process.env.NEXT_PUBLIC_API_URL}/api`
+  : undefined;
 
 export const api = axios.create({
   baseURL: BASE_URL,
@@ -12,5 +14,22 @@ export const api = axios.create({
 export const getBlogs = async () => {
   const res = await api.get("/blogs");
   console.log("API Response for /blogs:", res);
+  return res.data;
+};
+
+export const getBlogBySlug = async (slug: string) => {
+  try {
+    const res = await api.get(`/blogs/${slug}`);
+    return res.data;
+  } catch (error: unknown) {
+    if (axios.isAxiosError(error) && error.response?.status === 404) {
+      return null;
+    }
+    throw error;
+  }
+};
+
+export const getRelatedBlogs = async (slug: string) => {
+  const res = await api.get(`/blogs/related/${slug}`);
   return res.data;
 };

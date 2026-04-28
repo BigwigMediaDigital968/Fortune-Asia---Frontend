@@ -21,9 +21,9 @@ export default function BlogMiniCard({ blog, index }: BlogMiniCardProps) {
         className="group flex gap-5 items-center p-2 rounded-2xl hover:bg-white/[0.03] transition-all duration-300 cursor-pointer"
       >
         {/* Thumbnail */}
-        <div className="relative flex-shrink-0 w-24 md:w-28 aspect-[16/12] rounded-xl overflow-hidden border border-white/5">
+        <div className="relative shrink-0 w-24 md:w-28 aspect-16/12 rounded-xl overflow-hidden border border-white/5">
           <Image
-            src={blog?.coverImage}
+            src={blog?.coverImage || blog?.image}
             alt={blog?.title}
             fill
             className="object-cover transition-transform duration-500 group-hover:scale-110"
@@ -37,7 +37,7 @@ export default function BlogMiniCard({ blog, index }: BlogMiniCardProps) {
           </h4>
 
           <div className="flex items-center gap-2 text-[10px] text-white/30 font-medium uppercase tracking-widest">
-            <span>{formatDate(blog?.lastUpdated)}</span>
+            <span>{formatDate(blog?.lastUpdated || blog?.date)}</span>
           </div>
         </div>
       </motion.article>

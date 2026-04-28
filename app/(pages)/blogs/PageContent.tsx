@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
 import { getProperties } from "@/app/lib/properties";
 import { fadeUp } from "@/app/utils/motion";
-import { api, getBlogs } from "@/app/lib/api";
+import { getBlogs } from "@/app/lib/api";
 import BlogMiniCard from "@/app/Components/Blogs/BlogMiniCard";
 import BlogCard from "@/app/Components/Blogs/BlogCard";
 import Image from "next/image";
@@ -33,7 +33,7 @@ export default function PageContent() {
     queryFn: async () => {
       const res = await getBlogs();
       console.log("Fetched Blogs from API:", res);
-      return res.data; // 👈 IMPORTANT
+      return Array.isArray(res) ? res : (res.data ?? res);
     },
   });
 
@@ -60,7 +60,7 @@ export default function PageContent() {
                 {/* ── BACKGROUND IMAGE TRACK (Absolute Fill) ── */}
                 <div className="absolute inset-0 z-0 overflow-hidden">
                   <Image
-                    src={featuredMain?.coverImage}
+                    src={featuredMain?.coverImage || featuredMain?.image}
                     alt={featuredMain?.title}
                     fill
                     // Matches the luxury aspect ratio

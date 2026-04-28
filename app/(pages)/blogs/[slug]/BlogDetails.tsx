@@ -26,6 +26,10 @@ import {
 import { IoLogoWhatsapp } from "react-icons/io";
 import { FaXTwitter } from "react-icons/fa6";
 import { formatDate } from "@/app/utils/dateFormat";
+import { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { getRelatedBlogs } from "@/app/lib/api";
+import FAQAccordion from "@/app/Components/Blogs/FAQAccordion";
 
 export interface BlogContentSection {
   id: string;
@@ -42,136 +46,116 @@ export interface FullBlogEntry {
   content: BlogContentSection[];
 }
 
-// ─── Mock Data for Demo ────────────────────────────────────
-const MOCK_BLOG: FullBlogEntry = {
-  title: "A Guide to Restful Nights and Refreshing Mornings",
-  category: "Health & Wellness",
-  date: "June 30, 2024",
-  author: "Dr. Sarah Mitchell",
-  image:
-    "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=format&fit=crop&q=80&w=1200",
-  content: [
-    {
-      id: "introduction",
-      title: "Introduction",
-      content: (
-        <div className="space-y-4">
-          <p>
-            Sleep, the essential and inevitable part of our daily lives,
-            influences everything from our mood to productivity and overall
-            health. Yet, for many, achieving a truly restful night remains an
-            elusive goal.
-          </p>
-          <p>
-            In this comprehensive guide, we explore the science of sleep and
-            provide actionable steps to transform your nightly routine into a
-            sanctuary of recovery.
-          </p>
-        </div>
-      ),
-    },
-    {
-      id: "understanding-circadian-rhythms",
-      title: "Understanding Circadian Rhythms",
-      content: (
-        <div className="space-y-4">
-          <p>
-            Our bodies are governed by an internal clock known as the circadian
-            rhythm. This biological process responds to light and darkness,
-            signaling to our brain when it's time to be alert and when it's time
-            to rest.
-          </p>
-          <div className="relative aspect-video my-8 rounded-xl overflow-hidden border border-white/5">
-            <Image
-              src="https://images.unsplash.com/photo-1511296265581-c24500444084?auto=format&fit=crop&q=80&w=800"
-              alt="Sleep cycle"
-              fill
-              className="object-cover"
-            />
-          </div>
-          <p>
-            Disruptions to this rhythm—whether through blue light exposure from
-            screens or irregular sleep schedules—can lead to chronic fatigue and
-            lowered immunity.
-          </p>
-        </div>
-      ),
-    },
-    {
-      id: "the-optimized-bedroom",
-      title: "The Optimized Bedroom",
-      content: (
-        <div className="space-y-4">
-          <p>
-            Your environment plays a crucial role in sleep quality. A luxury
-            bedroom is not just about aesthetics; it's about engineering the
-            perfect conditions for rest.
-          </p>
-          <ul className="list-disc pl-5 space-y-2 text-white/70">
-            <li>Maintain a cool temperature (around 18-20°C).</li>
-            <li>Invest in high-thread-count Egyptian cotton bedding.</li>
-            <li>Use blackout curtains to eliminate street light.</li>
-            <li>
-              Consider white noise or green noise for auditory consistency.
-            </li>
-          </ul>
-        </div>
-      ),
-    },
-    {
-      id: "evening-rituals",
-      title: "Evening Rituals",
-      content: (
-        <div className="space-y-4">
-          <p>
-            How you spend the two hours before bed determines the quality of the
-            eight hours that follow. Digital detoxing and mindful reflection are
-            key components of a high-performance evening ritual.
-          </p>
-          <blockquote className="border-l-2 border-gold-400 p-6 bg-gold-400/5 rounded-r-xl my-8 italic text-gold-100/80">
-            "Luxury is not just in the objects we own, but in the time we give
-            ourselves to recover and reflect."
-          </blockquote>
-        </div>
-      ),
-    },
-  ],
+// Social sharing utilities
+const shareToFacebook = (url: string, title: string) => {
+  const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}&quote=${encodeURIComponent(title)}`;
+  window.open(shareUrl, "_blank", "width=600,height=400");
 };
 
-const RELATED_POSTS = [
-  {
-    id: "b2",
-    slug: "the-power-of-prioritizing-sleep-for-overall-health",
-    title: "The Power of Prioritizing Sleep for Overall Health",
-    category: "Updates",
-    date: "June 30, 2023",
-    image:
-      "https://images.unsplash.com/photo-1511296265581-c24500444084?auto=format&fit=crop&q=80&w=600",
-  },
-  {
-    id: "b3",
-    slug: "a-journey-through-sleep-and-bedding-choices",
-    title: "A Journey Through Sleep and Bedding Choices",
-    category: "Sleep Remedies",
-    date: "June 30, 2023",
-    image:
-      "https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&q=80&w=600",
-  },
-  {
-    id: "b4",
-    slug: "5-science-backed-tips-to-conquer-insomnia",
-    title: "5 Science-Backed Tips to Conquer Insomnia",
-    category: "Sleep Resources",
-    date: "June 30, 2023",
-    image:
-      "https://images.unsplash.com/photo-1512428559087-560ef5ceab42?auto=format&fit=crop&q=80&w=600",
-  },
-];
+const shareToTwitter = (url: string, title: string) => {
+  const shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`;
+  window.open(shareUrl, "_blank", "width=600,height=400");
+};
+
+const shareToLinkedIn = (url: string, title: string) => {
+  const shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`;
+  window.open(shareUrl, "_blank", "width=600,height=400");
+};
+
+const shareToWhatsApp = (url: string, title: string) => {
+  const shareUrl = `https://wa.me/?text=${encodeURIComponent(`${title} ${url}`)}`;
+  window.open(shareUrl, "_blank");
+};
+
+const copyToClipboard = async (text: string) => {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch (err) {
+    // Fallback for older browsers
+    const textArea = document.createElement("textarea");
+    textArea.value = text;
+    document.body.appendChild(textArea);
+    textArea.select();
+    try {
+      document.execCommand("copy");
+      return true;
+    } catch (fallbackErr) {
+      return false;
+    } finally {
+      document.body.removeChild(textArea);
+    }
+  }
+};
+
+// Extract headings from HTML content
+const extractHeadings = (html: string) => {
+  const headings: { id: string; text: string; level: number }[] = [];
+  const slugMap = new Map<string, number>();
+
+  const processedHtml = html.replace(
+    /<(h[2-3])([^>]*)>(.*?)<\/h[2-3]>/gi,
+    (match, tag, attrs, inner) => {
+      const level = parseInt(tag[1]);
+
+      // Remove inner HTML tags to get clean text
+      const text = inner.replace(/<[^>]+>/g, "").trim();
+
+      // Generate slug
+      let baseId = text
+        .toLowerCase()
+        .replace(/[^a-z0-9\s-]/g, "")
+        .replace(/\s+/g, "-")
+        .slice(0, 60);
+
+      if (!baseId) baseId = `heading-${headings.length}`;
+
+      // Handle duplicate IDs
+      const count = slugMap.get(baseId) ?? 0;
+      const id = count === 0 ? baseId : `${baseId}-${count}`;
+      slugMap.set(baseId, count + 1);
+
+      headings.push({ id, text, level });
+
+      // Preserve existing attributes
+      const safeAttrs = attrs?.trim() ? ` ${attrs.trim()}` : "";
+
+      return `<${tag} id="${id}"${safeAttrs}>${inner}</${tag}>`;
+    },
+  );
+
+  return { processedHtml, headings };
+};
 
 export default function BlogDetails({ blog }: { blog: any }) {
   const pathname = usePathname();
   const pathSegments = pathname.split("/").filter(Boolean);
-  console.log("Blog Data:", blog);
+  const [copySuccess, setCopySuccess] = useState(false);
+
+  const currentUrl = typeof window !== "undefined" ? window.location.href : "";
+  const shareTitle = blog?.title || "Check out this article";
+
+  // Extract headings from blog content
+  const { processedHtml, headings } = extractHeadings(blog?.content || "");
+
+  // Fetch related blogs
+  const { data: relatedBlogs = [], isLoading: isLoadingRelated } = useQuery({
+    queryKey: ["related-blogs", blog?.slug],
+    queryFn: () => getRelatedBlogs(blog?.slug),
+    enabled: !!blog?.slug,
+  });
+
+  console.log("Related Blogs:", relatedBlogs);
+
+  const handleCopyLink = async () => {
+    const success = await copyToClipboard(currentUrl);
+    if (success) {
+      setCopySuccess(true);
+      setTimeout(() => setCopySuccess(false), 2000);
+    }
+  };
+
+  console.log("Blog Data:", blog, headings);
   return (
     <>
       <section className="relative h-[60vh] min-h-[450px] w-full flex items-end justify-center overflow-hidden">
@@ -253,13 +237,14 @@ export default function BlogDetails({ blog }: { blog: any }) {
                   Contents
                 </h3>
                 <nav className="flex flex-col gap-4">
-                  {[].map((section: any) => (
+                  {headings.map((heading) => (
                     <a
-                      key={section.id}
-                      href={`#${section.id}`}
+                      key={heading.id}
+                      href={`#${heading.id}`}
                       className="text-sm text-white/60 hover:text-gold-400 transition-colors font-sans font-light tracking-wide cursor-pointer"
+                      style={{ paddingLeft: `${(heading.level - 1) * 16}px` }}
                     >
-                      {section.title}
+                      {heading.text}
                     </a>
                   ))}
                 </nav>
@@ -284,17 +269,27 @@ export default function BlogDetails({ blog }: { blog: any }) {
 
           {/* MIDDLE COLUMN: BLOG CONTENT */}
           <article className="lg:w-[58%] prose prose-invert prose-gold max-w-none">
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1, delay: 0.5 }}
-              className="space-y-16"
-            >
-              <div className="bg-white p-2 rounded-xl">
+            <div className="space-y-16">
+              <div className="p-2 rounded-xl">
                 <div
-                  dangerouslySetInnerHTML={{ __html: blog?.content }}
-                  className="blog-content"
+                  className="blog-content text-white [&_h1]:text-white [&_h1]:font-semibold [&_h1]:text-2xl [&_h1]:mb-4
+                [&_h2]:text-white [&_h2]:font-semibold [&_h2]:text-xl [&_h2]:mb-3
+                [&_h3]:text-white [&_h3]:font-medium [&_h3]:text-lg [&_h3]:mb-2
+                [&_p]:text-white/90 [&_p]:leading-relaxed [&_p]:mb-4
+                [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:mb-4
+                [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:mb-4
+                [&_li]:text-white/85 [&_li]:mb-1
+                [&_a]:text-blue-400 [&_a]:underline
+                [&_strong]:text-white [&_strong]:font-semibold
+                [&_blockquote]:border-l-4 [&_blockquote]:border-white/30 [&_blockquote]:pl-4 [&_blockquote]:italic [&_blockquote]:text-white/80"
+                  dangerouslySetInnerHTML={{
+                    __html: processedHtml || blog?.content || "",
+                  }}
                 />
+              </div>
+
+              <div>
+                <FAQAccordion items={blog?.faqs || []} />
               </div>
 
               {/* Social Share Bar */}
@@ -304,20 +299,39 @@ export default function BlogDetails({ blog }: { blog: any }) {
                     Share Article:
                   </span>
                   <div className="flex items-center gap-3">
-                    <SocialCircle icon={<FaFacebookF size={14} />} />
-                    <SocialCircle icon={<IoLogoWhatsapp size={14} />} />
-                    <SocialCircle icon={<FaXTwitter size={14} />} />
-                    <SocialCircle icon={<FaLinkedinIn size={14} />} />
+                    <SocialCircle
+                      icon={<FaFacebookF size={14} />}
+                      onClick={() => shareToFacebook(currentUrl, shareTitle)}
+                      label="Share on Facebook"
+                    />
+                    <SocialCircle
+                      icon={<IoLogoWhatsapp size={14} />}
+                      onClick={() => shareToWhatsApp(currentUrl, shareTitle)}
+                      label="Share on WhatsApp"
+                    />
+                    <SocialCircle
+                      icon={<FaXTwitter size={14} />}
+                      onClick={() => shareToTwitter(currentUrl, shareTitle)}
+                      label="Share on Twitter"
+                    />
+                    <SocialCircle
+                      icon={<FaLinkedinIn size={14} />}
+                      onClick={() => shareToLinkedIn(currentUrl, shareTitle)}
+                      label="Share on LinkedIn"
+                    />
                   </div>
                 </div>
-                <div className="flex items-center gap-2 px-6 py-3 bg-white/5 rounded-full border border-white/10 text-white/60 hover:text-gold-400 transition-colors cursor-pointer">
+                <div
+                  className="flex items-center gap-2 px-6 py-3 bg-white/5 rounded-full border border-white/10 text-white/60 hover:text-gold-400 transition-colors cursor-pointer"
+                  onClick={handleCopyLink}
+                >
                   <Share2 size={14} />
                   <span className="text-[10px] font-bold uppercase tracking-widest">
-                    Copy Link
+                    {copySuccess ? "Copied!" : "Copy Link"}
                   </span>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </article>
 
           {/* RIGHT COLUMN: RELATED BLOGS */}
@@ -337,9 +351,27 @@ export default function BlogDetails({ blog }: { blog: any }) {
               </span>
             </div>
             <div className="space-y-6">
-              {RELATED_POSTS.map((post, idx) => (
-                <BlogMiniCard key={post.id} blog={post} index={idx} />
-              ))}
+              {isLoadingRelated ? (
+                Array.from({ length: 5 }).map((_, idx) => (
+                  <RelatedBlogSkeleton key={idx} />
+                ))
+              ) : relatedBlogs.data?.length > 0 ? (
+                relatedBlogs.data
+                  ?.slice(0, 5)
+                  .map((post: any, idx: number) => (
+                    <BlogMiniCard
+                      key={post.id || idx}
+                      blog={post}
+                      index={idx}
+                    />
+                  ))
+              ) : (
+                <>
+                  <p className="text-white/40 px-4 text-sm">
+                    No related blogs found.
+                  </p>
+                </>
+              )}
             </div>
           </aside>
         </div>
@@ -348,10 +380,37 @@ export default function BlogDetails({ blog }: { blog: any }) {
   );
 }
 
-function SocialCircle({ icon }: { icon: React.ReactNode }) {
+function SocialCircle({
+  icon,
+  onClick,
+  label,
+}: {
+  icon: React.ReactNode;
+  onClick: () => void;
+  label: string;
+}) {
   return (
-    <div className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-gold-400 hover:bg-gold-400/10 transition-all cursor-pointer">
+    <button
+      className="w-8 h-8 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center text-white/60 hover:text-gold-400 hover:bg-gold-400/10 transition-all cursor-pointer"
+      onClick={onClick}
+      aria-label={label}
+      title={label}
+    >
       {icon}
+    </button>
+  );
+}
+
+function RelatedBlogSkeleton() {
+  return (
+    <div className="animate-pulse">
+      <div className="flex gap-5 items-center p-2 rounded-2xl bg-white/[0.03]">
+        <div className="relative flex-shrink-0 w-24 md:w-28 aspect-[16/12] rounded-xl bg-white/10"></div>
+        <div className="flex-1 space-y-2">
+          <div className="h-4 bg-white/10 rounded w-3/4"></div>
+          <div className="h-3 bg-white/5 rounded w-1/2"></div>
+        </div>
+      </div>
     </div>
   );
 }
