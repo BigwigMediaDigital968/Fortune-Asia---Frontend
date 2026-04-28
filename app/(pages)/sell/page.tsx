@@ -1,7 +1,9 @@
 "use client";
-import { useState } from "react";
+import { useState, type ChangeEvent, type FormEvent } from "react";
+import { motion } from "framer-motion";
 import PageHero from "@/app/Components/Ui/PageHero";
 import { BASE_URL } from "@/app/lib/api";
+import { fadeUp, motionContainer } from "@/app/utils/motion";
 
 interface FormData {
   name: string;
@@ -31,7 +33,9 @@ export default function SellPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<SubmitStatus | null>(null);
 
-  const handleChange = (e: any) => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -39,7 +43,7 @@ export default function SellPage() {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus(null);
@@ -104,9 +108,18 @@ export default function SellPage() {
             How It Works
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={motionContainer}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          >
             {/* Step 01 */}
-            <div className="bg-navy-800 rounded-2xl p-8 border border-navy-700 hover:border-gold-400/30 transition-all duration-300">
+            <motion.div
+              variants={fadeUp}
+              className="bg-navy-800 rounded-2xl p-8 border border-navy-700 hover:border-gold-400/30 transition-all duration-300"
+            >
               <div className="text-gold-400 text-5xl font-display mb-4">01</div>
               <h3 className="text-2xl font-display text-white mb-4">
                 PREPARATION
@@ -115,10 +128,13 @@ export default function SellPage() {
                 We meet either online or in our Dubai office, evaluate the
                 property, and conclude an agreement.
               </p>
-            </div>
+            </motion.div>
 
             {/* Step 02 */}
-            <div className="bg-navy-800 rounded-2xl p-8 border border-navy-700 hover:border-gold-400/30 transition-all duration-300">
+            <motion.div
+              variants={fadeUp}
+              className="bg-navy-800 rounded-2xl p-8 border border-navy-700 hover:border-gold-400/30 transition-all duration-300"
+            >
               <div className="text-gold-400 text-5xl font-display mb-4">02</div>
               <h3 className="text-2xl font-display text-white mb-4">
                 PROMOTION
@@ -128,10 +144,13 @@ export default function SellPage() {
                 personalized email newsletters, and publish advertisements on
                 public platforms.
               </p>
-            </div>
+            </motion.div>
 
             {/* Step 03 */}
-            <div className="bg-navy-800 rounded-2xl p-8 border border-navy-700 hover:border-gold-400/30 transition-all duration-300">
+            <motion.div
+              variants={fadeUp}
+              className="bg-navy-800 rounded-2xl p-8 border border-navy-700 hover:border-gold-400/30 transition-all duration-300"
+            >
               <div className="text-gold-400 text-5xl font-display mb-4">03</div>
               <h3 className="text-2xl font-display text-white mb-4">
                 AGREEMENT
@@ -140,18 +159,21 @@ export default function SellPage() {
                 We find a buyer and prepare documents, including the purchase
                 and sale agreement, while resolving tax and registration issues.
               </p>
-            </div>
+            </motion.div>
 
             {/* Step 04 */}
-            <div className="bg-navy-800 rounded-2xl p-8 border border-navy-700 hover:border-gold-400/30 transition-all duration-300">
+            <motion.div
+              variants={fadeUp}
+              className="bg-navy-800 rounded-2xl p-8 border border-navy-700 hover:border-gold-400/30 transition-all duration-300"
+            >
               <div className="text-gold-400 text-5xl font-display mb-4">04</div>
               <h3 className="text-2xl font-display text-white mb-4">PAYMENT</h3>
               <p className="text-navy-100 leading-relaxed">
                 Upon the successful completion of the transaction, you will
                 receive the payment with the agency commission deducted.
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
@@ -168,9 +190,18 @@ export default function SellPage() {
             be a smart decision if you want to sell property in Dubai.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={motionContainer}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          >
             {/* Reason 01 */}
-            <div className="border border-white/20 rounded-2xl p-8 hover:border-gold-400/50 transition-all duration-300">
+            <motion.div
+              variants={fadeUp}
+              className="border border-white/20 rounded-2xl p-8 hover:border-gold-400/50 transition-all duration-300"
+            >
               <div className="flex items-start gap-4 mb-4">
                 <svg
                   className="w-8 h-8 text-gold-400 flex-shrink-0"
@@ -190,10 +221,13 @@ export default function SellPage() {
                 Strong buyer interest makes properties get serious offers
                 quickly.
               </p>
-            </div>
+            </motion.div>
 
             {/* Reason 02 */}
-            <div className="border border-white/20 rounded-2xl p-8 hover:border-gold-400/50 transition-all duration-300">
+            <motion.div
+              variants={fadeUp}
+              className="border border-white/20 rounded-2xl p-8 hover:border-gold-400/50 transition-all duration-300"
+            >
               <div className="flex items-start gap-4 mb-4">
                 <svg
                   className="w-8 h-8 text-gold-400 flex-shrink-0"
@@ -212,10 +246,13 @@ export default function SellPage() {
               <p className="text-white leading-relaxed">
                 Globally, investors are rushing to Dubai for highest ROI.
               </p>
-            </div>
+            </motion.div>
 
             {/* Reason 03 */}
-            <div className="border border-white/20 rounded-2xl p-8 hover:border-gold-400/50 transition-all duration-300">
+            <motion.div
+              variants={fadeUp}
+              className="border border-white/20 rounded-2xl p-8 hover:border-gold-400/50 transition-all duration-300"
+            >
               <div className="flex items-start gap-4 mb-4">
                 <svg
                   className="w-8 h-8 text-gold-400 flex-shrink-0"
@@ -234,10 +271,13 @@ export default function SellPage() {
               <p className="text-white leading-relaxed">
                 Tax-free property market with high profits and simple deals.
               </p>
-            </div>
+            </motion.div>
 
             {/* Reason 04 */}
-            <div className="border border-white/20 rounded-2xl p-8 hover:border-gold-400/50 transition-all duration-300">
+            <motion.div
+              variants={fadeUp}
+              className="border border-white/20 rounded-2xl p-8 hover:border-gold-400/50 transition-all duration-300"
+            >
               <div className="flex items-start gap-4 mb-4">
                 <svg
                   className="w-8 h-8 text-gold-400 flex-shrink-0"
@@ -256,8 +296,8 @@ export default function SellPage() {
               <p className="text-white leading-relaxed">
                 Make profits from present high market prices.
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
@@ -338,7 +378,7 @@ export default function SellPage() {
                       href="mailto:sell@mondus.ae"
                       className="text-gold-400 hover:text-gold-300 transition-colors"
                     >
-                      sell@mondus.ae
+                      sell@far.com
                     </a>
                   </div>
                 </div>
@@ -448,7 +488,7 @@ export default function SellPage() {
                       onChange={handleChange}
                       placeholder="John Doe"
                       required
-                      className="w-full px-4 py-3 bg-navy-800 border border-navy-700 rounded-lg text-white placeholder:text-navy-100/50 focus:outline-none focus:border-gold-400 transition-colors"
+                      className="w-full px-3 py-2 bg-navy-800 border border-navy-700 rounded-lg text-white placeholder:text-navy-100/50 focus:outline-none focus:border-gold-400 transition-colors"
                     />
                   </div>
                   <div>
@@ -466,7 +506,7 @@ export default function SellPage() {
                       onChange={handleChange}
                       placeholder="+971 50 ..."
                       required
-                      className="w-full px-4 py-3 bg-navy-800 border border-navy-700 rounded-lg text-white placeholder:text-navy-100/50 focus:outline-none focus:border-gold-400 transition-colors"
+                      className="w-full px-3 py-2 bg-navy-800 border border-navy-700 rounded-lg text-white placeholder:text-navy-100/50 focus:outline-none focus:border-gold-400 transition-colors"
                     />
                   </div>
                 </div>
@@ -487,7 +527,7 @@ export default function SellPage() {
                     onChange={handleChange}
                     placeholder="john@example.com"
                     required
-                    className="w-full px-4 py-3 bg-navy-800 border border-navy-700 rounded-lg text-white placeholder:text-navy-100/50 focus:outline-none focus:border-gold-400 transition-colors"
+                    className="w-full px-3 py-2 bg-navy-800 border border-navy-700 rounded-lg text-white placeholder:text-navy-100/50 focus:outline-none focus:border-gold-400 transition-colors"
                   />
                 </div>
 
@@ -507,7 +547,7 @@ export default function SellPage() {
                     onChange={handleChange}
                     placeholder="Downtown Dubai, Building Name, Unit #"
                     required
-                    className="w-full px-4 py-3 bg-navy-800 border border-navy-700 rounded-lg text-white placeholder:text-navy-100/50 focus:outline-none focus:border-gold-400 transition-colors"
+                    className="w-full px-3 py-2 bg-navy-800 border border-navy-700 rounded-lg text-white placeholder:text-navy-100/50 focus:outline-none focus:border-gold-400 transition-colors"
                   />
                 </div>
 
@@ -525,7 +565,7 @@ export default function SellPage() {
                       name="bedrooms"
                       value={formData.bedrooms}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 bg-navy-800 border border-navy-700 rounded-lg text-white focus:outline-none focus:border-gold-400 transition-colors"
+                      className="w-full px-3 py-2 bg-navy-800 border border-navy-700 rounded-lg text-white focus:outline-none focus:border-gold-400 transition-colors"
                     >
                       <option value="">Select</option>
                       <option value="Studio">Studio</option>
@@ -551,7 +591,7 @@ export default function SellPage() {
                       onChange={handleChange}
                       placeholder="e.g., 1200"
                       required
-                      className="w-full px-4 py-3 bg-navy-800 border border-navy-700 rounded-lg text-white placeholder:text-navy-100/50 focus:outline-none focus:border-gold-400 transition-colors"
+                      className="w-full px-3 py-2 bg-navy-800 border border-navy-700 rounded-lg text-white placeholder:text-navy-100/50 focus:outline-none focus:border-gold-400 transition-colors"
                     />
                   </div>
                 </div>
@@ -571,7 +611,7 @@ export default function SellPage() {
                     onChange={handleChange}
                     placeholder="Tell us about your property requirements..."
                     rows={4}
-                    className="w-full px-4 py-3 bg-navy-800 border border-navy-700 rounded-lg text-white placeholder:text-navy-100/50 focus:outline-none focus:border-gold-400 transition-colors resize-none"
+                    className="w-full px-3 py-2 bg-navy-800 border border-navy-700 rounded-lg text-white placeholder:text-navy-100/50 focus:outline-none focus:border-gold-400 transition-colors resize-none"
                   />
                 </div>
 
@@ -579,7 +619,7 @@ export default function SellPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gold-400 hover:bg-gold-500 text-navy-950 font-medium py-4 px-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-gold-400/20 disabled:opacity-50 disabled:cursor-not-allowed uppercase tracking-wider"
+                  className="w-full cursor-pointer bg-gold-400 hover:bg-gold-500 text-navy-950 font-medium py-3 px-4 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-gold-400/20 disabled:opacity-50 disabled:cursor-not-allowed uppercase tracking-wider"
                 >
                   {isSubmitting ? "Submitting..." : "Submit Inquiry"}
                 </button>
