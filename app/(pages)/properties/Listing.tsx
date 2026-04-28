@@ -61,7 +61,7 @@ export default function Listing() {
           variants={motionContainer}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
         >
-          {properties.map((property: any, index: number) => (
+          {properties?.map((property: any, index: number) => (
             <PropertyCard key={property.id} property={property} index={index} />
           ))}
         </motion.div>

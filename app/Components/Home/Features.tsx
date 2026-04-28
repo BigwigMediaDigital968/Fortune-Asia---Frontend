@@ -106,7 +106,7 @@ export default function Features() {
           variants={motionContainer}
           className="grid md:grid-cols-3 gap-6"
         >
-          {features.map((f, i) => (
+          {features?.map((f, i) => (
             <motion.div
               key={f.title}
               variants={fadeUp}

@@ -237,7 +237,7 @@ export default function BlogDetails({ blog }: { blog: any }) {
                   Contents
                 </h3>
                 <nav className="flex flex-col gap-4">
-                  {headings.map((heading) => (
+                  {headings?.map((heading) => (
                     <a
                       key={heading.id}
                       href={`#${heading.id}`}

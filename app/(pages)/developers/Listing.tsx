@@ -71,7 +71,9 @@ export default function Listing() {
           className="flex flex-wrap justify-center gap-6"
         >
           {isLoading || error
-            ? Array.from({ length: 6 }).map((_, index) => renderSkeleton(index))
+            ? Array.from({ length: 6 })?.map((_, index) =>
+                renderSkeleton(index),
+              )
             : developers?.map((developer: any, index: number) => (
                 <DeveloperCard
                   key={developer._id || developer.slug}

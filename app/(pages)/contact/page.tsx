@@ -72,7 +72,7 @@ export default function ContactPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-              {CONTACT_DETAILS.map((item, index) => (
+              {CONTACT_DETAILS?.map((item, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
@@ -88,7 +88,7 @@ export default function ContactPage() {
                     <h4 className="font-bold text-white tracking-wide uppercase text-[10px] tracking-[0.2em] opacity-40">
                       {item.title}
                     </h4>
-                    {item.details.map((line, i) => (
+                    {item.details?.map((line, i) => (
                       <p key={i} className="text-white/80 text-sm font-light">
                         {line}
                       </p>

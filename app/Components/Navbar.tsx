@@ -49,7 +49,7 @@ export default function Navbar({ scrolled }: { scrolled: boolean }) {
 
         {/* ── DESKTOP NAV ── */}
         <ul className="hidden lg:flex items-center gap-10 list-none">
-          {navLinks.map((link) => (
+          {navLinks?.map((link) => (
             <li key={link.name}>
               <Link
                 href={link.href}
@@ -92,7 +92,7 @@ export default function Navbar({ scrolled }: { scrolled: boolean }) {
             className="lg:hidden bg-navy-950 fixed inset-0 top-[80px] z-40 px-8 py-12"
           >
             <ul className="flex flex-col gap-8">
-              {navLinks.map((link, i) => (
+              {navLinks?.map((link, i) => (
                 <motion.li
                   key={link.name}
                   initial={{ x: -20, opacity: 0 }}

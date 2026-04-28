@@ -100,7 +100,7 @@ export default function PageContent({ developer }: { developer: Developer }) {
             className="flex gap-2 md:gap-3 overflow-x-auto pb-2 no-scrollbar snap-x touch-pan-x"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
-            {images.map((img, index) => (
+            {images?.map((img, index) => (
               <button
                 key={img}
                 onClick={() => selectImage(index)}

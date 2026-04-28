@@ -34,7 +34,7 @@ const FAQAccordion: React.FC<FAQAccordionProps> = ({ items }) => {
 
         {/* ACCORDION TRACK */}
         <div className="space-y-6">
-          {items.map((item, index) => {
+          {items?.map((item, index) => {
             const isOpen = openId === item._id;
 
             return (

@@ -78,8 +78,10 @@ export default function Blogs() {
           className="grid md:grid-cols-3 gap-6"
         >
           {isLoading || isError
-            ? Array.from({ length: 3 }).map((_, index) => renderSkeleton(index))
-            : displayBlogs.map((b: any) => (
+            ? Array.from({ length: 3 })?.map((_, index) =>
+                renderSkeleton(index),
+              )
+            : displayBlogs?.map((b: any) => (
                 <motion.article
                   key={b.slug || b.title}
                   variants={fadeUp}

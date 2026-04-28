@@ -123,7 +123,7 @@ export default function PageContent() {
               </span>
             </div>
             <div className="space-y-2">
-              {featuredSecondary.map((blog: any, idx: number) => (
+              {featuredSecondary?.map((blog: any, idx: number) => (
                 <BlogMiniCard key={blog.id} blog={blog} index={idx} />
               ))}
             </div>
@@ -147,7 +147,7 @@ export default function PageContent() {
             variants={motionContainer}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
-            {regularBlogs.map((blog: any, index: number) => (
+            {regularBlogs?.map((blog: any, index: number) => (
               <BlogCard key={blog.id} blog={blog} index={index} />
             ))}
           </motion.div>
