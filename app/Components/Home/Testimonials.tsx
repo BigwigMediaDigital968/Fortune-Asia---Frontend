@@ -188,7 +188,7 @@ export default function Testimonials() {
                 >
                   {testimonials2.map((item, idx) => (
                     <div
-                      key={item.id + "testemonials"}
+                      key={idx + "testemonial-card"}
                       ref={idx === 0 ? cardRef : null}
                       className="w-[85vw] sm:w-[400px] px-4 shrink-0"
                     >
@@ -225,7 +225,7 @@ export default function Testimonials() {
                           <div className="flex gap-1 mb-1">
                             {[...Array(5)].map((_, i) => (
                               <div
-                                key={i}
+                                key={i + "star"}
                                 className="w-1 h-1 bg-gold-400 rounded-full shadow-[0_0_8px_rgba(212,164,53,0.8)]"
                               />
                             ))}
@@ -258,7 +258,7 @@ export default function Testimonials() {
                 <div className="flex gap-3">
                   {testimonials2.map((_, i) => (
                     <button
-                      key={i}
+                      key={i + "dot"}
                       onClick={() => setCurrentIndex(i)}
                       className={`h-1.5 rounded-full transition-all duration-500 ${
                         currentIndex === i
