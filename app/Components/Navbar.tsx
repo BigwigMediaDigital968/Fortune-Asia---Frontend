@@ -13,7 +13,7 @@ const navLinks = [
   { name: "Buy", href: "/buy" },
   { name: "Rent", href: "/rent" },
   { name: "Lease", href: "/lease" },
-
+  { name: "Sell", href: "/sell" },
 ];
 
 export default function Navbar({ scrolled }: { scrolled: boolean }) {
@@ -24,8 +24,11 @@ export default function Navbar({ scrolled }: { scrolled: boolean }) {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled || isOpen ? "bg-navy-950/95 backdrop-blur-md shadow-lg" : "bg-transparent"
-        }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled || isOpen
+          ? "bg-navy-950/95 backdrop-blur-md shadow-lg"
+          : "bg-transparent"
+      }`}
     >
       <nav className="flex items-center justify-between px-6 md:px-14 py-5">
         {/* ── LOGO ── */}
