@@ -25,10 +25,7 @@ const DevelopersSection = () => {
       dev?.shortDescription ||
       dev?.fullDescription ||
       "Premium development partner shaping luxury experiences.";
-    const image =
-      dev?.logo ||
-      dev?.coverImage ||
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800";
+    const image = dev?.images?.[0] || dev?.coverImage;
     const href = dev?.slug ? `/developers/${dev.slug}` : "#";
 
     return (
