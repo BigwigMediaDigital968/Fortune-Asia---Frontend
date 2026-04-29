@@ -148,22 +148,17 @@ export default function About() {
             viewport={{ once: true }}
           >
             <SectionHeading subtitle={"Who we are"} centered={false} />
-            <h2 className="font-display text-4xl md:text-5xl font-bold mt-6 mb-8 leading-tight">
-              A Legacy of <span className="text-gold-400">Excellence</span> in
-              Real Estate
+            <h2 className="font-display text-4xl md:text-5xl font-bold mb-4 leading-tight">
+              Our Story of <span className="text-gold-400">Excellence</span> 
             </h2>
             <div className="space-y-6 text-white/70 font-sans leading-relaxed">
               <p>
-                Founded in 2013, Fortune Asia Realty has established itself as a
-                premier boutique real estate agency in Dubai. We specialize in
-                luxury residential properties, investment opportunities, and
-                comprehensive property management services.
+                We didn’t begin merely as property consultants, we set out as creators of possibility. Our founders understood that every transaction carries a deeper purpose: finding a space that reflects who you are, enhances your lifestyle, and unlocks new potential. Whether it’s a family seeking comfort or an investor shaping a lasting legacy.
+              </p>
+              <p>With a balance of global standards and strong local expertise, we craft real estate journeys as unique as the people we serve. Through every handshake, agreement, and achievement, we stand by one belief: true fortune isn’t just in the properties we offer, it’s in the futures we help create. This is more than business.
               </p>
               <p>
-                Our mission is simple: to provide unparalleled service through
-                deep market insights and a client-first approach. We don't just
-                sell properties; we build lasting relationships based on trust
-                and results.
+                We recognized the chance to serve with intention, transparency, and care. From the very beginning, our mission has been to redefine luxury, not by price or status alone, but through insight, trust, and genuine relationships.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-8 mt-12">

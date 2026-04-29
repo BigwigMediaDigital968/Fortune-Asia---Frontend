@@ -17,7 +17,7 @@ export default function SectionLabel({
 }
 
 export const SectionHeading = ({ subtitle, title, centered = true }: { subtitle: any, title?: any, centered?: boolean }) => (
-  <div className={`mb-12 ${centered ? 'text-center' : 'text-left'}`}>
+  <div className={`mb-8 ${centered ? 'text-center' : 'text-left'}`}>
     <motion.span
       initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}

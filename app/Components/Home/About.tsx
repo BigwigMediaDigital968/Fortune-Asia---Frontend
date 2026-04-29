@@ -75,14 +75,14 @@ export default function About() {
             <span className="text-[#fcad51] font-bold text-[10px] uppercase tracking-[0.3em] block mb-2">
               ABOUT US
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight max-w-lg mb-6">
-              Find Your  <span className="text-gold-400">Dream Property </span> in Dubai
+            <h2 className="text-4xl md:text-5xl font-bold leading-tight max-w-lg mb-4">
+              Real Estate,   <span className="text-gold-400">Refined for Growth</span>
             </h2>
-            <p className="text-gray-400 text-sm leading-relaxed max-w-lg mb-10">
-              Discover exceptional properties across Dubai with our exclusive listings and expert guidance. Whether you're buying, investing, or renting, we help you secure the perfect property and build your future.                                </p>
+            <p className="text-gray-400 text-sm leading-relaxed max-w-lg mb-6">
+              Discover exceptional real estate opportunities across the UAE with our exclusive listings and expert guidance. From Dubai, Abu Dhabi, Sharjah, and Ras Al Khaimah to luxury villas in Goa, we help you invest smartly and build long-term value.</p>
           </motion.div>
 
-          <div className="space-y-8">
+          <div className="space-y-4">
             {/* Feature 1 */}
             <div className="flex gap-4 items-start max-w-lg group">
               <div className="w-14 h-14 aspect-square bg-white/5 rounded-2xl flex items-center justify-center text-[#fcad51] border border-white/5 group-hover:bg-[#fcad51] group-hover:text-white transition-all cursor-pointer">
@@ -91,7 +91,7 @@ export default function About() {
               <div>
                 <h4 className="font-bold text-lg text-white mb-1">Premium Properties Across Dubai</h4>
                 <p className="text-sm text-gray-500 leading-relaxed">
-                  Explore a wide range of handpicked apartments, villas, and commercial spaces in prime locations and world-class communities.                                        </p>
+                  Explore a curated selection of high-end residences, off-plan developments, and rental-focused properties in prime locations across the region.                               </p>
               </div>
             </div>
 
@@ -101,17 +101,17 @@ export default function About() {
                 <Briefcase size={22} />
               </div>
               <div>
-                <h4 className="font-bold text-lg text-white mb-1">The Perfect Property For Your Lifestyle
+                <h4 className="font-bold text-lg text-white mb-1">The Right Property For Your Future
                 </h4>
                 <p className="text-sm text-gray-500 leading-relaxed">
-                  Our expert advisors match you with properties that fit your budget, preferences, and long-term goals—ensuring the right choice every time.                                        </p>
+                  Our expert advisors guide you to properties that match your goals, budget, and lifestyle—ensuring confident decisions every step of the way.</p>
               </div>
             </div>
           </div>
 
           <motion.button
             whileHover={{ scale: 1.05 }}
-            className="mt-12 cursor-pointer px-10 py-4 rounded-lg border border-white text-white text-xs font-bold uppercase tracking-widest flex items-center gap-2 group hover:bg-white hover:text-navy-950 transition-all"
+            className="mt-8 cursor-pointer px-10 py-4 rounded-lg border border-white text-white text-xs font-bold uppercase tracking-widest flex items-center gap-2 group hover:bg-white hover:text-navy-950 transition-all"
           >
             <Link href={"/properties"} className="flex items-center gap-2">
               Explore Properties
