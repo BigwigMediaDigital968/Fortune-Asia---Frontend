@@ -32,8 +32,8 @@ export const getRelatedBlogs = async (slug: string) => {
   return res.data;
 };
 
-export const getDevelopers = async () => {
-  const res = await api.get("/developers");
+export const getDevelopers = async (filters: any) => {
+  const res = await api.get("/developers", { params: filters });
   return res.data;
 };
 

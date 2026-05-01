@@ -13,7 +13,9 @@ const DevelopersSection = () => {
     isError,
   } = useQuery({
     queryKey: ["developers"],
-    queryFn: getDevelopers,
+    queryFn: () => getDevelopers({
+      isActive: true,
+    }),
   });
 
   const developers = developersResponse?.data || developersResponse || [];
@@ -41,7 +43,7 @@ const DevelopersSection = () => {
         <img
           src={image}
           alt={title}
-          className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-40"
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-80 group-hover:opacity-50"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-transparent opacity-100 transition-opacity duration-500" />
         <div className="absolute inset-0 border-y-2 border-gold-500/0 group-hover:border-gold-500/50 transition-all duration-700 z-30" />
@@ -56,7 +58,7 @@ const DevelopersSection = () => {
               </p>
               <button className="flex items-center gap-3 text-white text-[10px] font-bold uppercase tracking-[0.3em] group/btn">
                 <span className="border-b border-gold-500/30 group-hover/btn:border-gold-500 transition-all pb-1">
-                  Explore Case Study
+                  View Details
                 </span>
                 <ArrowUpRight
                   size={16}
