@@ -62,7 +62,7 @@ export default function FeaturedProperties() {
               transition={{ delay: index * 0.1 }}
               className="group"
             >
-              <div className="relative rounded-xl overflow-hidden mb-6 aspect-4/5 shadow-2xl">
+              <div className="relative rounded-xl overflow-hidden mb-4 aspect-4/5 shadow-2xl">
                 <img
                   src={image}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -82,11 +82,11 @@ export default function FeaturedProperties() {
               </div>
 
               <div className="px-2">
-                <div className="flex justify-between items-start mb-3">
+                <div className=" items-start mb-3">
                   <h3 className="text-2xl font-serif font-bold text-white group-hover:text-gold-400 transition-colors">
                     {title}
                   </h3>
-                  <p className="text-gold-400 font-bold text-lg">{price}</p>
+                  <p className="text-gold-400 font-bold text-base">{price}</p>
                 </div>
                 <div className="flex items-center gap-2 text-white text-xs mb-6">
                   <MapPin size={12} className="text-gold-400" /> {location}
@@ -102,7 +102,7 @@ export default function FeaturedProperties() {
                   </div>
                   <div className="flex items-center gap-2 ml-auto">
                     <Square size={16} />
-                    <span className="text-xs font-bold">{sqft} sqft</span>
+                    <span className="text-xs font-bold">{sqft}</span>
                   </div>
                 </div>
               </div>
