@@ -23,7 +23,9 @@ export default function Listing() {
     error,
   } = useQuery({
     queryKey: ["developers"],
-    queryFn: () => getDevelopers(),
+    queryFn: () => getDevelopers({
+            isActive: true,
+    }),
     placeholderData: (prev) => prev, // 👈 smooth transition
   });
 
@@ -37,7 +39,7 @@ export default function Listing() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1, duration: 0.5 }}
-      className="group bg-navy-900 overflow-hidden rounded-lg border border-white/5"
+      className="group bg-navy-900 overflow-hidden rounded-lg w-full sm:w-76 border border-white/5"
     >
       <div className="aspect-[4/3] bg-slate-200 animate-pulse" />
       <div className="p-6 py-4 space-y-4">

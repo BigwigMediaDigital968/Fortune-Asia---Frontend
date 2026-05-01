@@ -17,8 +17,7 @@ export default function DeveloperCard({
 
   const href = `/developers/${developer?.slug}`;
   const image =
-    developer?.coverImage ||
-    developer?.logo ||
+    developer?.coverImage || developer?.images?.[0] ||
     "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1920";
   const title = developer?.name;
   const desc = developer?.shortDescription;
@@ -36,7 +35,7 @@ export default function DeveloperCard({
       <img
         src={image}
         alt={title}
-        className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-60 group-hover:opacity-40"
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-80 group-hover:opacity-60"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-transparent opacity-100 transition-opacity duration-500" />
       <div className="absolute inset-0 border-y-2 border-gold-500/0 group-hover:border-gold-500/50 transition-all duration-700 z-30" />
