@@ -156,7 +156,7 @@ export default function PageContent({ developer }: { developer: Developer }) {
             <div className=" text-white font-sans overflow-hidden">
               <div className="max-w-6xl mx-auto">
                 {/* Top Section: Logo, Title, and Stats Grid */}
-                <div className=" gap-8 lg:gap-16 items-start mb-12">
+                <div className=" gap-8 lg:gap-16 items-start mb-5">
                   {/* Logo & Identity */}
                   <div className=" space-y-6">
                     <motion.div
@@ -176,11 +176,11 @@ export default function PageContent({ developer }: { developer: Developer }) {
                       <Building2 className="absolute text-gold-500 w-10 h-10 opacity-20" />
                     </motion.div>
 
-                    <div className="space-y-4">
+                    <div className="space-y-4 mb-4">
                       <h1 className="text-4xl md:text-5xl font-serif font-light tracking-tight text-white">
                         {developer.name}
                       </h1>
-                      <p className="text-slate-400 text-lg font-light leading-relaxed max-w-md">
+                      <p className="text-slate-400 text-lg font-light leading-relaxed">
                         {developer.shortDescription}
                       </p>
                     </div>
@@ -237,7 +237,7 @@ export default function PageContent({ developer }: { developer: Developer }) {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
-                  className="relative py-10 border-t border-white/5"
+                  className="relative py-10 border-t border-white/5 hidden"
                 >
                   <div className="absolute top-0 left-0 w-24 h-px bg-gradient-to-r from-gold-500 to-transparent" />
                   <h3 className="text-xs uppercase tracking-[0.3em] text-gold-500 font-bold mb-6">
@@ -267,11 +267,14 @@ export default function PageContent({ developer }: { developer: Developer }) {
                 </motion.h2>
                 <motion.div
                   variants={fadeUp}
-                  className="prose prose-lg prose-invert max-w-none"
+                  className="prose prose-lg prose-invert max-w-none hidden"
                   dangerouslySetInnerHTML={{
                     __html: developer.fullDescription,
                   }}
                 />
+                <p className="text-slate-300 text-lg md:text-xl font-light leading-relaxed italic font-serif">
+                      "{developer.fullDescription}"
+                    </p>
               </motion.section>
             )}
 
