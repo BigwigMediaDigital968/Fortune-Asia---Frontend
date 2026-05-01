@@ -57,11 +57,11 @@ export default function PropertyCard({ property, index }: PropertyCardProps) {
 
       {/* Content */}
       <div className="p-6 py-4">
-        <div className="flex justify-between items-start mb-2">
+        <div className=" items-start mb-2">
           <h3 className="text-xl font-display font-bold text-white group-hover:text-gold-400 transition-colors line-clamp-1">
             {property?.propertyName}
           </h3>
-          <span className="text-gold-400 font-bold text-lg whitespace-nowrap ml-4">
+          <span className="text-gold-400 font-bold text-sm whitespace-nowrap">
             {property.price}
           </span>
         </div>
@@ -104,7 +104,7 @@ export default function PropertyCard({ property, index }: PropertyCardProps) {
                 {property.sizeSqft}
               </span>
             </div>
-            <span className="text-[10px] text-gray-500 uppercase font-medium tracking-wider">
+            <span className="text-[10px] hidden text-gray-500 uppercase font-medium tracking-wider">
               Sqft
             </span>
           </div>
