@@ -39,10 +39,13 @@ export default function RelatedPropertyCard({
             <h4 className="text-base font-display font-bold text-white group-hover:text-gold-400 transition-colors line-clamp-1 leading-tight">
               {property.propertyName}
             </h4>
-            <div className="flex items-center gap-1.5 text-gold-400 text-[8px] font-bold uppercase tracking-widest mb-1">
+            <div className="flex items-center gap-1.5 mt-1 text-gold-400 text-[10px] font-bold capitalize tracking-widest mb-1">
+              <div className="w-8">
+                <MapPin size={16} />
+              </div>
               <div className="flex items-center gap-0.5">
-                <MapPin size={8} />
-                <span>{property?.address}</span>
+                
+                <span className="line-clamp-2">{property?.address}</span>
               </div>
             </div>
           </div>

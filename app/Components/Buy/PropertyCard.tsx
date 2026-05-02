@@ -72,41 +72,46 @@ export default function PropertyCard({ property, index }: PropertyCardProps) {
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-3 gap-1 py-2 border-y border-white/5">
-          <div className="flex flex-col items-center gap-1">
-            <div className="flex items-center gap-2 text-gold-400">
-              <BedDouble size={16} />
-              <span className="text-white font-bold text-sm">
-                {property?.bedroom}
-              </span>
+        <div className=" gap-1 py-2 border-y border-white/5">
+          <div className="flex gap-6">
+            <div className="flex flex-col gap-1">
+              <div className="flex items-center gap-2 text-gold-400">
+                <BedDouble size={16} />
+                <span className="text-white font-bold text-sm">
+                  {property?.bedroom}
+                </span>
+                <span className="text-[10px] text-gray-200 uppercase font-medium tracking-wider">
+                  Beds
+                </span>
+              </div>
+
             </div>
-            <span className="text-[10px] text-gray-500 uppercase font-medium tracking-wider">
-              Beds
-            </span>
+
+            <div className="flex flex-col gap-1 border-x border-white/5">
+              <div className="flex items-center gap-2 text-gold-400">
+                <Bath size={16} />
+                <span className="text-white font-bold text-sm">
+                  {property?.bathroom}
+                </span>
+                <span className="text-[10px] text-gray-200 uppercase font-medium tracking-wider">
+                  Baths
+                </span>
+              </div>
+
+            </div>
           </div>
 
-          <div className="flex flex-col items-center gap-1 border-x border-white/5">
-            <div className="flex items-center gap-2 text-gold-400">
-              <Bath size={16} />
-              <span className="text-white font-bold text-sm">
-                {property?.bathroom}
-              </span>
-            </div>
-            <span className="text-[10px] text-gray-500 uppercase font-medium tracking-wider">
-              Baths
-            </span>
-          </div>
-
-          <div className="flex flex-col items-center gap-1">
+          <div className="flex gap-1 mt-3">
             <div className="flex items-center gap-2 text-gold-400">
               <Square size={14} />
               <span className="text-white font-bold text-sm">
                 {property.sizeSqft}
               </span>
+              <span className="text-[10px] hidden text-gray-200 uppercase font-medium tracking-wider">
+                Sqft
+              </span>
             </div>
-            <span className="text-[10px] hidden text-gray-500 uppercase font-medium tracking-wider">
-              Sqft
-            </span>
+
           </div>
         </div>
 
