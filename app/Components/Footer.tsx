@@ -1,5 +1,8 @@
 import Link from "next/link";
 import WhatsAppFloatingButton from "./WhatsAppFloatingButton";
+import { FaFacebook, FaWhatsapp } from "react-icons/fa";
+import { FaInstagram, FaXTwitter } from "react-icons/fa6";
+import { FiFacebook } from "react-icons/fi";
 
 export default function Footer() {
   const propertyLinks = [
@@ -43,15 +46,30 @@ export default function Footer() {
               with the city's most exclusive properties.
             </p>
             <div className="flex gap-3">
-              {["linkedin", "facebook", "instagram", "twitter"].map((s) => (
-                <a
-                  key={s}
+              <a
                   href="#"
                   className="w-8 h-8 rounded-full border border-navy-700 flex items-center justify-center text-white/40 hover:border-gold-400 hover:text-gold-400 transition-all duration-200 text-[10px] font-sans font-semibold uppercase tracking-widest"
                 >
-                  {s.slice(0, 2)}
+                  <FaInstagram  size={16}/>
                 </a>
-              ))}
+                <a
+                  href="#"
+                  className="w-8 h-8 rounded-full border border-navy-700 flex items-center justify-center text-white/40 hover:border-gold-400 hover:text-gold-400 transition-all duration-200 text-[10px] font-sans font-semibold uppercase tracking-widest"
+                >
+                  <FiFacebook  size={16}/>
+                </a>
+                <a
+                  href="#"
+                  className="w-8 h-8 rounded-full border border-navy-700 flex items-center justify-center text-white/40 hover:border-gold-400 hover:text-gold-400 transition-all duration-200 text-[10px] font-sans font-semibold uppercase tracking-widest"
+                >
+                  <FaXTwitter  size={16}/>
+                </a>
+                <a
+                  href="#"
+                  className="w-8 h-8 rounded-full border border-navy-700 flex items-center justify-center text-white/40 hover:border-gold-400 hover:text-gold-400 transition-all duration-200 text-[10px] font-sans font-semibold uppercase tracking-widest"
+                >
+                  <FaWhatsapp  size={16}/>
+                </a>
             </div>
           </div>
 
