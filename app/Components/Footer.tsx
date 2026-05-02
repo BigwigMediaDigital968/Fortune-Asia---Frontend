@@ -1,4 +1,5 @@
 import Link from "next/link";
+import WhatsAppFloatingButton from "./WhatsAppFloatingButton";
 
 export default function Footer() {
   const propertyLinks = [
@@ -11,12 +12,15 @@ export default function Footer() {
 
   const companyLinks = [
     { name: "About Us", href: "/about" },
-    { name: "Our Projects", href: "/projects" },
+    // { name: "Our Projects", href: "/projects" },
+    { name: "Our Developers", href: "/developers" },
     { name: "Latest Blogs", href: "/blogs" },
     { name: "Contact Us", href: "/contact" },
   ];
 
   return (
+    <>
+    <WhatsAppFloatingButton/>
     <footer className="bg-navy-950 pt-16 lg:pt-20 pb-8">
       <div className="max-w-[1320px] mx-auto px-5 sm:px-8 lg:px-12">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 pb-12 border-b border-navy-800">
@@ -190,5 +194,6 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+    </>
   );
 }

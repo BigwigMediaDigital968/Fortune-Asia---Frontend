@@ -37,7 +37,7 @@ export default function PageContent({
   property: PropertyListing | any;
 }) {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-  console.log("Rendering PageContent with property:", property);
+  // console.log("Rendering PageContent with property:", property);
 
   const {
     data: relatedProperties = [],
@@ -49,7 +49,7 @@ export default function PageContent({
     placeholderData: (prev) => prev, // 👈 smooth transition
   });
 
-  console.log("Fetched Related Properties:", relatedProperties);
+  // console.log("Fetched Related Properties:", relatedProperties);
 
   return (
     <>
@@ -291,7 +291,7 @@ export default function PageContent({
                   title="Location & Proximity"
                 />
                 <div className="">
-                  <div className="rounded-xl overflow-hidden grayscale brightness-75 hover:grayscale-0 transition-all duration-700 h-[400px]">
+                  <div className="rounded-xl overflow-hidden grayscale-0 brightness-100 hover:grayscale-0 transition-all duration-700 h-[400px]">
                     <iframe
                       src={property?.googleMapUrl}
                       width="100%"
@@ -450,7 +450,7 @@ function SectionTitle({
 
 function SpecItem({ label, value }: { label: string; value: string }) {
   return (
-    <div className="flex items-center justify-between p-5 bg-white/[0.02] border border-white/5 rounded-2xl hover:border-white/20 transition-colors">
+    <div className="flex flex-col gap-4 p-5 bg-white/[0.02] border border-white/5 rounded-2xl hover:border-white/20 transition-colors">
       <span className="text-[10px] font-bold text-white uppercase tracking-widest">
         {label}
       </span>
