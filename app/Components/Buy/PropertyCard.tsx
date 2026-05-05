@@ -130,3 +130,58 @@ export default function PropertyCard({ property, index }: PropertyCardProps) {
     </motion.div>
   );
 }
+
+export function PropertyCardSkeleton() {
+  return (
+    <div className="w-full max-w-sm sm:max-w-none mx-auto">
+      <div className="bg-navy-900 overflow-hidden rounded-lg border border-white/5 shadow-lg animate-pulse">
+        
+        {/* Image Placeholder */}
+        <div className="relative aspect-[4/3] bg-navy-800">
+          {/* Category Badge Placeholder */}
+          <div className="absolute top-5 left-5 w-20 h-6 bg-navy-700 rounded-full" />
+        </div>
+
+        {/* Content Area */}
+        <div className="p-6 py-4">
+          
+          {/* Title & Price Placeholder */}
+          <div className="flex flex-col gap-2 mb-2">
+            <div className="h-6 w-3/4 bg-navy-800 rounded" />
+            <div className="h-4 w-1/3 bg-gold-400/20 rounded" />
+          </div>
+
+          {/* Address Placeholder */}
+          <div className="flex items-center gap-2 mb-4">
+            <div className="w-4 h-4 bg-navy-800 rounded-full" />
+            <div className="h-3 w-1/2 bg-navy-800 rounded" />
+          </div>
+
+          {/* Features Grid Placeholder */}
+          <div className="py-4 border-y border-white/5">
+            <div className="flex gap-6 mb-3">
+              {/* Beds */}
+              <div className="flex items-center gap-2">
+                <div className="w-4 h-4 bg-navy-800 rounded" />
+                <div className="w-12 h-4 bg-navy-800 rounded" />
+              </div>
+              {/* Baths */}
+              <div className="flex items-center gap-2">
+                <div className="w-4 h-4 bg-navy-800 rounded" />
+                <div className="w-12 h-4 bg-navy-800 rounded" />
+              </div>
+            </div>
+            {/* Sqft */}
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-4 bg-navy-800 rounded" />
+              <div className="w-20 h-4 bg-navy-800 rounded" />
+            </div>
+          </div>
+
+          {/* Button Placeholder */}
+          <div className="w-full mt-4 h-12 bg-white/5 rounded-lg border border-white/10" />
+        </div>
+      </div>
+    </div>
+  );
+}

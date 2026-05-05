@@ -10,7 +10,7 @@ const motionContainer = {
   },
 };
 
-import PropertyCard from "@/app/Components/Buy/PropertyCard";
+import PropertyCard, { PropertyCardSkeleton } from "@/app/Components/Buy/PropertyCard";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
@@ -46,10 +46,19 @@ export default function Listing() {
             </h2>
           </div>
           <div className="max-w-md">
-            <p className="text-white/40 text-lg font-light leading-relaxed">
-              Showing {properties.length} exceptional opportunities across
-              Dubai's most prestigious communities.
-            </p>
+            {isLoading ? (<>
+              <div className=" w-md gap-2 mb-2 animate-pulse">
+                <div className="h-6 w-full bg-white/10 rounded" />
+                <div className="h-4 mt-2 w-full bg-white/10 rounded" />
+              </div>
+            </>) : (
+              <>
+                <p className="text-white/40 text-lg font-light leading-relaxed">
+                  Showing {properties.length} exceptional opportunities across
+                  Dubai's most prestigious communities.
+                </p>
+              </>
+            )}
           </div>
         </div>
 
@@ -61,9 +70,18 @@ export default function Listing() {
           variants={motionContainer}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
         >
-          {properties?.map((property: any, index: number) => (
-            <PropertyCard key={property._id} property={property} index={index} />
-          ))}
+
+          {isLoading ? (
+            <>
+              {Array.from({ length: 6 }).map((_, index) => (
+                <PropertyCardSkeleton key={index} />
+              ))}
+            </>
+          ) : (
+            properties?.map((property: any, index: number) => (
+              <PropertyCard key={property._id} property={property} index={index} />
+            ))
+          )}
         </motion.div>
 
         {/* Footer CTA */}
