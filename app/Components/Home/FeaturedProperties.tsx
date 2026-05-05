@@ -83,9 +83,9 @@ export default function FeaturedProperties() {
 
               <div className="px-2">
                 <div className=" items-start mb-3">
-                  <h3 className="text-2xl font-serif font-bold text-white group-hover:text-gold-400 transition-colors">
+                  <Link href={href} className="text-2xl font-serif font-bold text-white group-hover:text-gold-400 transition-colors">
                     {title}
-                  </h3>
+                  </Link>
                   <p className="text-gold-400 font-bold text-base">{price}</p>
                 </div>
                 <div className="flex items-center gap-2 text-white text-xs mb-6">

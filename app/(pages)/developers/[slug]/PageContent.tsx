@@ -162,18 +162,21 @@ export default function PageContent({ developer }: { developer: Developer }) {
                     <motion.div
                       initial={{ opacity: 0, scale: 0.9 }}
                       animate={{ opacity: 1, scale: 1 }}
-                      className="w-24 h-24 rounded-2xl bg-gradient-to-br from-[#1e293b] to-[#0f172a] border border-white/10 flex items-center justify-center p-2 shadow-2xl"
+                      className="w-24 rounded-2xl bg-gradient-to-br from-[#1e293b] to-[#0f172a] border border-white/10 flex items-center justify-center p-2 shadow-2xl"
                     >
                       {/* Fallback to Icon if image fails */}
-                      <Image
-                        src={developer.logo}
-                        alt="Developer Logo"
-                        width={96}
-                        height={96}
-                        unoptimized
+                      {developer.logo ? (
+                        <Image
+                          src={developer.logo }
+                          alt="Developer Logo"
+                          width={96}
+                          height={96}
+                          unoptimized
                         className="w-full h-full object-contain filter brightness-125"
-                      />
-                      <Building2 className="absolute text-gold-500 w-10 h-10 opacity-20" />
+                        />
+                      ) : (
+                        <Building2 className="text-gold-500 w-10 h-10" />
+                      )}
                     </motion.div>
 
                     <div className="space-y-4 mb-4">
