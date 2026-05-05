@@ -125,7 +125,7 @@ export default function PropertyFilters({
             </div>
 
             {/* 💰 Price Range */}
-            <div className="flex-1 lg:w-44 group relative">
+            <div className="flex-1 lg:w-44 group relative hidden">
               <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gold-400">
                 <DollarSign size={18} />
               </div>

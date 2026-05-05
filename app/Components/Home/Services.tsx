@@ -11,29 +11,29 @@ import { SectionHeading } from "../Ui/SectionLabel";
 
 const services = [
     {
-        title: "Sell Property",
-        desc: "Get the best value for your property with expert marketing and negotiation.",
-        detailedDesc:
-            "We help you sell faster and smarter with professional listings, targeted exposure, and strong negotiation strategies to maximize your return.",
-        image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80",
-        link: "/buy",
-    },
-    {
-        title: "Rent Property",
-        desc: "Find the perfect rental home tailored to your lifestyle and budget.",
-        detailedDesc:
-            "From apartments to villas, we offer a wide range of rental options with seamless support—from property search to final agreement.",
-        image: "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80",
-        link: "/rent",
-    },
-    {
-        title: "Lease Property",
-        desc: "Flexible leasing solutions for both landlords and tenants.",
-        detailedDesc:
-            "We manage lease agreements, tenant screening, and documentation to ensure a smooth and secure leasing experience for all parties.",
-        image: "https://images.unsplash.com/photo-1572120360610-d971b9d7767c?auto=format&fit=crop&w=800&q=80",
-        link: "/lease",
-    },
+    title: "Buy Property",
+    desc: "Find your ideal home or investment with confidence and clarity.",
+    detailedDesc:
+        "Explore verified listings, compare properties easily, and get expert guidance at every step—from shortlisting to final paperwork. We make buying simple, transparent, and stress-free.",
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80",
+    link: "/buy",
+},
+{
+    title: "Sell Property",
+    desc: "Sell faster at the right price with smart marketing and expert support.",
+    detailedDesc:
+        "We showcase your property with professional listings, high-quality visuals, and targeted reach. Combined with strong negotiation, we help you close deals quickly and profitably.",
+    image: "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80",
+    link: "/sell",
+},
+{
+    title: "Lease Property",
+    desc: "Hassle-free leasing solutions for long-term stability and returns.",
+    detailedDesc:
+        "Whether you're a landlord or tenant, we handle tenant screening, agreement drafting, and documentation to ensure secure, long-term leasing with minimal effort.",
+    image: "https://images.unsplash.com/photo-1572120360610-d971b9d7767c?auto=format&fit=crop&w=800&q=80",
+    link: "/lease",
+}
 ];
 
 export default function Services() {
