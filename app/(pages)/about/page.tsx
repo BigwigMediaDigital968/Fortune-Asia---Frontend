@@ -24,25 +24,11 @@ import Services from "@/app/Components/Home/Services";
 
 const teamMembers = [
   {
-    name: "Alexander Vance",
-    role: "Chief Investment Officer",
-    bio: "Ex-Goldman Sachs with 15 years of experience in MENA liquidity markets.",
+    name: "Mayur Sail",
+    role: "Owner",
+    bio: "With over 15 years of experience in Dubai’s fast-growing real estate market, Mayur Sail specializes in luxury properties, premium developments, and high-value investment opportunities. His strong understanding of the UAE market, property regulations, and emerging growth areas has helped clients secure profitable and future-ready investments across Dubai. Known for his transparent approach and strong industry network, he delivers trusted guidance and seamless real estate solutions tailored to every client’s goals.",
     image:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400",
-  },
-  {
-    name: "Sarah Al-Maktoum",
-    role: "Head of Luxury Sales",
-    bio: "Ex-Goldman Sachs with 15 years of experience in MENA liquidity markets.",
-    image:
-      "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400",
-  },
-  {
-    name: "David Chen",
-    role: "Investment Director",
-    bio: "Ex-Goldman Sachs with 15 years of experience in MENA liquidity markets.",
-    image:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400",
+      "/person-1.jpeg",
   },
 ];
 
@@ -149,7 +135,7 @@ export default function About() {
           >
             <SectionHeading subtitle={"Who we are"} centered={false} />
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-4 leading-tight">
-              Our Story of <span className="text-gold-400">Excellence</span> 
+              Our Story of <span className="text-gold-400">Excellence</span>
             </h2>
             <div className="space-y-6 text-white/70 font-sans leading-relaxed">
               <p>
@@ -297,55 +283,56 @@ const TeamSection = () => {
         </div>
 
         {/* Modern Staggered Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-y-16 md:gap-y-24 gap-x-8">
+        <div className="max-w-5xl mx-auto">
           {teamMembers?.map((member, i) => (
-            <motion.div
-              key={member.name}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: i * 0.1 }}
-              viewport={{ once: true }}
-              // This logic creates a staggered, asymmetrical premium layout
-              className={`relative group md:col-span-6 lg:col-span-4`}
-            >
-              {/* Image Container */}
-              <div className="relative aspect-[4/5] cursor-pointer overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 ease-in-out border border-white/10 rounded-sm">
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  fill
-                  className="object-cover scale-105 group-hover:scale-100 transition-transform duration-1000"
-                />
+            <>
+              <div key={i} className="group relative">
+                <div className="flex flex-col md:flex-row items-end gap-8 md:gap-16">
 
-                {/* Elegant Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-transparent to-transparent opacity-60" />
+                  {/* Image Column */}
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    className="w-full md:w-2/5 aspect-[4/5] relative rounded-2xl overflow-hidden bg-slate-900 border border-white/5"
+                  >
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover sm:grayscale hover:grayscale-0 transition-all duration-700 scale-110 group-hover:grayscale-0 group-hover:scale-100" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-transparent to-transparent opacity-60" />
+                  </motion.div>
 
-                {/* Floating Content Card */}
-                <div className="absolute -bottom-[25%] left-0 right-0 p-1 translate-y-4 group-hover:bottom-0 transition-all duration-500">
-                  <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-6 m-2">
-                    <div className="flex justify-between items-start mb-4">
-                      <div>
-                        <h3 className="text-xl font-display text-white tracking-wide">
-                          {member.name}
-                        </h3>
-                        <p className="text-gold-400 text-[10px] uppercase tracking-[0.2em] mt-1">
-                          {member.role}
-                        </p>
-                      </div>
+                  {/* Content Column - Baseline Aligned */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="w-full md:w-3/5 pb-4 space-y-6"
+                  >
+                    <div className="space-y-2">
+                      <p className="text-yellow-500 text-xs uppercase tracking-[0.3em] font-bold">
+                        {member.role}
+                      </p>
+                      <h3 className="text-white text-4xl md:text-5xl font-serif font-light">
+                        {member.name}
+                      </h3>
                     </div>
 
-                    <p className="text-white/60 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                      {
-                        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora quae harum aliquid laboriosam, ad consectetur quos neque tempore officia labore corporis maiores, error impedit libero."
-                      }
-                    </p>
-                  </div>
+                    <div className="relative">
+                      <div className="absolute -left-6 top-0 bottom-0 w-px bg-gradient-to-b from-yellow-500/50 to-transparent hidden md:block" />
+                      <p className="text-slate-400 text-lg leading-relaxed font-light italic">
+                        {member.bio}
+                      </p>
+                    </div>
+                  </motion.div>
                 </div>
-              </div>
 
-              {/* Decorative Accent (Luxury Touch) */}
-              <div className="absolute -bottom-4 -right-4 w-24 h-24 border-r border-b border-gold-500/20 group-hover:border-gold-500/50 transition-colors duration-500 -z-10" />
-            </motion.div>
+                {/* Background Decorative Element */}
+                <div className="absolute -bottom-10 -right-10 text-[120px] font-serif italic text-white/[0.02] pointer-events-none select-none hidden lg:block">
+                  Signature
+                </div>
+              </div></>
           ))}
         </div>
       </div>
