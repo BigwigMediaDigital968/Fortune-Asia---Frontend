@@ -123,9 +123,14 @@ export default function PageContent({
               <span className="text-[10px] font-bold text-white/40 uppercase tracking-[0.3em] block mb-2">
                 Asking Price
               </span>
-              <div className="text-2xl md:text-3xl font-display font-bold text-gold-400">
-                {property?.price}
-              </div>
+              {property?.price ? (<>
+                <div className="text-2xl md:text-3xl font-display font-bold text-gold-400">
+                  On Enquiry
+                </div>
+              </>) : (<>
+                <div className="text-2xl md:text-3xl font-display font-bold text-gold-400">
+                  {property?.price}
+                </div></>)}
             </div>
           </motion.div>
 
@@ -141,43 +146,51 @@ export default function PageContent({
             {/* Quick Stats Bar */}
             <motion.div
               variants={fadeUp}
-              className="grid grid-cols-2 md:grid-cols-4 gap-4 p-4 bg-navy-900/50 rounded-xl border border-white/5"
+              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 p-4 sm:text-center bg-navy-900/50 rounded-xl border border-white/5"
             >
-              <div className="flex flex-col items-center gap-2 border-r border-white/5">
+              <div className="flex sm:flex-col items-center gap-4 sm:gap-2 sm:border-r border-white/5">
                 <BedDouble size={24} className="text-gold-400" />
-                <span className="text-lg text-white font-bold">
-                  {property?.bedroom} Bedrooms
-                </span>
-                <span className="text-[10px] text-white/30 uppercase tracking-widest">
-                  Sleeping Spaces
-                </span>
+                <div>
+                  <p className="text-lg text-white font-bold">
+                    {property?.bedroom} Bedrooms
+                  </p>
+                  <p className="text-[10px] text-white/30 uppercase tracking-widest">
+                    Sleeping Spaces
+                  </p>
+                </div>
               </div>
-              <div className="flex flex-col items-center gap-2 md:border-r border-white/5">
+              <div className="flex sm:flex-col items-center gap-4 sm:gap-2 md:border-r border-white/5">
                 <Bath size={24} className="text-gold-400" />
-                <span className="text-lg text-white font-bold">
+                <div>
+                  <p className="text-lg text-white font-bold">
                   {property?.bathroom} Bathrooms
-                </span>
-                <span className="text-[10px] text-white/30 uppercase tracking-widest">
+                </p>
+                <p className="text-[10px] text-white/30 uppercase tracking-widest">
                   En-suite Baths
-                </span>
+                </p>
+                </div>
               </div>
-              <div className="flex flex-col items-center gap-2 border-r border-white/5">
+              <div className="flex sm:flex-col items-center gap-4 sm:gap-2 sm:border-r border-white/5">
                 <Square size={22} className="text-gold-400" />
-                <span className="text-lg text-white font-bold">
+                <div>
+                  <p className="text-lg text-white font-bold">
                   {property?.sizeSqft} sqft
-                </span>
-                <span className="text-[10px] text-white/30 uppercase tracking-widest">
+                </p>
+                <p className="text-[10px] text-white/30 uppercase tracking-widest">
                   Total Area
-                </span>
+                </p>
+                </div>
               </div>
-              <div className="flex flex-col items-center gap-2">
+              <div className="flex sm:flex-col items-center gap-4 sm:gap-2">
                 <Building size={22} className="text-gold-400" />
-                <span className="text-lg text-white font-bold">
+               <div>
+                 <p className="text-lg text-white font-bold">
                   {property?.propertyType}
-                </span>
-                <span className="text-[10px] text-white/30 uppercase tracking-widest">
+                </p>
+                <p className="text-[10px] text-white/30 uppercase tracking-widest">
                   Property Type
-                </span>
+                </p>
+               </div>
               </div>
             </motion.div>
 
@@ -315,19 +328,17 @@ export default function PageContent({
                     <div
                       key={i}
                       onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                      className={`bg-white/[0.03] border rounded-2xl p-4 md:p-8 transition-all duration-300 group cursor-pointer ${
-                        openFaq === i
+                      className={`bg-white/[0.03] border rounded-2xl p-4 md:p-8 transition-all duration-300 group cursor-pointer ${openFaq === i
                           ? "border-gold-400/50 bg-white/[0.06]"
                           : "border-white/10 hover:border-white/20"
-                      }`}
+                        }`}
                     >
                       <h3 className="text-white font-medium text-sm md:text-lg flex items-center justify-between">
                         {faq.question}
                         <ChevronRight
                           size={18}
-                          className={`text-gold-400 transition-transform duration-300 ${
-                            openFaq === i ? "rotate-90" : "rotate-0"
-                          }`}
+                          className={`text-gold-400 transition-transform duration-300 ${openFaq === i ? "rotate-90" : "rotate-0"
+                            }`}
                         />
                       </h3>
                       <AnimatePresence>

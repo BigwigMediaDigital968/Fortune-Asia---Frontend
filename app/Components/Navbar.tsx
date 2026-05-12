@@ -115,7 +115,8 @@ export default function Navbar({ scrolled }: { scrolled: boolean }) {
                 className="mt-10"
               >
                 <Link
-                  href="#"
+                  href="/contact"
+                  onClick={() => setIsOpen(false)}
                   className="inline-block text-[11px] font-bold tracking-[0.3em] text-gold-400 uppercase border border-gold-400 px-8 py-4 rounded-lg"
                 >
                   Contact Us Now

@@ -45,13 +45,13 @@ export default function RelatedPropertyCard({
               </div>
               <div className="flex items-center gap-0.5">
                 
-                <span className="line-clamp-2">{property?.address}</span>
+                <span className="line-clamp-2">{property?.subArea}</span>
               </div>
             </div>
           </div>
 
           <div className="mt-auto">
-            <div className="text-gold-400 font-display font-bold text-base mb-2">
+            <div className="text-gold-400 font-display font-bold text-sm md:text-base mb-2">
               {property?.price}
             </div>
 
