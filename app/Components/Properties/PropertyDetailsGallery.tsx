@@ -62,15 +62,15 @@ export default function PropertyDetailsGallery({ images = [], title = "" }) {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
 
                     {/* Status Badge */}
-                    <div className="absolute top-6 left-6">
+                    {/* <div className="absolute top-6 left-6">
                         <span className="bg-slate-950/80 backdrop-blur-xl text-white px-4 py-1.5 rounded-full text-[11px] uppercase tracking-[0.2em] font-bold border border-white/10 shadow-lg">
                             for rent
                         </span>
-                    </div>
+                    </div> */}
 
                     <button
                         onClick={() => openModal(activeImage)}
-                        className="absolute top-6 right-6 p-3 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full text-white opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0"
+                        className="absolute cursor-pointer top-6 right-6 p-3 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full text-white opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0"
                     >
                         <Maximize2 size={20} />
                     </button>
