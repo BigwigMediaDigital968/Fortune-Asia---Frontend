@@ -67,8 +67,8 @@ export default function HeroDesign1() {
                             <Link href={"/buy"} className="cursor-pointer cta-btn bg-gold-500  flex-1 sm:flex-none px-3 sm:px-5 md:px-10 py-2 rounded-lg text-center text-sm font-medium sm:font-bold uppercase tracking-wider">
                                 Buy
                             </Link>
-                            <Link href={"/rent"} className="cursor-pointer cta-btn flex-1 sm:flex-none px-3 sm:px-5 md:px-10 py-2 rounded-lg text-white text-center text-sm font-medium sm:font-bold uppercase tracking-wider">
-                                Rent
+                            <Link href={"/sell"} className="cursor-pointer cta-btn flex-1 sm:flex-none px-3 sm:px-5 md:px-10 py-2 rounded-lg text-white text-center text-sm font-medium sm:font-bold uppercase tracking-wider">
+                                Sell
                             </Link>
                             <Link href={"/lease"} className="cursor-pointer cta-btn flex-1 sm:flex-none px-3 sm:px-5 md:px-10 py-2 rounded-lg text-white text-center text-sm font-medium sm:font-bold uppercase tracking-wider">
                                 Lease

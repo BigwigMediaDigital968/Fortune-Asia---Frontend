@@ -11,9 +11,9 @@ const navLinks = [
   // { name: "Projects", href: "/projects" },
   { name: "Properties", href: "/properties" },
   { name: "Buy", href: "/buy" },
-  { name: "Rent", href: "/rent" },
+    { name: "Sell", href: "/sell" },
+  // { name: "Rent", href: "/rent" },
   { name: "Lease", href: "/lease" },
-  { name: "Sell", href: "/sell" },
 ];
 
 export default function Navbar({ scrolled }: { scrolled: boolean }) {
