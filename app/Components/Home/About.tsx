@@ -31,7 +31,7 @@ export default function About() {
                 className="object-cover rounded-3xl"
               />
               {/* Play Button Overlay */}
-              <div className="absolute inset-0 flex items-center justify-center">
+              <div className="absolute inset-0 flex items-center justify-center hidden">
                 <button className="w-16 h-16 bg-[#5176fc] rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform cursor-pointer">
                   <Play className="text-white text-xl translate-x-0.5" />
                 </button>
