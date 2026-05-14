@@ -174,7 +174,7 @@ export default function PageContent({
                 <Square size={22} className="text-gold-400" />
                 <div>
                   <p className="text-lg text-white font-bold">
-                  {property?.sizeSqft} sqft
+                  {property?.sizeSqft}
                 </p>
                 <p className="text-[10px] text-white/30 uppercase tracking-widest">
                   Total Area
