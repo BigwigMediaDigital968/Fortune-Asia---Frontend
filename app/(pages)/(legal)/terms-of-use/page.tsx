@@ -15,7 +15,7 @@ const CookiePolicy = () => {
       </>
     }
     description="Please review the terms governing your access to and use of our Dubai luxury real estate platform and services."
-    backgroundImage="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2070"
+    backgroundImage="https://images.unsplash.com/photo-1496568816309-51d7c20e3b21?q=80&w=1331&auto=format&fit=crop"
   />
 
   <section className="py-24 px-6 lg:px-14">

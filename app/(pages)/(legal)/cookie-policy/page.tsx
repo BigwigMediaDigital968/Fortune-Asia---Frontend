@@ -15,7 +15,7 @@ const CookiePolicy = () => {
                     </>
                 }
                 description="Understanding how cookies enhance your Dubai luxury real estate browsing experience while protecting your privacy and preferences."
-                backgroundImage="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2070"
+                backgroundImage="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?q=80&w=2070"
             />
 
             <section className="py-24 px-6 lg:px-14">

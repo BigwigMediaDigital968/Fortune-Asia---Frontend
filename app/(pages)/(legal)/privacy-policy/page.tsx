@@ -15,7 +15,7 @@ const PrivacyPolicy = () => {
           </>
         }
         description="Transparent data practices to protect your luxury real estate investments and personal identity."
-        backgroundImage="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2070"
+        backgroundImage="https://images.unsplash.com/photo-1509339022327-1e1e25360a41?q=80&w=1170&auto=format&fit=crop"
       />
 
       <section className="py-24 px-6 lg:px-14">
