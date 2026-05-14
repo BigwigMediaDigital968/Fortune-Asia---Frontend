@@ -199,13 +199,17 @@ export default function Footer() {
               reserved. RERA Licensed.
             </p>
             <div className="flex gap-6">
-              {["Privacy Policy", "Terms of Use", "Cookie Policy"].map((l) => (
+              {[
+                { label: "Privacy Policy", href: "/privacy-policy" },
+                { label: "Terms of Use", href: "/terms-of-use" },
+                { label: "Cookie Policy", href: "/cookie-policy" },
+              ].map((l) => (
                 <a
-                  key={l}
-                  href="#"
+                  key={l.label}
+                  href={l.href}
                   className="text-white/25 text-xs font-sans hover:text-white/50 transition-colors duration-200"
                 >
-                  {l}
+                  {l.label}
                 </a>
               ))}
             </div>
