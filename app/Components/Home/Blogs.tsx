@@ -82,7 +82,7 @@ export default function Blogs() {
                 renderSkeleton(index),
               )
             : displayBlogs?.map((b: any) => (
-              <Link href={`/blogs/${b.slug || ""}`}>
+              <Link href={`/blogs/${b.slug || ""}`} className="block max-w-[350px] mx-auto">
                 <motion.article
                   key={b.slug || b.title}
                   variants={fadeUp}
