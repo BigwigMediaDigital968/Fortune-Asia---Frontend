@@ -29,18 +29,16 @@ export default function Footer() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 pb-12 border-b border-navy-800">
             {/* Brand */}
             <div className="col-span-2 lg:col-span-1">
-              <div className="font-display text-white mb-4">
-                <div className="text-2xl leading-none font-semibold uppercase tracking-tight">
-                  FORTUNE ASIA
+              <Link href="/"
+                className="flex items-center cursor-pointer shrink-0">
+                <div className="h-[30px] md:h-[40px] mb-4">
+                  <img
+                    src="/logo.png"
+                    alt="Fortune Asia Realty"
+                    className="w-full h-full object-center object-cover"
+                  />
                 </div>
-                <div className="flex items-center gap-1.5 mt-1">
-                  <span className="block h-px w-5 bg-gold-400" />
-                  <span className="text-xs tracking-[0.25em] font-sans font-medium text-white/60">
-                    REALTY
-                  </span>
-                  <span className="block h-px w-5 bg-gold-400" />
-                </div>
-              </div>
+              </Link>
               <p className="font-sans text-white/40 text-sm leading-relaxed mb-5 max-w-xs">
                 Dubai's trusted real estate partner. Connecting discerning clients
                 with the city's most exclusive properties.

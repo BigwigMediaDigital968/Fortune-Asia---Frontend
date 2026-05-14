@@ -11,7 +11,7 @@ const navLinks = [
   // { name: "Projects", href: "/projects" },
   { name: "Properties", href: "/properties" },
   { name: "Buy", href: "/buy" },
-    { name: "Sell", href: "/sell" },
+  { name: "Sell", href: "/sell" },
   // { name: "Rent", href: "/rent" },
   { name: "Lease", href: "/lease" },
 ];
@@ -24,28 +24,24 @@ export default function Navbar({ scrolled }: { scrolled: boolean }) {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled || isOpen
-          ? "bg-navy-950/95 backdrop-blur-md shadow-lg"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled || isOpen
+        ? "bg-navy-950/95 backdrop-blur-md shadow-lg"
+        : "bg-transparent"
+        }`}
     >
       <nav className="flex items-center justify-between px-6 md:px-14 py-5">
         {/* ── LOGO ── */}
-        <div className="cursor-pointer">
-          <div className="font-display text-white">
-            <div className="text-xl md:text-2xl leading-none font-semibold tracking-tight">
-              FORTUNE ASIA
-            </div>
-            <div className="flex items-center gap-1.5 mt-1">
-              <span className="block h-px w-4 md:w-5 bg-gold-400"></span>
-              <span className="text-[10px] tracking-[0.25em] font-sans font-medium text-white/60">
-                REALTY
-              </span>
-              <span className="block h-px w-4 md:w-5 bg-gold-400"></span>
-            </div>
+        <Link href="/"
+          onClick={() => setIsOpen(false)}
+          className="flex items-center cursor-pointer shrink-0">
+          <div className="h-[30px] md:h-[40px]">
+            <img
+              src="/logo.png"
+              alt="Fortune Asia Realty"
+              className="w-full h-full object-center object-cover"
+            />
           </div>
-        </div>
+        </Link>
 
         {/* ── DESKTOP NAV ── */}
         <ul className="hidden lg:flex items-center gap-10 list-none">
