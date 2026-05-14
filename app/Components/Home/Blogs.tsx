@@ -82,12 +82,13 @@ export default function Blogs() {
                 renderSkeleton(index),
               )
             : displayBlogs?.map((b: any) => (
+              <Link href={`/blogs/${b.slug || ""}`}>
                 <motion.article
                   key={b.slug || b.title}
                   variants={fadeUp}
                   whileHover={{ y: -4 }}
                   transition={{ duration: 0.3 }}
-                  className="group border border-border rounded-xl overflow-hidden bg-white cursor-pointer"
+                  className="group border border-border rounded-xl max-w-[350px] overflow-hidden bg-white cursor-pointer"
                 >
                   <div className="overflow-hidden aspect-16/10 bg-slate-100">
                     <img
@@ -109,7 +110,7 @@ export default function Blogs() {
                     <h3 className="font-display text-navy-900 line-clamp-2 text-xl font-semibold leading-snug mb-3 group-hover:text-navy-700 transition-colors duration-200">
                       {b.title}
                     </h3>
-                    <p className="font-sans text-charcoal-500 text-sm leading-relaxed line-clamp-2">
+                    <p className="font-sans text-charcoal-500 text-sm leading-relaxed line-clamp-3">
                       {b.excerpt ||
                         b.summary ||
                         "Read our latest insights on Dubai real estate."}
@@ -137,6 +138,7 @@ export default function Blogs() {
                     </Link>
                   </div>
                 </motion.article>
+                </Link>
               ))}
         </motion.div>
         <div className="flex justify-center">
