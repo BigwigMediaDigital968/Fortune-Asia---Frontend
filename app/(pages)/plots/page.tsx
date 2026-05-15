@@ -35,7 +35,7 @@ const plotsData = [
         area: "45,000 Sq. Ft.",
         topography: "Tiered Plateau",
         orientation: "North-West Facing",
-        image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2000&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1580674684081-7617fbf3d745?q=80&w=1074&auto=format&fit=crop",
     },
     {
         id: "02",
@@ -45,7 +45,7 @@ const plotsData = [
         area: "62,500 Sq. Ft.",
         topography: "Gently Sloping Basin",
         orientation: "South-East Facing",
-        image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2000&auto=format&fit=crop",
+        image: "https://images.unsplash.com/photo-1544092683-c0c9ebb368e5?q=80&w=1151&auto=format&fit=crop",
     }
 ];
 
