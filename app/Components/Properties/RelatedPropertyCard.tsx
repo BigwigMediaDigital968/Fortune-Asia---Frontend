@@ -51,8 +51,8 @@ export default function RelatedPropertyCard({
           </div>
 
           <div className="mt-auto">
-            <div className="text-gold-400 font-display font-bold text-sm md:text-base mb-2">
-              {property?.price}
+            <div className="text-gold-400 font-display font-bold text-sm md:text-sm mb-2">
+              From {property?.price}
             </div>
 
             {/* Compact Stats */}

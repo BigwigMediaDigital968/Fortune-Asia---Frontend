@@ -15,6 +15,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
 import { getProperties } from "@/app/lib/properties";
+import { ArrowRight, Eye, Square } from "lucide-react";
 
 export default function Listing() {
   const {
@@ -78,9 +79,12 @@ export default function Listing() {
               ))}
             </>
           ) : (
-            properties?.map((property: any, index: number) => (
+            <>
+            {properties?.map((property: any, index: number) => (
               <PropertyCard key={property._id} property={property} index={index} />
-            ))
+            ))}
+            <PlotsRedirectCard/>
+            </>
           )}
         </motion.div>
 
@@ -113,3 +117,81 @@ export default function Listing() {
     </>
   );
 }
+
+const PlotsRedirectCard = ({ index = 0 }) => {
+  // Static dummy data for the redirection card
+  const staticData = {
+    propertyName: "Exclusive Land Portfolio",
+    propertyType: "Premium Plots",
+    tagline: "Prime opportunities in strategic locations",
+    ctaDescription: "Discover curated investment-grade land parcels for bespoke residential and commercial development.",
+    image: "https://images.unsplash.com/photo-1617449512807-7401d38e5c29?q=80&w=1074&auto=format&fit=crop",
+    isFeatured: true
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.1, duration: 0.5 }}
+      className="group bg-navy-900 overflow-hidden rounded-2xl border border-white/5 hover:border-gold-400/30 transition-all duration-500 shadow-2xl hover:shadow-gold-500/10 max-w-sm w-full"
+    >
+      {/* Image Container */}
+      <div className="relative aspect-[4/3] overflow-hidden">
+        <img
+          src={staticData.image}
+          alt={staticData.propertyName}
+          className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+        />
+
+        {/* Overlays */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-transparent to-transparent opacity-80" />
+
+        {/* Category Badge */}
+        <div className="absolute top-5 left-5 px-4 py-1.5 bg-[#020617]/60 backdrop-blur-md border border-white/10 rounded-full text-[10px] font-bold text-white uppercase tracking-widest">
+          {staticData.propertyType}
+        </div>
+
+        {/* Featured Badge */}
+        {false && staticData.isFeatured && (
+          <div className="absolute bottom-5 left-5 px-3 py-1 bg-gold-500 text-[#020617] text-[10px] font-bold uppercase tracking-tight rounded-sm">
+            Featured Collection
+          </div>
+        )}
+      </div>
+
+      {/* Content */}
+      <div className="p-8 py-6">
+        <div className="items-start mb-6">
+          <h3 className="text-2xl font-serif text-white group-hover:text-gold-400 transition-colors mb-2">
+            {staticData.propertyName}
+          </h3>
+          <p className="text-gold-500 font-bold text-sm tracking-tight">
+            {staticData.tagline}
+          </p>
+        </div>
+
+        {/* Informational Content for Redirection */}
+        <div className="py-1 border-y border-white/10">
+          <p className="text-slate-400 text-sm leading-relaxed font-light">
+            {staticData.ctaDescription}
+          </p>
+        </div>
+
+        {/* Action Button */}
+        <Link
+          href={"/plots"}
+          className="w-full mt-4 py-3 bg-white/5 hover:bg-gold-400 border border-white/10 hover:border-gold-400 text-white hover:text-navy-950 font-bold text-[10px] uppercase tracking-[0.2em] rounded-lg transition-all duration-300 flex items-center justify-center gap-2 group/btn cursor-pointer"
+        >
+          <Eye size={16} />
+          Explore Land Bank
+          <ArrowRight
+            size={14}
+            className="group-hover/btn:translate-x-2 transition-transform duration-300"
+          />
+        </Link>
+      </div>
+    </motion.div>
+  );
+};

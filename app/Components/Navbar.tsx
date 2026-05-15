@@ -13,7 +13,7 @@ const navLinks = [
   { name: "Buy", href: "/buy" },
   { name: "Sell", href: "/sell" },
   // { name: "Rent", href: "/rent" },
-  { name: "Lease", href: "/lease" },
+  // { name: "Lease", href: "/lease" },
 ];
 
 export default function Navbar({ scrolled }: { scrolled: boolean }) {

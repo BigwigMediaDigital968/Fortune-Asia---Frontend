@@ -48,9 +48,8 @@ export default function HeroDesign1() {
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ duration: 0.8, delay: 0.2 }} className="font-display text-white leading-[1.08] mb-5 animate-fadeUp2"
                             style={{ fontSize: "clamp(36px, 5vw, 72px)" }}>
-                            Find Your Dream<br />
-                            <em className="text-gold-lt not-italic">Luxury Home</em><br />
-                            in Dubai
+                            Crafting Dream<br />
+                            <em className="text-gold-lt not-italic">Creating feature</em><br />
                         </motion.h1>
 
                         <motion.p initial={{ y: 50, opacity: 0 }}
@@ -58,7 +57,7 @@ export default function HeroDesign1() {
                             transition={{ duration: 0.8, delay: 0.2 }} className="text-white/55 font-body font-light text-sm leading-relaxed tracking-wide mb-9 animate-fadeUp3"
                             style={{ maxWidth: "400px" }}>
                             Search confidently with your trusted source for premium homes
-                            to buy, sell or rent in Dubai's finest neighbourhoods.
+                            to buy, sell in Dubai's finest neighbourhoods.
                         </motion.p>
 
                         <motion.div initial={{ y: 50, opacity: 0 }}
@@ -70,9 +69,9 @@ export default function HeroDesign1() {
                             <Link href={"/sell"} className="cursor-pointer cta-btn flex-1 sm:flex-none px-3 sm:px-5 md:px-10 py-2 rounded-lg text-white text-center text-sm font-medium sm:font-bold uppercase tracking-wider">
                                 Sell
                             </Link>
-                            <Link href={"/lease"} className="cursor-pointer cta-btn flex-1 sm:flex-none px-3 sm:px-5 md:px-10 py-2 rounded-lg text-white text-center text-sm font-medium sm:font-bold uppercase tracking-wider">
+                            {/* <Link href={"/lease"} className="cursor-pointer cta-btn flex-1 sm:flex-none px-3 sm:px-5 md:px-10 py-2 rounded-lg text-white text-center text-sm font-medium sm:font-bold uppercase tracking-wider">
                                 Lease
-                            </Link>
+                            </Link> */}
                         </motion.div>
                         <motion.div initial={{ y: 50, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}

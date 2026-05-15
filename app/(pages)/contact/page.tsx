@@ -9,24 +9,18 @@ const CONTACT_DETAILS = [
   {
     icon: <MapPin className="w-6 h-6" />,
     title: "Visit Our Office",
-    details: ["Level 28, Marina Plaza,", "Dubai Marina, Dubai, UAE"],
+    details: ["Office#226, 2nd Floor | Smartplace Business Center | The Iridium Building – Umm Suqeim Street  Al Barsha 1 – Dubai"],
   },
   {
     icon: <Phone className="w-6 h-6" />,
     title: "Call Us",
-    details: ["Main Office: +971 4 123 4567", "Sales Desk: +971 4 765 4321"],
-  },
-  {
-    icon: <MessageSquare className="w-6 h-6" />,
-    title: "WhatsApp",
-    details: ["International: +971 50 123 4567"],
+    details: ["UAE Office: +971 50 2878765", "Goa Office: +91 9284788693"],
   },
   {
     icon: <Mail className="w-6 h-6" />,
     title: "Email Us",
     details: [
-      "General Inquiry: info@fortuneasia.com",
-      "Sales Desk: sales@fortuneasia.com",
+      "General Inquiry: contact@fortuneasia.ae",
     ],
   },
   {
@@ -116,7 +110,7 @@ export default function ContactPage() {
       {/* Map Section */}
       <section className="w-full h-[500px] relative">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3613.567083437149!2d55.13854611500731!3d25.082697883949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6b645b2b2b1b%3A0x1b1b1b1b1b1b1b1b!2sMarina%20Plaza!5e0!3m2!1sen!2sae!4v1628592102751!5m2!1sen!2sae"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3612.504366650783!2d55.2072461!3d25.1186337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f6bc1af8e1daf%3A0x6388c09f82918589!2sThe%20Iridium%20Building!5e0!3m2!1sen!2sin!4v1778850974023!5m2!1sen!2sin"
           width="100%"
           height="100%"
           style={{ border: 0 }}

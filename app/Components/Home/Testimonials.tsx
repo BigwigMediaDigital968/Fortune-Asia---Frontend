@@ -11,72 +11,72 @@ import Link from "next/link";
 const testimonials2 = [
   {
     id: 1,
-    name: "Michael",
-    role: "MDS Manufacturing",
-    text: "The level of professionalism was unparalleled. We found our dream office within a week.",
-    initials: "M",
-  },
-  {
-    id: 2,
-    name: "Diane",
-    role: "ABC Rentals",
-    text: "Exquisite taste and attention to detail. Every property was a masterpiece.",
-    initials: "D",
-  },
-  {
-    id: 3,
-    name: "Allison",
-    role: "Grand Party Rental",
-    text: "Seamless transaction from start to finish. The team handled everything with grace.",
+    name: "Arjun Mehta",
+    role: "Fortune Asia Client",
+    text: "Exceptional service and market expertise. Fortune Asia helped us secure the perfect Dubai investment property.",
     initials: "A",
   },
   {
-    id: 4,
-    name: "Robert",
-    role: "Tech Horizons",
-    text: "A truly bespoke experience. They found us a community that fits our lifestyle.",
-    initials: "R",
-  },
-  {
-    id: 5,
-    name: "Sarah",
-    role: "Global Luxe",
-    text: "Their understanding of the luxury market is unmatched in the region.",
-    initials: "S",
-  },
-  {
-    id: 1,
-    name: "Michael",
-    role: "MDS Manufacturing",
-    text: "The level of professionalism was unparalleled. We found our dream office within a week.",
-    initials: "M",
-  },
-  {
     id: 2,
-    name: "Diane",
-    role: "ABC Rentals",
-    text: "Exquisite taste and attention to detail. Every property was a masterpiece.",
-    initials: "D",
+    name: "Priya Kapoor",
+    role: "Business Owner",
+    text: "The entire experience felt seamless and professional. Every recommendation matched our lifestyle perfectly.",
+    initials: "P",
   },
   {
     id: 3,
-    name: "Allison",
-    role: "Grand Party Rental",
-    text: "Seamless transaction from start to finish. The team handled everything with grace.",
-    initials: "A",
-  },
-  {
-    id: 4,
-    name: "Robert",
-    role: "Tech Horizons",
-    text: "A truly bespoke experience. They found us a community that fits our lifestyle.",
+    name: "Rahul Sharma",
+    role: "Entrepreneur",
+    text: "From property selection to final paperwork, the team handled everything with complete transparency.",
     initials: "R",
   },
   {
+    id: 4,
+    name: "Neha Verma",
+    role: "Investor",
+    text: "Their understanding of Dubai’s luxury real estate market gave us complete confidence in our investment.",
+    initials: "N",
+  },
+  {
     id: 5,
-    name: "Sarah",
-    role: "Global Luxe",
-    text: "Their understanding of the luxury market is unmatched in the region.",
+    name: "Karan Malhotra",
+    role: "Fortune Asia Client",
+    text: "A premium real estate experience backed by trust, professionalism, and outstanding support.",
+    initials: "K",
+  },
+  {
+    id: 6,
+    name: "Ananya Desai",
+    role: "Consultant",
+    text: "They truly understood our vision and helped us find a property that exceeded expectations.",
+    initials: "A",
+  },
+  {
+    id: 7,
+    name: "Vikram Sethi",
+    role: "NRI Investor",
+    text: "Fortune Asia made investing in Dubai real estate smooth, secure, and completely stress-free.",
+    initials: "V",
+  },
+  {
+    id: 8,
+    name: "Ishita Rao",
+    role: "Creative Director",
+    text: "Professional guidance, curated properties, and excellent communication throughout the process.",
+    initials: "I",
+  },
+  {
+    id: 9,
+    name: "Rohan Bhatia",
+    role: "Startup Founder",
+    text: "The team’s local expertise and personalized approach made all the difference for our purchase.",
+    initials: "R",
+  },
+  {
+    id: 10,
+    name: "Sneha Arora",
+    role: "Luxury Homebuyer",
+    text: "A refined and trustworthy experience from start to finish. Highly recommended for Dubai properties.",
     initials: "S",
   },
 ];
@@ -218,7 +218,7 @@ export default function Testimonials() {
                             <h4 className="font-bold text-white tracking-wide">
                               {item.name}
                             </h4>
-                            <p className="text-[10px] text-gold-400 uppercase tracking-[0.2em] font-medium">
+                            <p className="hidden text-[10px] text-gold-400 uppercase tracking-[0.2em] font-medium">
                               {item.role}
                             </p>
                           </div>

@@ -3,9 +3,13 @@
 import React from 'react';
 
 const WhatsAppFloatingButton = () => {
-  const phoneNumber = "971XXXXXXXXX"; // Dubai Format: 971...
-  const message = encodeURIComponent("I'm interested in a specific developer in Dubai. Can we discuss?");
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+  const phoneNumber = "971502878765";
+
+const message = encodeURIComponent(
+  "I'd like to enquire about a property. Can we connect?"
+);
+
+const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
   return (
     <div className="fixed bottom-10 right-10 z-[100] group">

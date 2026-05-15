@@ -69,15 +69,6 @@ const services = [
       "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80",
     link: "/rent",
   },
-  {
-    title: "Lease Property",
-    desc: "Flexible leasing solutions for both landlords and tenants.",
-    detailedDesc:
-      "We manage lease agreements, tenant screening, and documentation to ensure a smooth and secure leasing experience for all parties.",
-    image:
-      "https://images.unsplash.com/photo-1572120360610-d971b9d7767c?auto=format&fit=crop&w=800&q=80",
-    link: "/lease",
-  },
 ];
 
 export default function About() {

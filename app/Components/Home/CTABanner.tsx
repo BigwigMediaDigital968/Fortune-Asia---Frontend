@@ -41,13 +41,13 @@ export default function CTABanner() {
             }}
           >
             Your Dubai Property Journey{" "}
-            <em className="text-gold-300 not-italic">Starts Here</em>
+            <em className="text-gold-400 not-italic">Starts Here</em>
           </motion.h2>
           <motion.p
             variants={fadeUp}
             className="font-sans text-white/60 max-w-lg text-base leading-relaxed"
           >
-            Whether you're buying, renting, or investing — our team is ready to
+            Whether you're buying, renting, or investing - our team is ready to
             guide you every step of the way.
           </motion.p>
           <motion.div

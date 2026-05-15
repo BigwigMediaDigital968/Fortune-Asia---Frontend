@@ -62,7 +62,7 @@ export default function PropertyCard({ property, index }: PropertyCardProps) {
             {property?.propertyName}
           </h3>
           <span className="text-gold-400 font-bold text-sm whitespace-nowrap">
-            {property.price}
+            Starting from {property.price}
           </span>
         </div>
 

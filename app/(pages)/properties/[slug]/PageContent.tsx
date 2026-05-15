@@ -123,13 +123,13 @@ export default function PageContent({
               <span className="text-[10px] font-bold text-white/40 uppercase tracking-[0.3em] block mb-2">
                 Asking Price
               </span>
-              {property?.price ? (<>
+              {!property?.price ? (<>
                 <div className="text-2xl md:text-3xl font-display font-bold text-gold-400">
                   On Enquiry
                 </div>
               </>) : (<>
-                <div className="text-2xl md:text-3xl font-display font-bold text-gold-400">
-                  {property?.price}
+                <div className="text-xl md:text-2xl font-display font-bold text-gold-400">
+                  From {property?.price}
                 </div></>)}
             </div>
           </motion.div>

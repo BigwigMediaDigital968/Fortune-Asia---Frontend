@@ -26,14 +26,6 @@ const services = [
     image: "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80",
     link: "/sell",
 },
-{
-    title: "Lease Property",
-    desc: "Hassle-free leasing solutions for long-term stability and returns.",
-    detailedDesc:
-        "Whether you're a landlord or tenant, we handle tenant screening, agreement drafting, and documentation to ensure secure, long-term leasing with minimal effort.",
-    image: "https://images.unsplash.com/photo-1572120360610-d971b9d7767c?auto=format&fit=crop&w=800&q=80",
-    link: "/lease",
-}
 ];
 
 export default function Services() {

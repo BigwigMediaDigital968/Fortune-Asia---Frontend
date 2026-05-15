@@ -9,7 +9,7 @@ export default function Footer() {
     { name: "Buy Property", href: "/buy" },
     // { name: "Rent Property", href: "/rent" },
     { name: "Sell Property", href: "/sell" },
-    { name: "Lease Property", href: "/lease" },
+    // { name: "Lease Property", href: "/lease" },
     { name: "Explore Properties", href: "/properties" },
   ];
 
@@ -45,7 +45,8 @@ export default function Footer() {
               </p>
               <div className="flex gap-3">
                 <a
-                  href="#"
+                  href="https://www.instagram.com/fortuneasiarealty_dxb"
+                  target="_blank"
                   className="w-8 h-8 rounded-full border border-navy-700 flex items-center justify-center text-white/40 hover:border-gold-400 hover:text-gold-400 transition-all duration-200 text-[10px] font-sans font-semibold uppercase tracking-widest"
                 >
                   <FaInstagram size={16} />
@@ -63,7 +64,8 @@ export default function Footer() {
                   <FaXTwitter size={16} />
                 </a>
                 <a
-                  href="#"
+                  href="https://wa.me/971502878765?text=I%E2%80%99d%20like%20to%20enquire%20about%20a%20property.%20Can%20we%20connect%3F"
+                  target="_blank"
                   className="w-8 h-8 rounded-full border border-navy-700 flex items-center justify-center text-white/40 hover:border-gold-400 hover:text-gold-400 transition-all duration-200 text-[10px] font-sans font-semibold uppercase tracking-widest"
                 >
                   <FaWhatsapp size={16} />
@@ -137,12 +139,12 @@ export default function Footer() {
                     />
                   </svg>
                   <span className="text-white/40 text-sm font-sans leading-relaxed">
-                    Office 2403, Mazaya Business Avenue, JLT, Dubai, UAE
+                    Office#226, 2nd Floor | Smartplace Business Center | The Iridium Building – Umm Suqeim Street  Al Barsha 1 – Dubai
                   </span>
                 </li>
                 <li>
                   <a
-                    href="tel:+97141234567"
+                    href="tel:+971502878765"
                     className="text-white/40 text-sm font-sans hover:text-gold-400 transition-colors flex gap-3"
                   >
                     <svg
@@ -160,12 +162,12 @@ export default function Footer() {
                         d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
                       />
                     </svg>
-                    +971 4 123 4567
+                    +971 50 2878765
                   </a>
                 </li>
                 <li>
                   <a
-                    href="mailto:hello@fortuneasiarealty.com"
+                    href="mailto:contact@fortuneasia.ae"
                     className="text-white/40 text-sm font-sans hover:text-gold-400 transition-colors flex gap-3 break-all"
                   >
                     <svg
@@ -183,7 +185,7 @@ export default function Footer() {
                         d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
                       />
                     </svg>
-                    hello@fortuneasiarealty.com
+                    contact@fortuneasia.ae
                   </a>
                 </li>
               </ul>
