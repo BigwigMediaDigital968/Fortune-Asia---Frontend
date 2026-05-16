@@ -57,7 +57,7 @@ export default function PropertyFilters({
 
           <div className="w-full lg:w-auto flex flex-wrap lg:flex-nowrap items-center gap-4">
             {/* 🏠 Property Type */}
-            <div className="flex-1 lg:w-44 group relative">
+            <div className="flex-1 lg:w-52 group relative">
               <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gold-400">
                 <Home size={18} />
               </div>
@@ -82,6 +82,9 @@ export default function PropertyFilters({
                 </option>
                 <option value="penthouse" className="bg-navy-900 text-white">
                   Penthouse
+                </option>
+                <option value="plots" className="bg-navy-900 text-white">
+                  Plots
                 </option>
               </select>
               <div className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none group-hover:text-gold-400 transition-colors">
@@ -182,7 +185,7 @@ export default function PropertyFilters({
             </button>
             <button
               onClick={resetFilters}
-              className="w-full lg:w-auto px-10 py-4 bg-gold-400 hover:bg-gold-500 text-navy-950 font-bold rounded-2xl transition-all shadow-lg active:scale-95 cursor-pointer"
+              className="w-full lg:w-auto px-5 py-4 bg-gold-400 hover:bg-gold-500 text-navy-950 font-bold rounded-2xl transition-all shadow-lg active:scale-95 cursor-pointer"
             >
               Reset
             </button>

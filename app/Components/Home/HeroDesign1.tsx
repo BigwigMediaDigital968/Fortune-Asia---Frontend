@@ -39,17 +39,17 @@ export default function HeroDesign1() {
 
                         <motion.div initial={{ y: 50, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
-                            transition={{ duration: 0.8, delay: 0.2 }} className="flex items-center gap-3 mb-6 animate-fadeUp1">
-                            <div className="w-8 h-px bg-gold"></div>
-                            <span className="text-[9px] font-medium tracking-[0.5em] text-gold-400/80 uppercase">Premium Dubai Real Estate</span>
+                            transition={{ duration: 0.8, delay: 0.2 }} className="flex md:items-center gap-3 mb-6 animate-fadeUp1">
+                            <span className="text-[10px] font-medium tracking-[0.5em] text-gold-400/80 uppercase">Crafting Dreams. Creating Fortune.</span>
                         </motion.div>
 
                         <motion.h1 initial={{ y: 50, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ duration: 0.8, delay: 0.2 }} className="font-display text-white leading-[1.08] mb-5 animate-fadeUp2"
                             style={{ fontSize: "clamp(36px, 5vw, 72px)" }}>
-                            Crafting Dream<br />
-                            <em className="text-gold-lt not-italic">Creating feature</em><br />
+                            Find Your Dream<br />
+                            <em className="not-italic">Luxury Home</em><br />
+                            in Dubai
                         </motion.h1>
 
                         <motion.p initial={{ y: 50, opacity: 0 }}

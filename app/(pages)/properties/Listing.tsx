@@ -118,14 +118,14 @@ export default function Listing() {
   );
 }
 
-const PlotsRedirectCard = ({ index = 0 }) => {
+export const PlotsRedirectCard = ({ index = 0 }) => {
   // Static dummy data for the redirection card
   const staticData = {
-    propertyName: "Exclusive Land Portfolio",
-    propertyType: "Premium Plots",
+    propertyName: "Exclusive Plots Portfolio",
+    propertyType: "plots",
     tagline: "Prime opportunities in strategic locations",
-    ctaDescription: "Discover curated investment-grade land parcels for bespoke residential and commercial development.",
-    image: "https://images.unsplash.com/photo-1617449512807-7401d38e5c29?q=80&w=1074&auto=format&fit=crop",
+    ctaDescription: "Plots for sale and JVs in prime locations in Dubai and Ras Al Khaimah for Villas, Commercial and Residential Towers",
+    image: "/plots/plot-1.jpeg",
     isFeatured: true
   };
 
@@ -135,7 +135,7 @@ const PlotsRedirectCard = ({ index = 0 }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.1, duration: 0.5 }}
-      className="group bg-navy-900 overflow-hidden rounded-2xl border border-white/5 hover:border-gold-400/30 transition-all duration-500 shadow-2xl hover:shadow-gold-500/10 max-w-sm w-full"
+      className="group bg-navy-900 overflow-hidden rounded-lg border border-white/5 hover:border-gold-400/30 transition-all duration-500 shadow-2xl hover:shadow-gold-500/10 max-w-sm w-full"
     >
       {/* Image Container */}
       <div className="relative aspect-[4/3] overflow-hidden">
@@ -162,9 +162,9 @@ const PlotsRedirectCard = ({ index = 0 }) => {
       </div>
 
       {/* Content */}
-      <div className="p-8 py-6">
-        <div className="items-start mb-6">
-          <h3 className="text-2xl font-serif text-white group-hover:text-gold-400 transition-colors mb-2">
+      <div className="p-8 py-4">
+        <div className="items-start mb-8">
+          <h3 className="text-2xl font-serif text-white capitalize group-hover:text-gold-400 transition-colors mb-1">
             {staticData.propertyName}
           </h3>
           <p className="text-gold-500 font-bold text-sm tracking-tight">
@@ -185,7 +185,7 @@ const PlotsRedirectCard = ({ index = 0 }) => {
           className="w-full mt-4 py-3 bg-white/5 hover:bg-gold-400 border border-white/10 hover:border-gold-400 text-white hover:text-navy-950 font-bold text-[10px] uppercase tracking-[0.2em] rounded-lg transition-all duration-300 flex items-center justify-center gap-2 group/btn cursor-pointer"
         >
           <Eye size={16} />
-          Explore Land Bank
+        View Plots
           <ArrowRight
             size={14}
             className="group-hover/btn:translate-x-2 transition-transform duration-300"

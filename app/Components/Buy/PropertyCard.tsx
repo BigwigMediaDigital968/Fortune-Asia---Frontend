@@ -58,7 +58,7 @@ export default function PropertyCard({ property, index }: PropertyCardProps) {
       {/* Content */}
       <div className="p-6 py-4">
         <div className=" items-start mb-2">
-          <h3 className="text-xl font-display font-bold text-white group-hover:text-gold-400 transition-colors line-clamp-1">
+          <h3 className="text-xl font-display capitalize font-bold text-white group-hover:text-gold-400 transition-colors line-clamp-1">
             {property?.propertyName}
           </h3>
           <span className="text-gold-400 font-bold text-sm whitespace-nowrap">

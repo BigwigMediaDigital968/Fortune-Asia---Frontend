@@ -5,7 +5,6 @@ import { ChevronDown } from 'lucide-react';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { Home, ShieldCheck, TrendingUp, Users } from "lucide-react";
-import PropertyListingSection from '../Components/Home/PropertyListingSection';
 
 const features = [
     {
@@ -257,9 +256,6 @@ export default function HeroScrollAnimation() {
                         })}
                     </motion.div>
                 </div>
-            </div>
-            <div>
-                <PropertyListingSection />
             </div>
         </>
     );

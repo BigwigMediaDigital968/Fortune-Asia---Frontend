@@ -5,6 +5,7 @@ import PropertySkeleton from "@/app/Components/Buy/PropertySkeleton";
 import { motion, AnimatePresence } from "framer-motion";
 import { getProperties, PropertyFilters } from "@/app/lib/properties";
 import { useQuery } from "@tanstack/react-query";
+import { PlotsRedirectCard } from "@/app/(pages)/properties/Listing";
 
 interface PropertyListingProps {
   filters: Partial<PropertyFilters>;
@@ -64,27 +65,37 @@ export default function PropertyListing({ filters }: PropertyListingProps) {
                 <PropertySkeleton />
               </motion.div>
             ))
-          ) : properties.length > 0 ? (
+          ) :  (
             // Actual Cards
-            properties.map((property: any, index: number) => (
+            <>
+            {properties.map((property: any, index: number) => (
               <PropertyCard
                 key={property.id}
                 property={property}
                 index={index}
               />
-            ))
-          ) : (
-            // Empty State
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="col-span-full text-center py-20"
-            >
-              <p className="text-gray-400 text-lg">
-                No properties found matching your criteria.
-              </p>
-            </motion.div>
-          )}
+            ))}
+            {
+              ( filters?.listingType === "buy"|| filters?.propertyType === "plots" || filters?.propertyType === "") && (
+                <PlotsRedirectCard/>
+              )
+            }
+            
+            </>
+            )
+          // ) : (
+          //   // Empty State
+          //   <motion.div
+          //     initial={{ opacity: 0 }}
+          //     animate={{ opacity: 1 }}
+          //     className="col-span-full text-center py-20"
+          //   >
+          //     <p className="text-gray-400 text-lg">
+          //       No properties found matching your criteria.
+          //     </p>
+          //   </motion.div>
+          // )
+          }
         </AnimatePresence>
       </div>
 

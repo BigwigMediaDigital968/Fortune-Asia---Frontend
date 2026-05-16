@@ -1,22 +1,12 @@
 "use client";
-import Image from "next/image";
-import { useState, useEffect, useRef } from "react";
-import { motion, useInView, AnimatePresence } from "framer-motion";
-import Navbar from "./Components/Navbar";
-import Hero from "./Components/Home/Hero";
 import About from "./Components/Home/About";
-import Features from "./Components/Home/Features";
 import Developers from "./Components/Home/Developers";
 import Testimonials from "./Components/Home/Testimonials";
 import LeadForm from "./Components/Home/LeadForm";
 import CTABanner from "./Components/Home/CTABanner";
 import Blogs from "./Components/Home/Blogs";
-import StatsBar from "./Components/Home/StatsBar";
-import Footer from "./Components/Footer";
-import HeroDesign1 from "./Hero/page";
-import NavbarWrapper from "./Components/NavbarWrapper";
 import FeaturedProperties from "./Components/Home/FeaturedProperties";
-import Services from "./Components/Home/Services";
+import HeroDesign1 from "./Components/Home/HeroDesign1";
 
 export default function Home() {
 

@@ -15,7 +15,7 @@ export default function PlotsPage() {
                         Luxury <span className="text-gold-400">Plots</span>
                     </>
                 }
-                description="Discover exclusive land opportunities in Dubai’s most prestigious locations. Crafted for visionary investments and future luxury living."
+                description="Plots for sale and JVs in prime locations in Dubai and Ras Al Khaimah for Villas, Commercial and Residential Towers"
                 backgroundImage="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2070"
             />
             <PlotsSectionDark />
@@ -35,7 +35,7 @@ const plotsData = [
         area: "45,000 Sq. Ft.",
         topography: "Tiered Plateau",
         orientation: "North-West Facing",
-        image: "https://images.unsplash.com/photo-1580674684081-7617fbf3d745?q=80&w=1074&auto=format&fit=crop",
+        image: "/plots/plot-1.jpeg",
     },
     {
         id: "02",
@@ -45,23 +45,11 @@ const plotsData = [
         area: "62,500 Sq. Ft.",
         topography: "Gently Sloping Basin",
         orientation: "South-East Facing",
-        image: "https://images.unsplash.com/photo-1544092683-c0c9ebb368e5?q=80&w=1151&auto=format&fit=crop",
+        image: "/plots/plot-2.jpeg",
     }
 ];
 
 const PlotsSectionDark = () => {
-    const [hoveredCard, setHoveredCard] = React.useState(null);
-
-    const redirectionProperty = {
-        _id: "plots-link",
-        title: "Explore Full Land Portfolio",
-        location: "Global Exclusive Estates",
-        type: "Premium Plots",
-        purpose: "INVEST",
-        images: ["https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=2000&auto=format&fit=crop"],
-        areaSqft: "Multiple Dimensions Available"
-    };
-
     return (
         <section className="bg-navy-950 py-32 px-6 lg:px-14 overflow-hidden text-white border-b border-gray-500">
             <div className="max-w-7xl mx-auto">

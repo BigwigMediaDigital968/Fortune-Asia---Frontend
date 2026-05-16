@@ -86,7 +86,7 @@ export default function FeaturedProperties() {
                   <Link href={href} className="text-2xl font-serif font-bold text-white group-hover:text-gold-400 transition-colors">
                     {title}
                   </Link>
-                  <p className="text-gold-400 font-bold text-base">{price}</p>
+                  <p className="text-gold-400 font-bold text-base">Starting from {price}</p>
                 </div>
                 <div className="flex items-center gap-2 text-white text-xs mb-6">
                   <MapPin size={12} className="text-gold-400" /> {location}

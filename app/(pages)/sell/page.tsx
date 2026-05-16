@@ -140,9 +140,7 @@ export default function SellPage() {
                 PROMOTION
               </h3>
               <p className="text-navy-100 leading-relaxed">
-                We capture photos and videos, launch contextual advertising and
-                personalized email newsletters, and publish advertisements on
-                public platforms.
+                We professionally showcase your property through premium visuals and targeted promotion to generate strong buyer interest.
               </p>
             </motion.div>
 
@@ -156,8 +154,7 @@ export default function SellPage() {
                 AGREEMENT
               </h3>
               <p className="text-navy-100 leading-relaxed">
-                We find a buyer and prepare documents, including the purchase
-                and sale agreement, while resolving tax and registration issues.
+                From finding buyers to handling the process, we ensure a smooth and stress-free experience.
               </p>
             </motion.div>
 
@@ -347,10 +344,8 @@ export default function SellPage() {
                     <h3 className="text-white font-medium mb-1">
                       Dubai Office
                     </h3>
-                    <p className="text-navy-100">
-                      Business Bay, Dubai, UAE
-                      <br />
-                      PO Box 12345
+                    <p className="text-navy-100 max-w-md">
+                      Office#226, 2nd Floor | Smartplace Business Center | The Iridium Building – Umm Suqeim Street Al Barsha 1 – Dubai
                     </p>
                   </div>
                 </div>
@@ -378,7 +373,7 @@ export default function SellPage() {
                       href="mailto:sell@mondus.ae"
                       className="text-gold-400 hover:text-gold-300 transition-colors"
                     >
-                      sell@far.com
+                      contact@fortuneasia.ae
                     </a>
                   </div>
                 </div>
@@ -406,7 +401,7 @@ export default function SellPage() {
                       href="tel:+97150000000"
                       className="text-gold-400 hover:text-gold-300 transition-colors"
                     >
-                      +971 50 000 0000
+                      +971 50 2878765
                     </a>
                   </div>
                 </div>
@@ -433,9 +428,9 @@ export default function SellPage() {
                       Working Hours
                     </h3>
                     <p className="text-navy-100">
-                      Sunday - Thursday: 9AM - 6PM
+                      Monday - Saturday
                       <br />
-                      Saturday: 10AM - 4PM
+                      09:00 AM - 06:00 PM
                     </p>
                   </div>
                 </div>
@@ -627,11 +622,10 @@ export default function SellPage() {
                 {/* Status Messages */}
                 {submitStatus && (
                   <div
-                    className={`p-4 rounded-lg ${
-                      submitStatus.type === "success"
+                    className={`p-4 rounded-lg ${submitStatus.type === "success"
                         ? "bg-green-500/10 border border-green-500/30 text-green-400"
                         : "bg-red-500/10 border border-red-500/30 text-red-400"
-                    }`}
+                      }`}
                   >
                     {submitStatus.message}
                   </div>
@@ -654,7 +648,7 @@ export default function SellPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:+97150000000"
+              href="tel:+971502878765"
               className="inline-flex items-center justify-center gap-2 bg-gold-400 hover:bg-gold-500 text-navy-950 font-medium py-4 px-8 rounded-lg transition-all duration-300"
             >
               <svg
@@ -673,7 +667,9 @@ export default function SellPage() {
               Call Now
             </a>
             <a
-              href="https://wa.me/97150000000"
+              href="https://wa.me/+971502878765?text=Hey!%20I%E2%80%99d%20like%20to%20connect%20regarding%20selling%20a%20property."
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-white hover:bg-gold-100 text-navy-950 font-medium py-4 px-8 rounded-lg transition-all duration-300"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
