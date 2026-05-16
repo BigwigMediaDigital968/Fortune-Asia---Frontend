@@ -333,6 +333,28 @@ export default function PageContent({
               </div>
             </div>
 
+             {/* Highlights & Amenities */}
+            {(property?.extraHighlights && property?.extraHighlights?.length>0) && (<div className="grid grid-cols-1 gap-12">
+              <div className="space-y-6">
+                <SectionTitle
+                  icon={<CheckCircle2 size={20} />}
+                  title="Additional Info"
+                />
+                <ul className="space-y-4">
+                  {property?.extraHighlights?.map((item: any, i: number) => (
+                    <li key={i} className="flex items-start gap-3 group">
+                      <div className="w-5 h-5 rounded-full bg-gold-400/20 flex items-center justify-center mt-0.5 group-hover:bg-gold-400 transition-colors">
+                        <div className="w-1.5 h-1.5 rounded-full bg-gold-400 group-hover:bg-navy-900" />
+                      </div>
+                      <span className="text-white/70 text-sm font-light tracking-wide">
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>)}
+
 
             {/* Map Location */}
             {property?.googleMapUrl && (
