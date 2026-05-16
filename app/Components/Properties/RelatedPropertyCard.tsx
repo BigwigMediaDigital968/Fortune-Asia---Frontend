@@ -40,7 +40,7 @@ export default function RelatedPropertyCard({
               {property.propertyName}
             </h4>
             <div className="flex items-center gap-1.5 mt-1 text-gold-400 text-[10px] font-bold capitalize tracking-widest mb-1">
-              <div className="w-8">
+              <div className="w-auto">
                 <MapPin size={16} />
               </div>
               <div className="flex items-center gap-0.5">

@@ -163,36 +163,64 @@ export default function PageContent({
                 <Bath size={24} className="text-gold-400" />
                 <div>
                   <p className="text-lg text-white font-bold">
-                  {property?.bathroom} Bathrooms
-                </p>
-                <p className="text-[10px] text-white/30 uppercase tracking-widest">
-                  En-suite Baths
-                </p>
+                    {property?.bathroom} Bathrooms
+                  </p>
+                  <p className="text-[10px] text-white/30 uppercase tracking-widest">
+                    En-suite Baths
+                  </p>
                 </div>
               </div>
-              <div className="flex sm:flex-col items-center gap-4 sm:gap-2 sm:border-r border-white/5">
+              {property?.sizeSqft && (<div className="flex sm:flex-col items-center gap-4 sm:gap-2 sm:border-r border-white/5">
                 <Square size={22} className="text-gold-400" />
                 <div>
                   <p className="text-lg text-white font-bold">
-                  {property?.sizeSqft}
-                </p>
-                <p className="text-[10px] text-white/30 uppercase tracking-widest">
-                  Total Area
-                </p>
+                    {property?.sizeSqft}
+                  </p>
+                  <p className="text-[10px] text-white/30 uppercase tracking-widest">
+                    Total Area
+                  </p>
                 </div>
-              </div>
+              </div>)}
               <div className="flex sm:flex-col items-center gap-4 sm:gap-2">
                 <Building size={22} className="text-gold-400" />
-               <div>
-                 <p className="text-lg text-white font-bold">
-                  {property?.propertyType}
-                </p>
-                <p className="text-[10px] text-white/30 uppercase tracking-widest">
-                  Property Type
-                </p>
-               </div>
+                <div>
+                  <p className="text-lg text-white font-bold">
+                    {property?.propertyType}
+                  </p>
+                  <p className="text-[10px] text-white/30 uppercase tracking-widest">
+                    Property Type
+                  </p>
+                </div>
               </div>
             </motion.div>
+
+            {property?.videoLink && (
+              <div className="space-y-6">
+                <SectionTitle
+                  icon={<PlayCircle size={20} />}
+                  title="Property Video Tour"
+                />
+                <div className="">
+                  <div className="rounded-xl overflow-hidden grayscale-0 brightness-100 hover:grayscale-0 transition-all duration-700 h-[400px]">
+                    <video
+                      key={property?.videoLink}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="auto"
+                      className="w-full h-full object-cover"
+                      controls
+                    >
+                      <source src={property?.videoLink} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                        <div className="pointer-events-none absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                  </div>
+                </div>
+              </div>
+            )}
 
             {/* Description Section */}
 
@@ -296,6 +324,7 @@ export default function PageContent({
               </div>
             </div>
 
+
             {/* Map Location */}
             {property?.googleMapUrl && (
               <div className="space-y-6">
@@ -329,8 +358,8 @@ export default function PageContent({
                       key={i}
                       onClick={() => setOpenFaq(openFaq === i ? null : i)}
                       className={`bg-white/[0.03] border rounded-2xl p-4 md:p-8 transition-all duration-300 group cursor-pointer ${openFaq === i
-                          ? "border-gold-400/50 bg-white/[0.06]"
-                          : "border-white/10 hover:border-white/20"
+                        ? "border-gold-400/50 bg-white/[0.06]"
+                        : "border-white/10 hover:border-white/20"
                         }`}
                     >
                       <h3 className="text-white font-medium text-sm md:text-lg flex items-center justify-between">
