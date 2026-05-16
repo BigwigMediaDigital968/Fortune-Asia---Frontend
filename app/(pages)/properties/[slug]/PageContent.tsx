@@ -146,48 +146,57 @@ export default function PageContent({
             {/* Quick Stats Bar */}
             <motion.div
               variants={fadeUp}
-              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 p-4 sm:text-center bg-navy-900/50 rounded-xl border border-white/5"
+              className="flex flex-col sm:flex-row flex-wrap justify-center items-stretch gap-y-6 p-6 sm:text-center bg-navy-900/50 rounded-xl border border-white/5 divide-y sm:divide-y-0 sm:divide-x divide-white/5"
             >
-              <div className="flex sm:flex-col items-center gap-4 sm:gap-2 sm:border-r border-white/5">
-                <BedDouble size={24} className="text-gold-400" />
+              {/* Bedrooms */}
+              <div className="flex-1 min-w-[150px] flex sm:flex-col items-center justify-start sm:justify-center gap-4 sm:gap-2 pb-4 sm:pb-0 sm:px-4">
+                <BedDouble size={24} className="text-gold-400 shrink-0" />
                 <div>
-                  <p className="text-lg text-white font-bold">
+                  <p className="text-lg text-white font-bold leading-tight">
                     {property?.bedroom} Bedrooms
                   </p>
-                  <p className="text-[10px] text-white/30 uppercase tracking-widest">
+                  <p className="text-[10px] text-white/30 uppercase tracking-widest mt-0.5">
                     Sleeping Spaces
                   </p>
                 </div>
               </div>
-              <div className="flex sm:flex-col items-center gap-4 sm:gap-2 md:border-r border-white/5">
-                <Bath size={24} className="text-gold-400" />
+
+              {/* Bathrooms */}
+              <div className="flex-1 min-w-[150px] flex sm:flex-col items-center justify-start sm:justify-center gap-4 sm:gap-2 pt-4 sm:pt-0 pb-4 sm:pb-0 sm:px-4">
+                <Bath size={24} className="text-gold-400 shrink-0" />
                 <div>
-                  <p className="text-lg text-white font-bold">
+                  <p className="text-lg text-white font-bold leading-tight">
                     {property?.bathroom} Bathrooms
                   </p>
-                  <p className="text-[10px] text-white/30 uppercase tracking-widest">
+                  <p className="text-[10px] text-white/30 uppercase tracking-widest mt-0.5">
                     En-suite Baths
                   </p>
                 </div>
               </div>
-              {property?.sizeSqft && (<div className="flex sm:flex-col items-center gap-4 sm:gap-2 sm:border-r border-white/5">
-                <Square size={22} className="text-gold-400" />
-                <div>
-                  <p className="text-lg text-white font-bold">
-                    {property?.sizeSqft}
-                  </p>
-                  <p className="text-[10px] text-white/30 uppercase tracking-widest">
-                    Total Area
-                  </p>
+
+              {/* Total Area (Conditional) */}
+              {property?.sizeSqft && (
+                <div className="flex-1 min-w-[150px] flex sm:flex-col items-center justify-start sm:justify-center gap-4 sm:gap-2 pt-4 sm:pt-0 pb-4 sm:pb-0 sm:px-4">
+                  <Square size={22} className="text-gold-400 shrink-0" />
+                  <div>
+                    <p className="text-lg text-white font-bold leading-tight">
+                      {property?.sizeSqft} sqft
+                    </p>
+                    <p className="text-[10px] text-white/30 uppercase tracking-widest mt-0.5">
+                      Total Area
+                    </p>
+                  </div>
                 </div>
-              </div>)}
-              <div className="flex sm:flex-col items-center gap-4 sm:gap-2">
-                <Building size={22} className="text-gold-400" />
+              )}
+
+              {/* Property Type */}
+              <div className="flex-1 min-w-[150px] flex sm:flex-col items-center justify-start sm:justify-center gap-4 sm:gap-2 pt-4 sm:pt-0 sm:px-4">
+                <Building size={22} className="text-gold-400 shrink-0" />
                 <div>
-                  <p className="text-lg text-white font-bold">
+                  <p className="text-lg text-white font-bold leading-tight">
                     {property?.propertyType}
                   </p>
-                  <p className="text-[10px] text-white/30 uppercase tracking-widest">
+                  <p className="text-[10px] text-white/30 uppercase tracking-widest mt-0.5">
                     Property Type
                   </p>
                 </div>
@@ -215,7 +224,7 @@ export default function PageContent({
                       <source src={property?.videoLink} type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
-                        <div className="pointer-events-none absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="pointer-events-none absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                   </div>
                 </div>
@@ -398,68 +407,76 @@ export default function PageContent({
 
           {/* RIGHT COLUMN: SIDEBAR */}
           <aside className="w-full lg:w-[420px] shrink-0">
-            <div className="space-y-8">
-              {/* Inquiry Form Card */}
-              <div className="bg-navy-900 border border-white/10 rounded-xl p-4 md:p-6 shadow-2xl relative overflow-hidden">
-                <div className="absolute -top-24 -right-24 w-64 h-64 bg-gold-400/10 blur-[100px] rounded-full" />
+  <div className="space-y-8">
 
-                <div className="relative z-10 space-y-8">
-                  <div className="text-center">
-                    <span className="text-[10px] font-bold text-gold-400 uppercase tracking-[0.4em] block mb-3">
-                      Priority Access
-                    </span>
-                    <h2 className="text-3xl font-display font-bold text-white">
-                      Inquire Now
-                    </h2>
-                    <p className="text-white/40 text-[10px] uppercase font-bold tracking-widest mt-2">
-                      Ref: {property?.slug.toUpperCase()}
-                    </p>
-                  </div>
+    {/* ── Inquiry Form Card ─────────────────────────────────────────────── */}
+    <div className="bg-navy-900 border border-white/10 rounded-xl p-4 md:p-6 shadow-2xl relative overflow-hidden">
+      <div className="absolute -top-24 -right-24 w-64 h-64 bg-gold-400/10 blur-[100px] rounded-full" />
+      <div className="relative z-10 space-y-8">
+        <div className="text-center">
+          <span className="text-[10px] font-bold text-gold-400 uppercase tracking-[0.4em] block mb-3">
+            Priority Access
+          </span>
+          <h2 className="text-3xl font-display font-bold text-white">
+            Inquire Now
+          </h2>
+          <p className="text-white/40 text-[10px] uppercase font-bold tracking-widest mt-2">
+            Ref: {property?.slug.toUpperCase()}
+          </p>
+        </div>
+        <EnquiryForm 
+    source="property-detail" 
+    brochureUrl={property?.propertyBrochure ?? null}  // ← only change
+  />
+      </div>
+    </div>
 
-                  {/* Direct use of EnquiryForm as requested */}
-                  <EnquiryForm source="property-detail" />
-                </div>
-              </div>
+    {/* ── Related Properties ────────────────────────────────────────────── */}
+    <div className="space-y-6 pt-10">
+      <div className="flex items-center gap-4 mb-4">
+        <div className="w-2 h-8 bg-gold-400 rounded-full" />
+        <h3 className="text-xl font-display font-bold text-white uppercase tracking-wider">
+          Related Properties
+        </h3>
+      </div>
+      <div className="flex flex-col gap-4">
+        {relatedProperties?.map((related: any, idx: number) => (
+          <RelatedPropertyCard
+            key={related?._id}
+            property={related}
+            index={idx}
+          />
+        ))}
+      </div>
+    </div>
 
-              {/* Related Properties */}
-              <div className="space-y-6 pt-10">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-2 h-8 bg-gold-400 rounded-full" />
-                  <h3 className="text-xl font-display font-bold text-white uppercase tracking-wider">
-                    Related Properties
-                  </h3>
-                </div>
-                <div className="flex flex-col gap-4">
-                  {relatedProperties?.map((related: any, idx: number) => (
-                    <RelatedPropertyCard
-                      key={related?._id}
-                      property={related}
-                      index={idx}
-                    />
-                  ))}
-                </div>
-              </div>
+    {/* ── Brochure Download Card (gated behind enquiry form) ────────────── */}
+    {property?.propertyBrochure && (
+      <div className="bg-navy-900 border border-white/10 rounded-xl p-4 md:p-6 shadow-2xl relative overflow-hidden">
+        <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-gold-400/5 blur-[100px] rounded-full" />
+        <div className="relative z-10 space-y-6">
+          <div className="text-center">
+            <span className="text-[10px] font-bold text-gold-400 uppercase tracking-[0.4em] block mb-3">
+              Full Technical Details
+            </span>
+            <h2 className="text-2xl font-display font-bold text-white">
+              Property Brochure
+            </h2>
+            <p className="text-white/40 text-[10px] uppercase font-bold tracking-widest mt-2">
+              Share your details to download
+            </p>
+          </div>
+          {/* Brochure-gated form — triggers download on success */}
+          <EnquiryForm
+            source="brochure-download"
+            brochureUrl={property.propertyBrochure}
+          />
+        </div>
+      </div>
+    )}
 
-              {/* Brochure Download Card */}
-              {property?.brochure && (
-                <div className="bg-gold-400 group p-1 rounded-[2.5rem] overflow-hidden cursor-pointer hover:shadow-2xl hover:shadow-gold-400/20 transition-all">
-                  <div className="bg-navy-900 rounded-[2.4rem] p-8 flex items-center justify-between border border-transparent group-hover:border-navy-800 transition-all">
-                    <div>
-                      <h4 className="text-white font-display font-bold text-lg">
-                        Property Brochure
-                      </h4>
-                      <p className="text-gold-400/60 text-[10px] uppercase font-bold tracking-widest">
-                        Full Technical Details
-                      </p>
-                    </div>
-                    <div className="w-12 h-12 rounded-full bg-gold-400 flex items-center justify-center text-navy-950">
-                      <PlayCircle size={24} className="rotate-90" />
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-          </aside>
+  </div>
+</aside>
         </div>
       </section>
     </>
