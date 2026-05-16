@@ -48,9 +48,9 @@ export default function FeaturedProperties() {
           const location = prop.address || prop.subArea || "Dubai";
           const price = prop.price || "Contact for price";
           const category = prop.propertyType || prop.listingType || "Property";
-          const beds = prop.bedroom || "-";
-          const baths = prop.bathroom || "-";
-          const sqft = prop.sizeSqft || "-";
+          const beds = prop.bedroom || "";
+          const baths = prop.bathroom || "";
+          const sqft = prop.sizeSqft || "";
           const href = prop.slug ? `/properties/${prop.slug}` : "/properties";
 
           return (
@@ -100,10 +100,10 @@ export default function FeaturedProperties() {
                     <Bath size={16} />
                     <span className="text-xs font-bold">{baths} Baths</span>
                   </div>
-                  <div className="flex items-center gap-2 ml-auto">
+                  {sqft && (<div className="flex items-center gap-2 ml-auto">
                     <Square size={16} />
                     <span className="text-xs font-bold">{sqft}</span>
-                  </div>
+                  </div>)}
                 </div>
               </div>
             </motion.div>

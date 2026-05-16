@@ -16,7 +16,7 @@ const DevelopersSection = () => {
     queryFn: () => getDevelopers({
       isActive: true,
       isFeatured: true,
-      limit: 6,
+      limit: 3,
     }),
   });
 
