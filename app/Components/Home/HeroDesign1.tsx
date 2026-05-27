@@ -8,7 +8,7 @@ import Link from 'next/link';
 export default function HeroDesign1() {
     return (
         <>
-            <section className="relative w-full h-screen overflow-hidden">
+            <section className="relative w-full max-h-[700px] sm:max-h-screen h-screen overflow-hidden">
 
                 <div className="absolute inset-0">
                     <video
