@@ -104,11 +104,10 @@ export default function PageContent({ developer }: { developer: Developer }) {
               <button
                 key={img}
                 onClick={() => selectImage(index)}
-                className={`relative flex-shrink-0 w-24 h-16 md:w-36 md:h-24 rounded-md overflow-hidden snap-start transition-all duration-300 ${
-                  activeIndex === index
-                    ? "ring-2 ring-gold-500 ring-offset-2 opacity-100 scale-[0.98]"
-                    : "opacity-60 hover:opacity-100"
-                }`}
+                className={`relative flex-shrink-0 w-24 h-16 md:w-36 md:h-24 rounded-md overflow-hidden snap-start transition-all duration-300 ${activeIndex === index
+                  ? "ring-2 ring-gold-500 ring-offset-2 opacity-100 scale-[0.98]"
+                  : "opacity-60 hover:opacity-100"
+                  }`}
               >
                 <Image
                   src={img}
@@ -167,12 +166,12 @@ export default function PageContent({ developer }: { developer: Developer }) {
                       {/* Fallback to Icon if image fails */}
                       {developer.logo ? (
                         <Image
-                          src={developer.logo }
+                          src={developer.logo}
                           alt="Developer Logo"
                           width={96}
                           height={96}
                           unoptimized
-                        className="w-full h-full object-contain filter brightness-125"
+                          className="w-full h-full object-contain filter brightness-125"
                         />
                       ) : (
                         <Building2 className="text-gold-500 w-10 h-10" />
@@ -276,8 +275,8 @@ export default function PageContent({ developer }: { developer: Developer }) {
                   }}
                 />
                 <p className="text-slate-300 text-lg md:text-xl font-light leading-relaxed italic font-serif">
-                      "{developer.fullDescription}"
-                    </p>
+                  "{developer.fullDescription}"
+                </p>
               </motion.section>
             )}
 
@@ -332,16 +331,23 @@ export default function PageContent({ developer }: { developer: Developer }) {
                 <motion.div
                   variants={fadeUp}
                   className="grid md:grid-cols-3 gap-4"
-                >
-                  {developer.amenities.map((amenity, index) => (
+                >{developer.amenities.map((amenity, index) => {
+                  const isLong = amenity.length > 40;
+
+                  return (
                     <div
                       key={index}
-                      className="flex items-center gap-3 p-4 bg-white/5 border border-white/10 rounded-xl"
+                      className={`
+                                  flex items-start gap-3 p-4
+                                  bg-white/5 border border-white/10 rounded-xl
+                                  ${isLong ? "md:col-span-3" : ""}
+                                `}
                     >
-                      <Star className="text-gold-400 flex-shrink-0" size={18} />
+                      <Star className="text-gold-400 flex-shrink-0 mt-1" size={18} />
                       <span className="text-white/80">{amenity}</span>
                     </div>
-                  ))}
+                  );
+                })}
                 </motion.div>
               </motion.section>
             )}
@@ -412,9 +418,8 @@ export default function PageContent({ developer }: { developer: Developer }) {
                         </span>
                         <ChevronRight
                           size={20}
-                          className={`text-gold-400 transition-transform ${
-                            openFaq === index ? "rotate-90" : ""
-                          }`}
+                          className={`text-gold-400 transition-transform ${openFaq === index ? "rotate-90" : ""
+                            }`}
                         />
                       </button>
                       <AnimatePresence>
@@ -563,11 +568,10 @@ const StatCard = ({
   isHighlight: boolean;
 }) => (
   <div
-    className={`p-6 rounded-xl border flex items-center gap-5 transition-all duration-300 ${
-      isHighlight
-        ? "bg-gradient-to-br from-[#1e293b] to-[#020617] border-gold-500/30"
-        : "bg-white/5 border-white/10"
-    }`}
+    className={`p-6 rounded-xl border flex items-center gap-5 transition-all duration-300 ${isHighlight
+      ? "bg-gradient-to-br from-[#1e293b] to-[#020617] border-gold-500/30"
+      : "bg-white/5 border-white/10"
+      }`}
   >
     <div className="p-3 bg-white/5 rounded-lg">{icon}</div>
     <div>
