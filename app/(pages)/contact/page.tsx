@@ -14,7 +14,7 @@ const CONTACT_DETAILS = [
   {
     icon: <Phone className="w-6 h-6" />,
     title: "Call Us",
-    details: ["UAE Office: +971 50 2878765", "Goa Office: +91 9284788693"],
+    details: ["UAE Office: +971 50 2878865", "Goa Office: +91 9284788693"],
   },
   {
     icon: <Mail className="w-6 h-6" />,

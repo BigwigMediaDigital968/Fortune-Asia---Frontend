@@ -398,10 +398,10 @@ export default function SellPage() {
                   <div>
                     <h3 className="text-white font-medium mb-1">Call Us</h3>
                     <a
-                      href="tel:+97150000000"
+                      href="tel:+971502878865"
                       className="text-gold-400 hover:text-gold-300 transition-colors"
                     >
-                      +971 50 2878765
+                      +971 50 2878865
                     </a>
                   </div>
                 </div>
@@ -648,7 +648,7 @@ export default function SellPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:+971502878765"
+              href="tel:+971502878865"
               className="inline-flex items-center justify-center gap-2 bg-gold-400 hover:bg-gold-500 text-navy-950 font-medium py-4 px-8 rounded-lg transition-all duration-300"
             >
               <svg
@@ -667,7 +667,7 @@ export default function SellPage() {
               Call Now
             </a>
             <a
-              href="https://wa.me/+971502878765?text=Hey!%20I%E2%80%99d%20like%20to%20connect%20regarding%20selling%20a%20property."
+              href="https://wa.me/+971502878865?text=Hey!%20I%E2%80%99d%20like%20to%20connect%20regarding%20selling%20a%20property."
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-white hover:bg-gold-100 text-navy-950 font-medium py-4 px-8 rounded-lg transition-all duration-300"

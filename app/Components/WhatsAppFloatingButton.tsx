@@ -3,7 +3,7 @@
 import React from 'react';
 
 const WhatsAppFloatingButton = () => {
-  const phoneNumber = "971502878765";
+  const phoneNumber = "971502878865";
 
 const message = encodeURIComponent(
   "I'd like to enquire about a property. Can we connect?"
