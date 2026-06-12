@@ -34,8 +34,8 @@ export default function HeroDesign1() {
 
 
 
-                <div className="absolute inset-0 z-10 flex flex-col justify-end md:justify-center p-5 sm:px-10 md:px-20">
-                    <motion.div className="max-w-2xl">
+                <div className="absolute inset-0 z-10 flex flex-col justify-end p-5 sm:px-10 md:px-20">
+                    <motion.div className="max-w-2xl pb-10">
 
                         <motion.div initial={{ y: 50, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
