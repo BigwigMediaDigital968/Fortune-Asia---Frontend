@@ -121,7 +121,7 @@ export default function HeroDesign1() {
                 </div>
 
 
-                <div className="absolute bottom-0 left-0 right-0 z-10  hidden sm:flex border-t border-white/10 animate-fadeUp4">
+                <div className="absolute bottom-0 left-0 right-0 z-10  hidden border-t border-white/10 animate-fadeUp4">
                     <div className="flex-1 flex flex-col items-center justify-center py-2 sm:py-5 border-r border-white/10
                 bg-navy-deep/50 backdrop-blur-sm hover:bg-navy/60 transition-colors duration-300 cursor-pointer group">
                         <span className="font-display text-lg sm:text-2xl font-semibold text-white group-hover:text-gold-lt transition-colors duration-300">1,200<span className="text-gold text-base">+</span></span>
@@ -155,7 +155,7 @@ export default function HeroDesign1() {
                 </div>
 
             </section>
-            <div className=" bottom-0 left-0 right-0 z-10 grid grid-cols-2 sm:hidden border-t border-white/10 animate-fadeUp4">
+            <div className="hidden bottom-0 left-0 right-0 z-10 grid-cols-2 sm:hidden border-t border-white/10 animate-fadeUp4">
                 <div className="flex-1 flex flex-col items-center justify-center py-2 sm:py-5 border-r border-white/10
                 bg-navy-deep/50 backdrop-blur-sm hover:bg-navy/60 transition-colors duration-300 cursor-pointer group">
                     <span className="font-display text-lg sm:text-2xl font-semibold text-white group-hover:text-gold-lt transition-colors duration-300">1,200<span className="text-gold text-base">+</span></span>

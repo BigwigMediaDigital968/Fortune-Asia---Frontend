@@ -147,14 +147,6 @@ export default function About() {
                   Years Experience
                 </p>
               </div>
-              <div>
-                <h4 className="text-gold-400 text-3xl font-display font-bold">
-                  2.4B+
-                </h4>
-                <p className="text-white/40 text-xs uppercase tracking-widest mt-1">
-                  AED Portfolio
-                </p>
-              </div>
             </div>
           </motion.div>
         </div>
