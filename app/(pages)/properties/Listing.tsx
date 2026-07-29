@@ -108,7 +108,7 @@ export default function Listing() {
                 href={"/contact"}
                 className="px-12 py-5 bg-gold-400 text-navy-950 font-bold text-xs uppercase tracking-[0.4em] rounded-xl hover:bg-white transition-all duration-300 shadow-2xl shadow-gold-400/20 active:scale-95"
               >
-                Contact an Advisor
+                Talk to an Advisor
               </Link>
             </div>
           </div>

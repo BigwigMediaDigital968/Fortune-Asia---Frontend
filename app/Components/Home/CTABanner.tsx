@@ -52,7 +52,7 @@ export default function CTABanner() {
           </motion.p>
           <motion.div
             variants={fadeUp}
-            className="flex flex-wrap justify-center gap-4"
+            className="flex flex-col flex-wrap justify-center gap-4"
           >
             <Link
               href="/properties"
@@ -64,7 +64,7 @@ export default function CTABanner() {
               href="/contact"
               className="px-8 py-4 border border-white/40 text-white text-xs font-sans font-semibold tracking-widest uppercase rounded hover:bg-white/10 hover:border-white transition-all duration-200"
             >
-              Speak to an Agent
+              Book Your Strategy Call
             </Link>
           </motion.div>
         </motion.div>

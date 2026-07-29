@@ -40,24 +40,25 @@ export default function HeroDesign1() {
                         <motion.div initial={{ y: 50, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ duration: 0.8, delay: 0.2 }} className="flex md:items-center gap-3 mb-6 animate-fadeUp1">
-                            <span className="text-[10px] font-medium tracking-[0.5em] text-gold-400/80 uppercase">Crafting Dreams. Creating Fortune.</span>
+                            <span className="text-[10px] font-medium tracking-[0.5em] text-gold-400/80 uppercase">Crafting Dreams. Creating Fortunes.</span>
                         </motion.div>
 
                         <motion.h1 initial={{ y: 50, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
                             transition={{ duration: 0.8, delay: 0.2 }} className="font-display text-white leading-[1.08] mb-5 animate-fadeUp2"
-                            style={{ fontSize: "clamp(36px, 5vw, 72px)" }}>
-                            Find Your Dream<br />
-                            <em className="not-italic">Luxury Home</em><br />
-                            in Dubai
+                            style={{ fontSize: "clamp(32px, 4vw, 62px)" }}>
+                            Building Wealth.  <br />
+                            <em className="not-italic">Creating Legacies.</em><br />
+                            One Investment at a Time.
                         </motion.h1>
 
                         <motion.p initial={{ y: 50, opacity: 0 }}
                             animate={{ y: 0, opacity: 1 }}
-                            transition={{ duration: 0.8, delay: 0.2 }} className="text-white/55 font-body font-light text-sm leading-relaxed tracking-wide mb-9 animate-fadeUp3"
-                            style={{ maxWidth: "400px" }}>
-                            Search confidently with your trusted source for premium homes
-                            to buy, sell in Dubai's finest neighbourhoods.
+                            transition={{ duration: 0.8, delay: 0.2 }} 
+                            className="text-white/55 font-body font-light text-sm leading-relaxed tracking-wide mb-9 max-w-2xl animate-fadeUp3">
+                            At Fortune Asia Realty, we don’t just help you buy property—we help you make confident real
+                            estate investment decisions that build long-term wealth. From your first investment to portfolio
+                            growth, we stand beside you every step of the way.
                         </motion.p>
 
                         <motion.div initial={{ y: 50, opacity: 0 }}

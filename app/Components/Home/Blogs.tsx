@@ -43,6 +43,10 @@ export default function Blogs() {
     </motion.article>
   );
 
+  if(blogs.length <1){
+    return null;
+  }
+
   return (
     <section ref={ref} className="py-5 lg:py-10 mb-10">
       <div className="max-w-[1320px] mx-auto px-5 sm:px-8 lg:px-12">

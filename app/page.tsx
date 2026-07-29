@@ -7,6 +7,8 @@ import CTABanner from "./Components/Home/CTABanner";
 import Blogs from "./Components/Home/Blogs";
 import FeaturedProperties from "./Components/Home/FeaturedProperties";
 import HeroDesign1 from "./Components/Home/HeroDesign1";
+import { motion } from "framer-motion";
+import CompanyPhilosophy from "./Components/Home/CompanyPhilosophy";
 
 export default function Home() {
 
@@ -20,6 +22,7 @@ export default function Home() {
       <Testimonials />
       <LeadForm />
       <Blogs />
+      <CompanyPhilosophy/>
       <CTABanner />
 
 

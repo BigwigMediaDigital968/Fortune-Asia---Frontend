@@ -2,25 +2,15 @@
 
 import { motion } from "framer-motion";
 import {
-  Users,
-  Target,
-  Award,
-  Clock,
   CheckCircle2,
-  MapPin,
-  ArrowRight,
-  Home,
-  Briefcase,
   TrendingUp,
   ShieldCheck,
-  ChevronRight,
 } from "lucide-react";
 import Image from "next/image";
 import SectionLabel, { SectionHeading } from "@/app/Components/Ui/SectionLabel";
 import PageHero from "@/app/Components/Ui/PageHero";
-import { fadeUp, motionContainer } from "@/app/utils/motion";
-import Link from "next/link";
 import Services from "@/app/Components/Home/Services";
+import MissionVisionPromise from "@/app/Components/About/MissionVisionPromise";
 
 const teamMembers = [
   {
@@ -87,9 +77,8 @@ export default function About() {
       />
 
       {/* ── 2. COMPANY OVERVIEW SECTION ── */}
-      <section className="py-24 px-6 md:px-14">
+      {/* <section className="py-24 px-6 md:px-14">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Left: Image Gallery (Reusing Home/About style logic) */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -112,12 +101,10 @@ export default function About() {
                   className="object-cover"
                 />
               </div>
-              {/* Decorative Gold Accent */}
               <div className="absolute -top-5 -left-5 md:-top-10 md:-left-10 w-32 aspect-square border-l-2 border-t-2 border-gold-400/30 rounded-tl-3xl z-20" />
             </div>
           </motion.div>
 
-          {/* Right: Content */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -150,7 +137,106 @@ export default function About() {
             </div>
           </motion.div>
         </div>
+      </section> */}
+
+      <section className="bg-[#020617] py-24 px-6 md:px-14 relative overflow-hidden text-white">
+        {/* Structural Ambient Lighting */}
+        <div className="absolute top-1/4 left-1/4 -translate-x-1/2 w-[500px] h-[500px] bg-gold-500/5 blur-[150px] pointer-events-none" />
+        <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 w-[400px] h-[400px] bg-blue-500/5 blur-[130px] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start relative z-10">
+
+          {/* Left Space: Re-architected Asymmetrical Luxury Gallery (Grid Span 5) */}
+          <div className="lg:col-span-5 lg:sticky lg:top-32 h-fit">
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+              className=" relative flex justify-center items-center h-[550px] w-full"
+            >
+              {/* Main Structural Frame */}
+              <div className="relative top-0 -left-3 sm:-left-5 md:left-0 w-[80%] max-w-[400px] aspect-square rounded-2xl  border-2 border-navy-900 shadow-2xl">
+                <Image
+                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800"
+                  alt="Modern Office"
+                  fill
+                  className="object-cover rounded-2xl"
+                />
+                <div className="absolute -bottom-1/2 -right-1/2 -translate-1/2  w-[60%] aspect-square rounded-2xl overflow-hidden border-4 border-navy-950 shadow-2xl z-20">
+                  <Image
+                    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=600"
+                    alt="Team Meeting"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="absolute -top-5 -left-5 md:-top-10 md:-left-10 w-32 aspect-square border-l-2 border-t-2 border-gold-400/30 rounded-tl-3xl z-20" />
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Right Space: Luxury Content Work area (Grid Span 7) */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+            className="lg:col-span-7 space-y-8"
+          >
+            <div>
+              <SectionHeading subtitle="About Fortune Asia" centered={false} />
+              <h2 className="font-serif text-3xl md:text-5xl font-light tracking-tight leading-tight mb-2">
+                We Don’t Just Sell Real Estate. <br />
+                <span className="italic text-gold-400 font-normal">We Build Relationships That Last Generations.</span>
+              </h2>
+            </div>
+
+            {/* Strictly Kept Core Copy Content Area */}
+            <div className="space-y-4 text-slate-300 font-sans text-base font-light leading-relaxed max-w-2xl">
+              <p className="text-white text-lg leading-relaxed font-normal border-l-2 border-gold-400/40 pl-4 bg-white/[0.01] py-2">
+                Fortune Asia Realty was founded on a simple belief: Every real estate investment has the power to transform a family’s future.
+              </p>
+
+              <p>
+                Whether it is purchasing a first home, building an investment portfolio, or creating generational wealth, every decision deserves thoughtful guidance, honest advice, and a trusted partner.
+              </p>
+
+              <p className="text-gold-400 font-medium tracking-wide">
+                That is why we do things differently.
+              </p>
+
+
+              <p className="text-slate-300 font-medium tracking-wide">
+                Before recommending any property, we ask ourselves one question:</p>
+              {/* Core Golden Rule Callout Block */}
+              <p className="text-white text-lg font-light italic font-serif">
+                “Would we invest our own money in this opportunity?”
+              </p>
+              <p className="text-slate-300 text-sm mt-3">
+                If the answer is no, we will never recommend it to our clients.
+              </p>
+
+              <p>
+                Our responsibility goes beyond closing transactions. We guide our clients through every stage of their real estate journey, from understanding their goals and selecting the right investment to documentation, handover, leasing, resale, and long-term portfolio growth.
+              </p>
+
+              <p>
+                At Fortune Asia, we measure our success not by the number of properties we sell, but by the number of lives we positively impact, the relationships we build, and the trust we earn.
+              </p>
+
+              <p className="text-white font-medium tracking-wide">
+                Because we believe great companies are built on trust, not transactions.
+              </p>
+            </div>
+
+          </motion.div>
+
+        </div>
       </section>
+
+      <MissionVisionPromise />
+      <WhyFortuneAsia/>
 
       <TeamSection />
 
@@ -246,7 +332,7 @@ export default function About() {
 
 const TeamSection = () => {
   return (
-    <section className="py-32 bg-[#020617] overflow-hidden">
+    <section className="py-18 bg-[#020617] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header Section */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
@@ -318,6 +404,72 @@ const TeamSection = () => {
               </div></>
           ))}
         </div>
+      </div>
+    </section>
+  );
+};
+
+
+
+const WhyFortuneAsia = () => {
+  const points = [
+    { title: "Investment Advisory, Not Just Brokerage" },
+    { title: "End-to-End Wealth Partner" },
+    { title: "Trust Beyond Transactions" },
+    { title: "Building Relationships for Generations" },
+  ];
+
+  return (
+    <section className="relative py-16 bg-[#020617] overflow-hidden text-white border-t border-white/5">
+      {/* Structural Ambient Luxury Lighting */}
+      <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-gold-500/[0.02] blur-[150px] pointer-events-none" />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-14">
+        
+        {/* Header Section */}
+        <div className="max-w-3xl mb-16">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="space-y-4"
+          >
+            <h2 className="font-display text-4xl md:text-6xl font-light text-white leading-tight">
+              Why <br />
+              <span className="font-serif italic text-gold-400">Fortune Asia?</span>
+            </h2>
+          </motion.div>
+        </div>
+
+        {/* Pillars Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+          {points.map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: i * 0.1 }}
+              viewport={{ once: true }}
+              className="group relative"
+            >
+              {/* Luxury Frame Container */}
+              <div className="relative p-8 md:p-10 rounded-2xl bg-white/[0.01] border border-white/5 backdrop-blur-md transition-all duration-500 hover:bg-white/[0.03] hover:border-gold-500/20">
+                <div className="flex items-start gap-6 relative z-10">
+                  <span className="font-mono text-xs md:text-sm font-bold tracking-widest text-gold-400/40 group-hover:text-gold-400 transition-colors pt-1">
+                    0{i + 1}
+                  </span>
+                  <h3 className="font-serif text-2xl font-light tracking-wide text-white group-hover:text-gold-400/90 transition-colors">
+                    {item.title}
+                  </h3>
+                </div>
+                {/* Micro corner accent */}
+                <div className="absolute bottom-4 right-4 w-4 h-4 border-r border-b border-white/5 opacity-40 group-hover:border-gold-500/30 group-hover:opacity-100 transition-all duration-500" />
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
       </div>
     </section>
   );
