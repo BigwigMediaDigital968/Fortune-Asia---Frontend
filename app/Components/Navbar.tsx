@@ -34,11 +34,11 @@ export default function Navbar({ scrolled }: { scrolled: boolean }) {
         <Link href="/"
           onClick={() => setIsOpen(false)}
           className="flex items-center cursor-pointer shrink-0">
-          <div className="h-[30px] md:h-[40px]">
+          <div className="h-[30px] md:h-[40px] w-auto">
             <img
               src="/logo.png"
               alt="Fortune Asia Realty"
-              className="w-full h-full object-center object-cover"
+              className="h-full w-auto object-contain"
             />
           </div>
         </Link>
